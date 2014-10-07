@@ -69,7 +69,7 @@ Click on the one you just created.
 
 ![Select your new bot](http://i.groupme.com/871x333.png.5a33ef2b6ab74ea59d5aaa5569aaaf23)
 
-On your Bot's page, copy the Bot Token (aka your Bot ID)
+On your Bot's page, copy the Bot ID
 
 ![Copy your Bot ID](http://i.groupme.com/615x295.png.3256190e86ed4cd7ae6cf09899c1f9a8)
 
