@@ -61,7 +61,7 @@ function postMessage() {
 function postMessageF(name) {
   var botResponse, options, body, botReq;
 
-  botResponse = "Fuck you too fag" + name;
+  botResponse = "Fuck you too " + name;
 
   options = {
     hostname: 'api.groupme.com',
