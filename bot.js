@@ -12,11 +12,7 @@ function respond() {
     postMessage();
     this.res.end();
   } 
-  else if(request.text && botFuckYou.test(request.text)){
-    this.res.writeHead(200);
-    postMessageF();
-    this.res.end();
-  }else {
+  else {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
