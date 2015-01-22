@@ -58,10 +58,14 @@ function postMessage() {
   });
   botReq.end(JSON.stringify(body));
 }
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 function postMessageF(name) {
   var botResponse, options, body, botReq;
-
-  botResponse = "Fuck you too " + name;
+  var masonGif = ["http://share.gifyoutube.com/mGxRag.gif","https://i.groupme.com/640x360.gif.25555a684a354486a1ae25d17f65669d.large"]
+  botResponse = masonGif[getRandomInt(0,1)];
 
   options = {
     hostname: 'api.groupme.com',
@@ -83,6 +87,9 @@ function postMessageF(name) {
         console.log('rejecting bad status code ' + res.statusCode);
       }
   });
+
+
+
 
   botReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
