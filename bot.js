@@ -14,7 +14,7 @@ function respond() {
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessageDL(request.name);
+    postMessageDL(request);
     this.res.end();
   } 
   else {
