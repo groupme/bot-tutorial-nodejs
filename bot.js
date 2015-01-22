@@ -14,7 +14,7 @@ function respond() {
   } 
   else if(request.text && botRegexF.test(request.text)) {
     this.res.writeHead(200);
-    postMessageF();
+    postMessageF(request.name);
     this.res.end();
   } 
   else {
@@ -58,10 +58,10 @@ function postMessage() {
   });
   botReq.end(JSON.stringify(body));
 }
-function postMessageF() {
+function postMessageF(name) {
   var botResponse, options, body, botReq;
 
-  botResponse = "Fuck you too fag";
+  botResponse = "Fuck you too fag" + name;
 
   options = {
     hostname: 'api.groupme.com',
