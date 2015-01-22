@@ -5,16 +5,16 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexF =  /^\/fuck you/; botRegexDL = /^\/DDL/i
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
   } 
-  else if(request.text && botRegexF.test(request.text)) {
+  else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessageF(request.name);
+    postMessageDL(request.name);
     this.res.end();
   } 
   else {
@@ -62,11 +62,9 @@ function postMessage() {
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
-function postMessageF(name) {
+function postMessageDL(name) {
   var botResponse, options, body, botReq;
-  var masonGif = ["http://share.gifyoutube.com/mGxRag.gif","https://i.groupme.com/640x360.gif.25555a684a354486a1ae25d17f65669d.large"]
-  botResponse = masonGif[getRandomInt(0,1)];
-
+  botResponse = name[5,name.length]
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
