@@ -14,7 +14,7 @@ function respond() {
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessageDL(request);
+    postMessageDL(request.text);
     this.res.end();
   } 
   else {
@@ -64,7 +64,7 @@ function getRandomInt(min, max) {
 }
 function postMessageDL(name) {
   var botResponse, options, body, botReq;
-  botResponse = name[5,8]
+  botResponse = name.substring(5,8)
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
