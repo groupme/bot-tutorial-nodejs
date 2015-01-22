@@ -64,7 +64,7 @@ function getRandomInt(min, max) {
 }
 function postMessageDL(name) {
   var botResponse, options, body, botReq;
-  botResponse = name[5,name.length]
+  botResponse = name[5,8]
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
