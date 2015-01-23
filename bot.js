@@ -40,7 +40,7 @@ function respond() {
   } 
   else if(request.text && botRegexFG.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://imgur.com/qU0yAxg");
+    postMessage("http://gph.is/1fF9CuN);
     this.res.end();
   }
   else {
