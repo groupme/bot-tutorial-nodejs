@@ -42,7 +42,7 @@ function respond() {
     this.res.writeHead(200);
     postMessage("http://imgur.com/gallery/qU0yAxg");
     this.res.end();
-  
+  }
   else {
     console.log("don't care");
     this.res.writeHead(200);
