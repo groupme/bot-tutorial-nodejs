@@ -6,6 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
+      botRegexAd=/^\/advance/
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -22,6 +23,11 @@ function respond() {
     postMessage("http://i.imgur.com/q3ohLtD.gif");
     this.res.end();
   } 
+  else if(request.text && botRegexAd.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.kno.com/images/store/knoadvance/overview.png");
+    this.res.end();
+  }
   else if(request.text && botRegexYub.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.quickmeme.com/img/9f/9f3720469d1ce6c2d20130ed0750935a394df80ffcddec6d16e091d95efea854.jpg");
