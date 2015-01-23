@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
-      botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/
+      botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/ botRegexFG = /^\/fag/
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -38,6 +38,10 @@ function respond() {
     postMessage("https://i.groupme.com/220x147.jpeg.a2dd2add32b14fff9e329535186d793c.large");
     this.res.end();
   } 
+  else if(request.text && botRegexFG.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://imgur.com/gallery/qU0yAxg");
+    this.res.end();
   
   else {
     console.log("don't care");
