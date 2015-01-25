@@ -15,7 +15,7 @@ function respond() {
     postMessage(cool());
     this.res.end();
   } 
-  else if(request.text && botRegexDL.test(request.text) && request.text.substring(5,8) in (teamAb)) {
+  else if(request.text && botRegexDL.test(request.text) && (request.text.substring(5,8) in (teamAb))) {
     this.res.writeHead(200);
     postMessage("http://daddyleagues.com/rMCF/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
@@ -45,7 +45,7 @@ function respond() {
     postMessage("http://i.imgur.com/qU0yAxg.gif");
     this.res.end();
   }
-  else if(request.text && botRegexSC.test(request.text) && request.text.substring(5,8) in (teamAb)) {
+  else if(request.text && botRegexSC.test(request.text) && (request.text.substring(5,8) in (teamAb))) {
     this.res.writeHead(200);
     postMessage("http://daddyleagues.com/rMCF/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
