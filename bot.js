@@ -7,13 +7,15 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexFG = /^\/fag/; botRegexSC = /^\/SDL/i
-
+  var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
+                ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
+                "MIA","BUF","SF","WAS","NYJ","TB"]
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
     this.res.end();
   } 
-  else if(request.text && botRegexDL.test(request.text)) {
+  else if(request.text && botRegexDL.test(request.text) && botRegexDL.test(teamAb)) {
     this.res.writeHead(200);
     postMessage("http://daddyleagues.com/rMCF/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
@@ -43,7 +45,7 @@ function respond() {
     postMessage("http://i.imgur.com/qU0yAxg.gif");
     this.res.end();
   }
-  else if(request.text && botRegexSC.test(request.text)) {
+  else if(request.text && botRegexSC.test(request.text) && request.text.substring(5,8).test(teamAb)) {
     this.res.writeHead(200);
     postMessage("http://daddyleagues.com/rMCF/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
