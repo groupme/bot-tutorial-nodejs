@@ -54,8 +54,8 @@ function respond() {
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
-    req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/rMCF/players?name="+req+"&position=all&team=all");
+    var rep = req.replace(/ /,"+");
+    postMessage("http://daddyleagues.com/rMCF/players?name="+rep+"&position=all&team=all");
     this.res.end();
   } 
   else {
