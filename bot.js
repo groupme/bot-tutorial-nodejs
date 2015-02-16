@@ -72,7 +72,7 @@ function respond() {
   } 
   else if(request.text && botRegexRemove.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://stream1.gifsoup.com/webroot/animatedgifs4/1841600_o.gif");
+    postMessage("http://i.minus.com/i97PmI4lhAJPx.gif");
     this.res.end();
   } 
   else {
