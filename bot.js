@@ -7,7 +7,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/ayyhomienigga/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexFG = /^\/fag/; botRegexSC = /^\/SDL/i
-      botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i
+      botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i; botRegexPop = /^\/popcorn/i
 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
@@ -64,6 +64,12 @@ function respond() {
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
     this.res.end();
   } 
+  else if(request.text && botRegexTw.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://persephonemagazine.com/wp-content/uploads/2012/10/kingofpopcorn1.gif");
+    this.res.end();
+  } 
+  
   else {
     console.log("don't care");
     this.res.writeHead(200);
