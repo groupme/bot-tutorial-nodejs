@@ -64,7 +64,7 @@ function respond() {
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
     this.res.end();
   } 
-  else if(request.text && botRegexTw.test(request.text)) {
+  else if(request.text && botRegexPop.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://persephonemagazine.com/wp-content/uploads/2012/10/kingofpopcorn1.gif");
     this.res.end();
