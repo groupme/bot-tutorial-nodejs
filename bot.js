@@ -7,7 +7,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/ayyhomienigga/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexFG = /^\/fag/; botRegexSC = /^\/SDL/i
-      botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i; botRegexPop = /^\/popcorn/i
+      botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i; botRegexPop = /^\/popcorn/i; botRegexSb = /^\/sub;
 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
@@ -15,6 +15,11 @@ function respond() {
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
+    this.res.end();
+  } 
+  else if(request.text && botRegexSb.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.reddit.com/r/maddencf");
     this.res.end();
   } 
   else if(request.text && botRegexDL.test(request.text)) {
