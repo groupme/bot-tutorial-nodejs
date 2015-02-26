@@ -7,7 +7,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/ayyhomienigga/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexFG = /^\/fag/; botRegexSC = /^\/SDL/i
-      botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i; botRegexPop = /^\/popcorn/i; botRegexSb = /^\/sub;
+      botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i; botRegexPop = /^\/popcorn/i; botRegexSb = /^\/sub
 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
@@ -15,11 +15,6 @@ function respond() {
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
-    this.res.end();
-  } 
-  else if(request.text && botRegexSb.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://www.reddit.com/r/maddencf");
     this.res.end();
   } 
   else if(request.text && botRegexDL.test(request.text)) {
@@ -74,7 +69,11 @@ function respond() {
     postMessage("http://persephonemagazine.com/wp-content/uploads/2012/10/kingofpopcorn1.gif");
     this.res.end();
   } 
-  
+  else if(request.text && botRegexSb.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://reddit.com/r/MaddenCF");
+    this.res.end();
+  } 
   else {
     console.log("don't care");
     this.res.writeHead(200);
