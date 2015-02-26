@@ -6,8 +6,8 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
-      botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexFG = /^\/fag/; botRegexSC = /^\/SDL/i;
-      botRegexP = /^\/PDL/i; botRegexN = /nigger/i; botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/
+      botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i;
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -18,7 +18,7 @@ function respond() {
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/rDos/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/rMCF/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
@@ -41,29 +41,19 @@ function respond() {
     postMessage("https://i.groupme.com/220x147.jpeg.a2dd2add32b14fff9e329535186d793c.large");
     this.res.end();
   } 
-  else if(request.text && botRegexFG.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://i.imgur.com/qU0yAxg.gif");
-    this.res.end();
-  }
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/rDos/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/rMCF/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/rDos/players?name="+rep+"&position=all&team=all");
+    postMessage("http://daddyleagues.com/rMCF/players?name="+rep+"&position=all&team=all");
     this.res.end();
   } 
-  
-  else if(request.text && botRegexN.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("HARD R ALERT");
-    this.res.end();
-  } 
+
   else if(request.text && botRegexTw.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
