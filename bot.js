@@ -61,7 +61,7 @@ function respond() {
   } 
   else if(request.text && botRegexSb.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("N/A");
+    postMessage("http://www.reddit.com/r/maddenall32");
     this.res.end();
   } 
   else {
