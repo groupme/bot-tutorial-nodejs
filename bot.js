@@ -66,7 +66,7 @@ function respond() {
   } 
   else if(request.text && botRegexSh.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("¯\_(ツ)_/¯");
+    postMessage("¯\\_(ツ)_/¯");
     this.res.end();
   } 
   else {
