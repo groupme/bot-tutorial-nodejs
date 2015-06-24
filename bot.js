@@ -23,7 +23,7 @@ function respond() {
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://i.imgur.com/q3ohLtD.gif");
+    postMessage("https://i.imgur.com/B5BSVqH.png");
     this.res.end();
   } 
   else if(request.text && botRegexAd.test(request.text)) {
