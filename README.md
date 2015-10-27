@@ -11,7 +11,24 @@ This guide was partially written by me in order to more easily get your code up 
 
 # Getting Started
 
-## First, create a GroupMe Bot:
+## First, create a Heroku App:
+
+Go to:
+https://dashboard.heroku.com/apps
+
+Use your login credentials to log in.
+
+![Click on the Plus sign in the upper right corner]( )
+
+Then click 'Create New App.
+
+Choose a name, or don't I prefer not to, and then click 'Create App'
+
+The name of your app should appear in the URL, for example:
+In https://dashboard.heroku.com/apps/safe-scrubland-8523/deploy/heroku-git, the name is 'safe-scrubland-8523'
+Find the name of your app and remember it.
+
+## Next, create a GroupMe Bot:
 
 Go to:
 https://dev.groupme.com/session/new
@@ -30,6 +47,7 @@ Fill out the form to create your new bot:
   * Give your bot a name
   * Paste in the url to your newly deply heroku app
     * `http://your-app-name-here.herokuapp.com/`
+    * For example, mine would be `http://safe-scrubland-8523.herokuapp.com`
   * (Optional) Give your bot an avatar by providing a url to an image
   * Click submit
 
@@ -74,11 +92,44 @@ Fill out the form to add an environment variable to your app:
 
 ![Add the Bot ID environment variable](http://i.groupme.com/784x148.png.5790498a7acd46b289aca2be43e9c84e)
 
-## Now go test your bot!
+## Now you must connect Github to your Heroku Account.
 
-Go to GroupMe and type "/cool guy" in the group where your bot lives to see it in action.
+Go here to see all of your Heroku apps and select the one you just created before:
 
-![Test your Bot](http://i.groupme.com/821x587.png.7bcf55bed1c64acab83fa2c2ad0b0862)
+https://dashboard-next.heroku.com/apps
+
+Click on your app.
+
+![Go to your app's settings](http://i.groupme.com/722x127.png.27c0a2e83c524064bd41bb66df76d14c)
+
+On your app page, click deploy in the top navigation bar.
+
+There should be three buttons at the top, Heroku Git/Connect to GitHub/DropBox
+
+Click Connect to Github
+
+Sign in to Github and click Search
+
+There should only be one 'repo' that comes up, and if you have more than one I assume you know how to do this.
+
+Click on the repo to connect to it.
+
+Scroll all the way down to 'Manual Deploy' and click 'Deploy Branch'
+
+## All done, test out the bot in your GroupMe
+
+# How to make the code your own
+
+Sign in to Github
+
+Find where you forked the code
+
+Click on bot.js
+
+
+
+
+
 
 
 
