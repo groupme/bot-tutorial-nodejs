@@ -127,10 +127,10 @@ Find where you forked the code
 
 Click on bot.js
 
-![](https://imgur.com/8bhkPw9.png?raw=true)
-![]https://imgur.com/I1JKjQm?raw=true)
-![]https://imgur.com/fCuH0jw?raw=true)
-![]https://imgur.com/LWC2ks1?raw=true)
+![Deploy, Github, Search](https://imgur.com/8bhkPw9.png?raw=true)
+![]https://imgur.com/I1JKjQm.png?raw=true)
+![]https://imgur.com/fCuH0jw.png?raw=true)
+![]https://imgur.com/LWC2ks1.png?raw=true)
 
 
 
