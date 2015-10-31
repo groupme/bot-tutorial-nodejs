@@ -29,6 +29,7 @@ Choose a name, or don't I prefer not to, and then click 'Create App'
 
 The name of your app should appear in the URL, for example:
 In https://dashboard.heroku.com/apps/safe-scrubland-8523/deploy/heroku-git, the name is 'safe-scrubland-8523'
+
 Find the name of your app and remember it.
 
 ## Next, create a GroupMe Bot:
@@ -139,9 +140,9 @@ Click on the pencil to edit the code
 
 In order to add more commands follow these steps:
   * Create a command in the following way, i.e, `botRegexSb = /^\/sub/;`
-   *`botRegex[x]` where [x] is some two to three letter combination to help you remember what the code does.
-   *`/^\/[y]/;` where [y] is what you want the command to be.
-   *Paste the command after the last command you see, usually `botRegexWk = /^\/users/;` if this is your first command added, the semi-colon is important.
+   *`botRegex[x]` where [x] is some two to three letter combination to help you remember what the code does.  
+   *`/^\/[y]/;` where [y] is what you want the command to be.  
+   *Paste the command after the last command you see, usually `botRegexWk = /^\/users/;` if this is your first command added, the semi-colon is important.  
   * Create the part of the bot that actually responds to the command
    *The template looks as follows:
    ```
@@ -151,8 +152,8 @@ In order to add more commands follow these steps:
     this.res.end();
     }
    ```
-   *Replace `botDuck` with the command you created in the first step, i.e., botRegexSb, call it [x]
-   *Replace what's inside `postMessage("")` with what you want, say [y]
+   *Replace `botDuck` with the command you created in the first step, i.e., botRegexSb, call it [x]  
+   *Replace what's inside `postMessage("")` with what you want, say [y]  
    *What you should have is:
    ```
     else if(request.text && [x].test(request.text)) {
@@ -161,7 +162,7 @@ In order to add more commands follow these steps:
     this.res.end();
     }
    ```
-   *Paste this code after the curly brackets of the last command, but before the code that looks like:
+   Paste this code after the curly brackets of the last command, but before the code that looks like:
    ```
    else {
     console.log("don't care");
