@@ -139,8 +139,8 @@ Click on bot.js
 Click on the pencil to edit the code
 
 In order to add more commands follow these steps:
-  * Create a command in the following way, i.e, `botRegexSb = /^\/sub/;`
-    *`botRegex[x]` where `[x]` is some two to three letter combination to help you remember what the code does.  
+  * Create a command in the following way, i.e, `botRegexSb = /^\/sub/;`  
+    `botRegex[x]` where `[x]` is some two to three letter combination to help you remember what the code does.  
     `/^\/[y]/;` where `[y]` is what you want the command to be.  
     Your command should look like `[x] = [y]`
     Paste the command after the last command you see, usually `botRegexWk = /^\/users/;` if this is your first command added, the semi-colon is important.  
