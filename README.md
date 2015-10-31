@@ -137,6 +137,40 @@ Click on bot.js
 
 Click on the pencil to edit the code
 
+In order to add more commands follow these steps:
+  * Create a command in the following way, i.e, `botRegexSb = /^\/sub/;`
+   *`botRegex[x]` where [x] is some two to three letter combination to help you remember what the code does.
+   *`/^\/[y]/;` where [y] is what you want the command to be.
+   *Paste the command after the last command you see, usually `botRegexWk = /^\/users/;` if this is your first command added, the semi-colon is important.
+  * Create the part of the bot that actually responds to the command
+   *The template looks as follows:
+   ```
+    else if(request.text && botDuck.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://media3.giphy.com/media/YCseTHF2I6CCA/giphy.gif");
+    this.res.end();
+    }
+   ```
+   *Replace `botDuck` with the command you created in the first step, i.e., botRegexSb, call it [x]
+   *Replace what's inside `postMessage("")` with what you want, say [y]
+   *What you should have is:
+   ```
+    else if(request.text && [x].test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("[y]");
+    this.res.end();
+    }
+   ```
+   *Paste this code after the curly brackets of the last command, but before the code that looks like:
+   ```
+   else {
+    console.log("don't care");
+    this.res.writeHead(200);
+    this.res.end();
+    }
+    ```
+    
+ Redeploy your code on Heroku and you should be all set!
 
 
 
