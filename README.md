@@ -98,7 +98,13 @@ Fill out the form to add an environment variable to your app:
 
 ## Now you must connect Github to your Heroku Account.
 
-Go here to see all of your Heroku apps and select the one you just created before:
+First you must fork the initial code from my account.
+
+Sign into Github and click the 'Fork' button in the upper right corner
+
+![Fork button](http://imgur.com/Cm9gXmJ.png?raw=true)
+
+Now sign into Heroku to see all of your Heroku apps and select the one you just created before:
 
 https://dashboard-next.heroku.com/apps
 
