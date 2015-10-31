@@ -19,7 +19,7 @@ https://dashboard.heroku.com/apps
 
 Use your login credentials to log in.
 
-![Click on the Plus sign in the upper right corner](https://imgur.com/Qq957oF.png?raw=true)
+![Click on bot.js](https://imgur.com/Qq957oF.png?raw=true)
 
 Then click 'Create New App.
 
@@ -127,10 +127,10 @@ Find where you forked the code
 
 Click on bot.js
 
-http://imgur.com/8bhkPw9
-http://imgur.com/I1JKjQm
-http://imgur.com/fCuH0jw
-http://imgur.com/LWC2ks1
+![](https://imgur.com/8bhkPw9.png?raw=true)
+![]https://imgur.com/I1JKjQm?raw=true)
+![]https://imgur.com/fCuH0jw?raw=true)
+![]https://imgur.com/LWC2ks1?raw=true)
 
 
 
