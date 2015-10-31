@@ -4,6 +4,7 @@
 
 This guide was partially written by me in order to more easily get your code up and running without needing a lot of the technical knowledge necessary to create a bot.  Most of the code and half of the readme was forked from https://github.com/groupme/bot-tutorial-nodejs and modified for my own needs. I've gotten a lot of requests from people to implement the bot in their GroupMe, but I don't have the time to do them all so I'm writing this guide as the guide in the previous Git is unfollowable without further explanation. This is meant to be used to setup a bot to integrate Daddyleagues more easily with GroupMe.
 
+
 ## Requirements:
 
   * GroupMe account
@@ -18,7 +19,7 @@ https://dashboard.heroku.com/apps
 
 Use your login credentials to log in.
 
-![Click on the Plus sign in the upper right corner]( )
+![Click on the Plus sign in the upper right corner](http://imgur.com/Qq957oF)
 
 Then click 'Create New App.
 
@@ -126,7 +127,10 @@ Find where you forked the code
 
 Click on bot.js
 
-
+http://imgur.com/8bhkPw9
+http://imgur.com/I1JKjQm
+http://imgur.com/fCuH0jw
+http://imgur.com/LWC2ks1
 
 
 
