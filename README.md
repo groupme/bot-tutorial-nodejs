@@ -19,7 +19,7 @@ https://dashboard.heroku.com/apps
 
 Use your login credentials to log in.
 
-![Click on the Plus sign in the upper right corner](http://imgur.com/Qq957oF)
+![Click on the Plus sign in the upper right corner](https://imgur.com/Qq957oF.png?raw=true)
 
 Then click 'Create New App.
 
