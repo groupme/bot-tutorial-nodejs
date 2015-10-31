@@ -19,9 +19,11 @@ https://dashboard.heroku.com/apps
 
 Use your login credentials to log in.
 
-![Click on bot.js](https://imgur.com/Qq957oF.png?raw=true)
+![Plus Sign to Create new Heroku](https://imgur.com/LWC2ks1.png?raw=true)
 
-Then click 'Create New App.
+Click on the 'Plus Sign' as shown above.
+
+Then click 'Create New App'.
 
 Choose a name, or don't I prefer not to, and then click 'Create App'
 
@@ -107,6 +109,8 @@ On your app page, click deploy in the top navigation bar.
 
 There should be three buttons at the top, Heroku Git/Connect to GitHub/DropBox
 
+![Deploy, Github, Search](https://imgur.com/8bhkPw9.png?raw=true)
+
 Click Connect to Github
 
 Sign in to Github and click Search
@@ -114,6 +118,8 @@ Sign in to Github and click Search
 There should only be one 'repo' that comes up, and if you have more than one I assume you know how to do this.
 
 Click on the repo to connect to it.
+
+![Deploy Branch](https://imgur.com/I1JKjQm.png?raw=true)
 
 Scroll all the way down to 'Manual Deploy' and click 'Deploy Branch'
 
@@ -125,12 +131,17 @@ Sign in to Github
 
 Find where you forked the code
 
+![Click on bot.js](https://imgur.com/Qq957oF.png?raw=true)
+
 Click on bot.js
 
-![Deploy, Github, Search](https://imgur.com/8bhkPw9.png?raw=true)
-![]https://imgur.com/I1JKjQm.png?raw=true)
-![]https://imgur.com/fCuH0jw.png?raw=true)
-![]https://imgur.com/LWC2ks1.png?raw=true)
+![Edit Bot.js](https://imgur.com/fCuH0jw.png?raw=true)
+
+Click on the pencil to edit the code
+
+
+
+
 
 
 
