@@ -103,11 +103,9 @@ https://dashboard-next.heroku.com/apps
 
 Click on your app.
 
-![Go to your app's settings](http://i.groupme.com/722x127.png.27c0a2e83c524064bd41bb66df76d14c)
+There should be three buttons at the top, Heroku Git/Connect to GitHub/DropBox
 
 On your app page, click deploy in the top navigation bar.
-
-There should be three buttons at the top, Heroku Git/Connect to GitHub/DropBox
 
 ![Deploy, Github, Search](https://imgur.com/8bhkPw9.png?raw=true)
 
