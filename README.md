@@ -1,8 +1,10 @@
-# Sample GroupMe NodeJS Callback Bot for DaddyLeagues
+# GroupMe NodeJS Callback Bot for DaddyLeagues Integration
 
 ## Introduction
 
 This guide was partially written by me in order to more easily get your code up and running without needing a lot of the technical knowledge necessary to create a bot.  Most of the code and half of the readme was forked from https://github.com/groupme/bot-tutorial-nodejs and modified for my own needs. I've gotten a lot of requests from people to implement the bot in their GroupMe, but I don't have the time to do them all so I'm writing this guide as the guide in the previous Git is unfollowable without further explanation. This is meant to be used to setup a bot to integrate Daddyleagues more easily with GroupMe.
+
+Any questions can be directed to /u/SharpObject on Reddit.
 
 
 ## Requirements:
@@ -132,7 +134,9 @@ Scroll all the way down to 'Manual Deploy' and click 'Deploy Branch'
 
 ## All done, test out the bot in your GroupMe
 
-# How to make the code your own
+# How To Make The Code Your Own 
+
+This may require some coding knowledge to get working, but basically how it works is you have a 'regex' variable at the top which stores what you want the bot to respond to, and then code below which actually responds to the code.
 
 Sign in to Github
 
@@ -147,7 +151,7 @@ Click on bot.js
 Click on the pencil to edit the code
 
 In order to add more commands follow these steps:
-  * Create a command in the following way, i.e, `botRegexSb = /^\/sub/;`  
+  * Create the regex command in the following way, i.e, `botRegexSb = /^\/sub/;`  
     `botRegex[x]` where `[x]` is some two to three letter combination to help you remember what the code does.  
     `/^\/[y]/;` where `[y]` is what you want the command to be.  
     Your command should look like `[x] = [y]`
@@ -171,6 +175,8 @@ In order to add more commands follow these steps:
     this.res.end();
     }
    ```
+   [x] should be where what you called your regex variable, and [y] will be what you want the bot to say in chat.  
+   
    Paste this code after the curly brackets of the last command, but before the code that looks like:
    ```
    else {
