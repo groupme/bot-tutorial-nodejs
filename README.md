@@ -147,3 +147,21 @@ Then navigate to `http://127.0.0.1:5000/` in a browser.
 
 ## All done! Go play around and make the bot your own.
 
+##Troubleshooting
+If you get errors make sure you have the following dependencies installed in the bot's directory:
+* Foreman 
+* Director
+* cool-ascii-faces
+
+Run: `npm ls --depth=0` to check what packages you have in your bot's directory.
+
+If you're missing any use the following commands to install them:
+
+1. `npm install foreman`
+2. `npm install director`
+3. `npm install cool-ascii-faces`
+
+Sometimes you might need to use `nf start` instead of `foreman start`.
+
+If you plan on hosting the bot locally you will also need to open port 5000 on your router as well as changing the URL to `http://Your_IP_Address:5000` within your bot settings on groupme.
+
