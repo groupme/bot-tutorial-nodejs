@@ -5,8 +5,23 @@ var mongoose = require('mongoose'); // mongoose for mongodb
 var morgan = require('morgan'); // log requests to the console (express4)
 var bodyParser = require('body-parser'); // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
+var bot = require('fancy-groupme-bot');
 
 // configuration =================
+
+// local configuration read from env.
+const TOKEN = process.env['TOKEN']; // your groupme api token
+const GROUP = process.env['GROUP']; // the room you want to join
+const NAME = process.env['NAME']; // the name of your bot
+const URL = process.env['URL']; // the domain you're serving from, should be accessible by Groupme.
+const CONFIG = {
+  token: TOKEN,
+  group: GROUP,
+  name: NAME,
+  url: URL
+};
+
+var mybot = bot(CONFIG);
 
 //mongoose.connect('mongodb://sho854:kai1483@ds025389.mlab.com:25389/messagebase');
 
@@ -36,9 +51,42 @@ var messages = mongoose.model('messages', {
 // routes ======================================================================
 
 // api ---------------------------------------------------------------------
+
+//get conversation
+app.get('/api/groupme', function(req, res) {
+  //make call to groupme api to get conversation, and send it to front end
+});
+
+//send a message
+app.post('/api/groupme', function(req, res) {
+  mybot.message(req.body.text);
+});
+
+//have bot listening for messages
+mybot.on('botMessage', function(b, message) {
+  var botRegex = /[Hh]ans/;
+  if (message.text && botRegex.test(message.txt) && message.text != NAME) {
+    b.message('Praise me');
+  }
+});
+
+//get scheduled events
+app.get('/api/schedule', function(req, res) {
+  //get all scheduled events from database and send them
+});
+
+//create new event
+app.post('/api/schedule', function(req, res) {
+  //create a new document for the new event
+});
+
+//delete event
+app.delete('/api/schedule/:schedule_id', function(req, res) {
+  //remove scheduled message with given id
+});
+
 // get all messages
 app.get('/api/messages', function(req, res) {
-  console.log('get received');
   // use mongoose to get all messages in the database
   messages.find(function(err, messages) {
 
