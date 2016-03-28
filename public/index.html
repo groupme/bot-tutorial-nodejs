@@ -1,0 +1,110 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="messageApp">
+  <head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Optimize mobile viewport -->
+
+    <title>Bot Manager</title>
+
+    <!-- Stylesheets -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!--<script src="js/lib/angular.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-messages.min.js"></script>-->
+
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js'></script>
+    <script src='js/lib/ui-bootstrap-tpls-1.2.5.min.js'></script>
+    <script src="core.js"></script>
+
+  </head>
+  <!-- SET THE CONTROLLER AND GET ALL messageS -->
+  <body ng-controller="mainController" ng-init="getMessages()">
+
+    <div layout="row">
+      <div class='col-xs-4'>
+        <h3>Conversation</h3>
+
+        <ul>
+          <li ng-repeat="message in groupme">
+            <div layout="column">
+              <h3>{{ message.name }}</h3>
+              <h4>{{ message.text }}</h4>
+            </div>
+
+          </li>
+        </ul>
+
+        <form>
+          <label>Message</label>
+          <input ng-model="sendInput" type="text">
+          <button type="submit" ng-click="sendGroupme(sendInput)">Send</button>
+          <button type="button" ng-click="getGroupme()">Refresh</button>
+        </form>
+
+      </div>
+      <div class='col-xs-4'>
+        <h3>Scheduled Messages</h3>
+
+        <ul>
+          <li ng-repeat="item in schedule">
+            <div layout="column">
+              <h3>{{ item.text }}</h3>
+              <h4>{{ item.date }}</h4>
+              <button type="button" class="btn btn-default" ng-click="deleteSchedule(item._id)">
+                D
+              </button>
+            </div>
+          </li>
+        </ul>
+
+        <p class="input-group">
+          <input type="text" class="form-control" uib-datepicker-popup="shortDate" ng-model="date" is-open="popup" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="openPopup()">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+          </span>
+        </p>
+
+        <uib-timepicker ng-model="date" hour-step="1" minute-step="5" show-meridian="ismeridian"></uib-timepicker>
+
+        <form>
+          <label>Message</label>
+          <input ng-model="scheduleInput" type="text">
+          <button type="submit" ng-click="createSchedule()">Add</button>\
+        </form>
+
+      </div>
+      <div class='col-xs-4'>
+        <h3>Message Pool</h3>
+
+        <ul>
+          <li ng-repeat="message in messages">
+              <p class='messagepool'>{{ message.text }}</p>
+              <button type="button" class="btn btn-default" class='messagepool' ng-click="deleteMessage(message._id)">
+                D
+              </button>
+          </li>
+        </ul>
+
+        <form>
+          <label>Message</label>
+          <input ng-model="poolInput" type="text">
+          <button type="submit" ng-click="createMessage()">Add</button>
+        </form>
+
+      </div>
+    </div>
+
+  </body>
+</html>
