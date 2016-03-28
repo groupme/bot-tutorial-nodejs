@@ -8,7 +8,7 @@ angular.module('messageApp', ['ui.bootstrap'])
     $scope.schedule = null;
     $scope.groupme = null;
     $scope.popup = false;
-    $scope.date = Date();
+    $scope.date = new Date();
 
 
     /** Date and Time **/
@@ -19,7 +19,7 @@ angular.module('messageApp', ['ui.bootstrap'])
     $scope.today = function() {
       $scope.datet = new Date();
     };
-    $scope.today();
+    //$scope.today();
 
 
 
@@ -28,28 +28,28 @@ angular.module('messageApp', ['ui.bootstrap'])
 
     /* GroupMe Conversation */
 
-    $scope.getGroupme = function() {
-      $http.get('api/groupme')
-        .success(function(data) {
-          $scope.groupme = data;
-        })
-        .error(function(data) {
-          console.log('Error: ' + data);
-        });
-    };
-    $scope.getGroupme();
-
-    $scope.sendGroupme = function(text) {
-      //send message
-      $http.post('/api/groupme', text)
-        .success(function(data) {
-          $scope.sendInput = '';
-          $scope.groupme = data;
-        })
-        .error(function(data) {
-          console.log('Error: ' + data);
-        });
-    };
+    // $scope.getGroupme = function() {
+    //   $http.get('api/groupme')
+    //     .success(function(data) {
+    //       $scope.groupme = data;
+    //     })
+    //     .error(function(data) {
+    //       console.log('Error: ' + data);
+    //     });
+    // };
+    // $scope.getGroupme();
+    //
+    // $scope.sendGroupme = function(text) {
+    //   //send message
+    //   $http.post('/api/groupme', text)
+    //     .success(function(data) {
+    //       $scope.sendInput = '';
+    //       $scope.groupme = data;
+    //     })
+    //     .error(function(data) {
+    //       console.log('Error: ' + data);
+    //     });
+    // };
 
 
     /* Scheduled Messages */
@@ -67,10 +67,10 @@ angular.module('messageApp', ['ui.bootstrap'])
     $scope.getSchedule();
 
     $scope.createSchedule = function() {
-      item = {
-        message: $scope.scheduleInput,
-        when: $scope.date
-      };
+      item = {};
+
+      item['message']= $scope.scheduleInput;
+      item['when'] = $scope.date;
 
       $http.post('/api/schedule', item)
         .success(function(data) {
@@ -109,7 +109,9 @@ angular.module('messageApp', ['ui.bootstrap'])
 
     // when submitting the add form, send the text to the node API
     $scope.createMessage = function() {
-      $http.post('/api/messages', $scope.poolInput)
+      item = {};
+      item['text'] = $scope.poolInput;
+      $http.post('/api/messages', item)
         .success(function(data) {
           $scope.poolInput = ""; // clear the form so our user is ready to enter another
           $scope.messages = data;

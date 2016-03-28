@@ -124,7 +124,6 @@ app.delete('/api/schedule/:schedule_id', function(req, res) {
     // get and return all the messages after you create another
     schedule.find(function(err, schedule) {
       if (err) {
-
         res.send(err);
       }
       res.json(schedule);
