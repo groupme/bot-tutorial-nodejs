@@ -43,9 +43,14 @@ app.use(bodyParser.json({
 app.use(methodOverride());
 
 
-// define model =================
+// define models =================
 var messages = mongoose.model('messages', {
   text: String
+});
+
+var schedule = mongoose.model('schedule', {
+  message: String,
+  when: Date,
 });
 
 // routes ======================================================================
@@ -59,30 +64,72 @@ app.get('/api/groupme', function(req, res) {
 
 //send a message
 app.post('/api/groupme', function(req, res) {
-  mybot.message(req.body.text);
+  mybot.message(req.body);
+  //send updated conversation as response
 });
 
 //have bot listening for messages
-mybot.on('botMessage', function(b, message) {
-  var botRegex = /[Hh]ans/;
-  if (message.text && botRegex.test(message.txt) && message.text != NAME) {
-    b.message('Praise me');
-  }
-});
+// mybot.on('botMessage', function(b, message) {
+//   var botRegex = /[Hh]ans/;
+//   if (message.text && botRegex.test(message.txt) && message.text != NAME) {
+//     b.message('Praise me');
+//   }
+// });
 
 //get scheduled events
 app.get('/api/schedule', function(req, res) {
   //get all scheduled events from database and send them
+  // use mongoose to get all scheduled items in the database
+  schedule.find(function(err, schedule) {
+
+    // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+    if (err) {
+      res.send(err);
+    }
+
+    res.json(schedule); // return all messages in JSON format
+  });
 });
 
 //create new event
 app.post('/api/schedule', function(req, res) {
   //create a new document for the new event
+  // create a item, information comes from AJAX request from Angular
+  schedule.create({
+    text: req.body.message,
+    when: req.body.date
+  }, function(err, message) {
+    if (err)
+      res.send(err);
+
+    // get and return all the messages after you create another
+    schedule.find(function(err, schedule) {
+      if (err) {
+        res.send(err);
+      }
+      res.json(schedule);
+    });
+  });
 });
 
 //delete event
 app.delete('/api/schedule/:schedule_id', function(req, res) {
   //remove scheduled message with given id
+  schedule.remove({
+    _id: req.params.schedule_id
+  }, function(err, schedule) {
+    if (err)
+      res.send(err);
+
+    // get and return all the messages after you create another
+    schedule.find(function(err, schedule) {
+      if (err) {
+
+        res.send(err);
+      }
+      res.json(schedule);
+    });
+  });
 });
 
 // get all messages
@@ -104,8 +151,7 @@ app.post('/api/messages', function(req, res) {
 
   // create a message, information comes from AJAX request from Angular
   messages.create({
-    text: req.body.text,
-    done: false
+    text: req.body.text
   }, function(err, message) {
     if (err)
       res.send(err);
