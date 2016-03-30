@@ -2,6 +2,7 @@
 var express = require('express');
 var app = express(); // create our app w/ express
 var mongoose = require('mongoose'); // mongoose for mongodb
+var Schema = mongoose.Schema;
 var morgan = require('morgan'); // log requests to the console (express4)
 var bodyParser = require('body-parser'); // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
@@ -44,14 +45,28 @@ app.use(methodOverride());
 
 
 // define models =================
-var messages = mongoose.model('messages', {
+// var messages = mongoose.model('messages', {
+//   text: String
+// });
+//
+// var schedule = mongoose.model('schedule', {
+//   when: Date
+// });
+
+var schema1 = new mongoose.Schema({
   text: String
 });
-
-var schedule = mongoose.model('schedule', {
+var schema2 = new mongoose.Schema({
   message: String,
-  when: Date,
+  when: {
+    type: Date,
+    default: Date.now
+  }
 });
+
+var messages = mongoose.model('messages', schema1);
+var schedules = mongoose.model('schedules', schema2);
+
 
 // routes ======================================================================
 
@@ -76,53 +91,54 @@ app.post('/api/groupme', function(req, res) {
 //   }
 // });
 
-//get scheduled events
-app.get('/api/schedule', function(req, res) {
-  //get all scheduled events from database and send them
-  // use mongoose to get all scheduled items in the database
-  schedule.find(function(err, schedule) {
+
+app.get('/api/schedules', function(req, res) {
+  // use mongoose to get all messages in the database
+  schedules.find(function(err, schedules) {
 
     // if there is an error retrieving, send the error. nothing after res.send(err) will execute
     if (err) {
       res.send(err);
     }
 
-    res.json(schedule); // return all messages in JSON format
+    res.json(schedules); // return all messages in JSON format
   });
 });
 
-//create new event
-app.post('/api/schedule', function(req, res) {
-  //create a new document for the new event
-  // create a item, information comes from AJAX request from Angular
-  schedule.create({
-    text: req.body.message,
-    when: req.body.date
-  }, function(err, message) {
-    if (err)
+// create message and send back all messages after creation
+app.post('/api/schedules', function(req, res) {
+
+  // create a message, information comes from AJAX request from Angular
+  schedules.create({
+    message: req.body.message,
+    when: req.body.when
+  }, function(err, schedule) {
+    if (err) {
       res.send(err);
+    }
 
     // get and return all the messages after you create another
-    schedule.find(function(err, schedule) {
+    schedules.find(function(err, schedule) {
       if (err) {
         res.send(err);
       }
       res.json(schedule);
     });
   });
+
 });
 
-//delete event
-app.delete('/api/schedule/:schedule_id', function(req, res) {
-  //remove scheduled message with given id
-  schedule.remove({
+// delete a message
+app.delete('/api/schedules/:schedule_id', function(req, res) {
+  schedules.remove({
     _id: req.params.schedule_id
   }, function(err, schedule) {
-    if (err)
+    if (err) {
       res.send(err);
+    }
 
     // get and return all the messages after you create another
-    schedule.find(function(err, schedule) {
+    schedules.find(function(err, schedule) {
       if (err) {
         res.send(err);
       }
@@ -130,6 +146,7 @@ app.delete('/api/schedule/:schedule_id', function(req, res) {
     });
   });
 });
+
 
 // get all messages
 app.get('/api/messages', function(req, res) {
@@ -152,8 +169,9 @@ app.post('/api/messages', function(req, res) {
   messages.create({
     text: req.body.text
   }, function(err, message) {
-    if (err)
+    if (err) {
       res.send(err);
+    }
 
     // get and return all the messages after you create another
     messages.find(function(err, messages) {
@@ -171,8 +189,9 @@ app.delete('/api/messages/:message_id', function(req, res) {
   messages.remove({
     _id: req.params.message_id
   }, function(err, message) {
-    if (err)
+    if (err) {
       res.send(err);
+    }
 
     // get and return all the messages after you create another
     messages.find(function(err, messages) {

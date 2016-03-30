@@ -7,8 +7,7 @@ set up schedule
 
 
 FRONT END
-fix errors??? aaaaa
-can't read schedule properly
+schedule api failing.  why?
 
 
 OTHER

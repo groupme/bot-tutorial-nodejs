@@ -55,7 +55,7 @@ angular.module('messageApp', ['ui.bootstrap'])
     /* Scheduled Messages */
 
     $scope.getSchedule = function() {
-      $http.get('api/schedule')
+      $http.get('api/schedules')
         .success(function(data) {
           $scope.schedule = data;
           console.log(data);
@@ -72,7 +72,7 @@ angular.module('messageApp', ['ui.bootstrap'])
       item['message']= $scope.scheduleInput;
       item['when'] = $scope.date;
 
-      $http.post('/api/schedule', item)
+      $http.post('/api/schedules', item)
         .success(function(data) {
           $scope.sendInput = '';
           $scope.schedule = data;
@@ -83,7 +83,7 @@ angular.module('messageApp', ['ui.bootstrap'])
     };
 
     $scope.deleteSchedule = function(id) {
-      $http.delete('/api/schedule/' + id)
+      $http.delete('/api/schedules/' + id)
         .success(function(data) {
           $scope.schedule = data;
           console.log(data);
