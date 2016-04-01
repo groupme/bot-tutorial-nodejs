@@ -61,12 +61,28 @@ var messages = mongoose.model('messages', schema1);
 var schedules = mongoose.model('schedules', schema2);
 
 //set up timeplan ==================
+
+var curSchedule = [];
+getSchedules();
+
+
 timeplan.repeat({
-  period: "2s",
-  task: function() {
-    console.log("Every 2 Seconds");
-  }
+    period: "10s",
+    task: function() {
+        console.log('checking schedule, length is ' + curSchedule.length);
+        for (var i = 0; i < curSchedule.length; i++) {
+            cur = curSchedule[i];
+            now = Date.now();
+            time = cur.when;
+            if (now >= time) {
+                console.log(cur.message);
+                deleteSchedule(cur._id);
+            }
+        }
+    }
 });
+
+
 
 // routes ======================================================================
 
@@ -91,37 +107,19 @@ app.post('/api/groupme', function(req, res) {
 //   }
 // });
 
-function getSchedules(req, res) {
-  // use mongoose to get all messages in the database
-  schedules.find(function(err, schedules) {
 
-    // if there is an error retrieving, send the error. nothing after res.send(err) will execute
-    if (err) {
-      res.send(err);
-    }
+function getSchedules() {
+    schedules.find(function(err, schedules) {
 
-    res.json(schedules); // return all messages in JSON format
+      // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+      if (err) {
+        res.send(err);
+      }
+      curSchedule = schedules;
   });
 }
 
-// app.get('/api/schedules', function(req, res) {
-//   // use mongoose to get all messages in the database
-//   schedules.find(function(err, schedules) {
-//
-//     // if there is an error retrieving, send the error. nothing after res.send(err) will execute
-//     if (err) {
-//       res.send(err);
-//     }
-//
-//     res.json(schedules); // return all messages in JSON format
-//   });
-// });
-//
-app.get('/api/schedules', getSchedules);
-
-// create message and send back all messages after creation
-app.post('/api/schedules', function(req, res) {
-
+function postSchedules(req, res) {
   // create a message, information comes from AJAX request from Angular
   schedules.create({
     message: req.body.message,
@@ -131,34 +129,48 @@ app.post('/api/schedules', function(req, res) {
       res.send(err);
     }
 
-    // get and return all the messages after you create another
-    schedules.find(function(err, schedule) {
+    getSchedules(req, res);
+  });
+}
+
+function postSchedules(message, when) {
+    schedules.create({
+      message: message,
+      when: when
+    }, function(err, schedule) {
       if (err) {
         res.send(err);
       }
-      res.json(schedule);
+      getSchedules();
     });
-  });
+}
 
+function deleteSchedule(id) {
+    schedules.remove({
+      _id: id
+    }, function(err, schedule) {
+      if (err) {
+        res.send(err);
+      }
+      getSchedules();
+    });
+}
+
+app.get('/api/schedules', function(req, res) {
+    getSchedules();
+    res.json(curSchedule);
+});
+
+// create message and send back all messages after creation
+app.post('/api/schedules', function(req, res) {
+    postSchedules(req.body.message, req.body.when);
+    res.json(curSchedule);
 });
 
 // delete a message
 app.delete('/api/schedules/:schedule_id', function(req, res) {
-  schedules.remove({
-    _id: req.params.schedule_id
-  }, function(err, schedule) {
-    if (err) {
-      res.send(err);
-    }
-
-    // get and return all the messages after you create another
-    schedules.find(function(err, schedule) {
-      if (err) {
-        res.send(err);
-      }
-      res.json(schedule);
-    });
-  });
+    deleteSchedule(req.params.schedule_id);
+    res.json(curSchedule);
 });
 
 

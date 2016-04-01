@@ -59,7 +59,7 @@
           <li ng-repeat="item in schedule">
             <div layout="column">
               <h3>{{ item.message }}</h3>
-              <h4>{{ item.when }}</h4>
+              <h4>{{ item.when | date: 'short'}}</h4>
               <button type="button" class="btn btn-default" ng-click="deleteSchedule(item._id)">
                 D
               </button>

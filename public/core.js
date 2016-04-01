@@ -74,7 +74,7 @@ angular.module('messageApp', ['ui.bootstrap'])
 
       $http.post('/api/schedules', item)
         .success(function(data) {
-          $scope.sendInput = '';
+          $scope.scheduleInput = '';
           $scope.schedule = data;
         })
         .error(function(data) {
