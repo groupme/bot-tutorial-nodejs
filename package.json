@@ -15,7 +15,8 @@
     "method-override": "~2.1.2",
     "mongoose": "~3.6.2",
     "morgan": "~1.2.2",
-    "node-schedule": "^1.1.0"
+    "node-schedule": "^1.1.0",
+    "timeplan": "^1.0.0"
   },
   "engines": {
     "node": "0.10.x"

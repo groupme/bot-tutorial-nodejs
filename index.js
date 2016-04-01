@@ -7,7 +7,7 @@ var morgan = require('morgan'); // log requests to the console (express4)
 var bodyParser = require('body-parser'); // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var bot = require('fancy-groupme-bot');
-
+var timeplan = require('timeplan');
 // configuration =================
 
 // local configuration read from env.
@@ -45,13 +45,6 @@ app.use(methodOverride());
 
 
 // define models =================
-// var messages = mongoose.model('messages', {
-//   text: String
-// });
-//
-// var schedule = mongoose.model('schedule', {
-//   when: Date
-// });
 
 var schema1 = new mongoose.Schema({
   text: String
@@ -67,6 +60,13 @@ var schema2 = new mongoose.Schema({
 var messages = mongoose.model('messages', schema1);
 var schedules = mongoose.model('schedules', schema2);
 
+//set up timeplan ==================
+timeplan.repeat({
+  period: "2s",
+  task: function() {
+    console.log("Every 2 Seconds");
+  }
+});
 
 // routes ======================================================================
 
@@ -91,8 +91,7 @@ app.post('/api/groupme', function(req, res) {
 //   }
 // });
 
-
-app.get('/api/schedules', function(req, res) {
+function getSchedules(req, res) {
   // use mongoose to get all messages in the database
   schedules.find(function(err, schedules) {
 
@@ -103,7 +102,22 @@ app.get('/api/schedules', function(req, res) {
 
     res.json(schedules); // return all messages in JSON format
   });
-});
+}
+
+// app.get('/api/schedules', function(req, res) {
+//   // use mongoose to get all messages in the database
+//   schedules.find(function(err, schedules) {
+//
+//     // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+//     if (err) {
+//       res.send(err);
+//     }
+//
+//     res.json(schedules); // return all messages in JSON format
+//   });
+// });
+//
+app.get('/api/schedules', getSchedules);
 
 // create message and send back all messages after creation
 app.post('/api/schedules', function(req, res) {
