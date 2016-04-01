@@ -1,3 +1,19 @@
+/* TODO:
+learn to send images
+make post calls from outside the groupme
+markov model/more complex speech
+emoji?
+send messages on a timer
+javascript regex
+
+setting up multiple call rules
+
+UI to do some of this stuff online
+    make instantaneous post
+    generate potential posts
+    create a queue / timed queue of messages to send
+*/
+
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
@@ -5,7 +21,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy$/;
+      botRegex = /[Hh]ans/;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
