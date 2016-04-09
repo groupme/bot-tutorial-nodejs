@@ -28,28 +28,31 @@ angular.module('messageApp', ['ui.bootstrap'])
 
     /* GroupMe Conversation */
 
-    // $scope.getGroupme = function() {
-    //   $http.get('api/groupme')
-    //     .success(function(data) {
-    //       $scope.groupme = data;
-    //     })
-    //     .error(function(data) {
-    //       console.log('Error: ' + data);
-    //     });
-    // };
-    // $scope.getGroupme();
-    //
-    // $scope.sendGroupme = function(text) {
-    //   //send message
-    //   $http.post('/api/groupme', text)
-    //     .success(function(data) {
-    //       $scope.sendInput = '';
-    //       $scope.groupme = data;
-    //     })
-    //     .error(function(data) {
-    //       console.log('Error: ' + data);
-    //     });
-    // };
+    $scope.getGroupme = function() {
+      $http.get('api/groupme')
+        .success(function(data) {
+          $scope.groupme = data.messages;
+          console.log(data);
+        })
+        .error(function(data) {
+          console.log('Error: ' + data);
+        });
+    };
+    $scope.getGroupme();
+
+    $scope.sendGroupme = function(text) {
+      //send message
+      item = {};
+      item.text = text;
+      $http.post('/api/groupme', item)
+        .success(function(data) {
+          $scope.sendInput = '';
+          $scope.groupme = data.messages;
+        })
+        .error(function(data) {
+          console.log('Error: ' + data);
+        });
+    };
 
 
     /* Scheduled Messages */

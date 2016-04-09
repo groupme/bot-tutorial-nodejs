@@ -1,9 +1,12 @@
 todo:
 
+ORDER
+fix async
+clean up front end
+add regex
+
 BACKEND
-connect to schedule
-connect to groupme api
-set up schedule
+fix async of schedule
 
 
 FRONT END

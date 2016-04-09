@@ -1,4 +1,6 @@
 // set up ========================
+var env = require('node-env-file');
+var HTTPS = require('https');
 var express = require('express');
 var app = express(); // create our app w/ express
 var mongoose = require('mongoose'); // mongoose for mongodb
@@ -6,23 +8,15 @@ var Schema = mongoose.Schema;
 var morgan = require('morgan'); // log requests to the console (express4)
 var bodyParser = require('body-parser'); // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
-var bot = require('fancy-groupme-bot');
+var API = require('groupme').Stateless;
 var timeplan = require('timeplan');
 // configuration =================
+env('./.env');
 
 // local configuration read from env.
-const TOKEN = process.env['TOKEN']; // your groupme api token
-const GROUP = process.env['GROUP']; // the room you want to join
-const NAME = process.env['NAME']; // the name of your bot
-const URL = process.env['URL']; // the domain you're serving from, should be accessible by Groupme.
-const CONFIG = {
-  token: TOKEN,
-  group: GROUP,
-  name: NAME,
-  url: URL
-};
 
-var mybot = bot(CONFIG);
+
+//var mybot = bot(CONFIG);
 
 //mongoose.connect('mongodb://sho854:kai1483@ds025389.mlab.com:25389/messagebase');
 
@@ -67,19 +61,22 @@ getSchedules();
 
 
 timeplan.repeat({
-    period: "10s",
-    task: function() {
-        console.log('checking schedule, length is ' + curSchedule.length);
-        for (var i = 0; i < curSchedule.length; i++) {
-            cur = curSchedule[i];
-            now = Date.now();
-            time = cur.when;
-            if (now >= time) {
-                console.log(cur.message);
-                deleteSchedule(cur._id);
-            }
-        }
+  period: "10s",
+  task: function() {
+    console.log('checking schedule, length is ' + curSchedule.length);
+    for (var i = 0; i < curSchedule.length; i++) {
+      cur = curSchedule[i];
+      now = Date.now();
+      time = cur.when;
+      if (now >= time) {
+        console.log(cur.message);
+        API.Bots.post(process.env.TOKEN, process.env.BOT_ID, cur.message, {}, function(err, ret) {
+            console.log(cur._id);
+            deleteSchedule(cur._id);
+        });
+      }
     }
+  }
 });
 
 
@@ -91,86 +88,82 @@ timeplan.repeat({
 //get conversation
 app.get('/api/groupme', function(req, res) {
   //make call to groupme api to get conversation, and send it to front end
+  API.Messages.index(process.env.TOKEN, process.env.GROUP, {}, function(err, ret) {
+    res.json(ret);
+  });
 });
 
 //send a message
 app.post('/api/groupme', function(req, res) {
-  mybot.message(req.body);
   //send updated conversation as response
+  API.Bots.post(process.env.TOKEN, process.env.BOT_ID, req.body.text, {}, function(err, ret) {
+    API.Messages.index(process.env.TOKEN, process.env.GROUP, {}, function(err, ret) {
+      res.json(ret);
+    });
+  });
 });
 
-//have bot listening for messages
-// mybot.on('botMessage', function(b, message) {
-//   var botRegex = /[Hh]ans/;
-//   if (message.text && botRegex.test(message.txt) && message.text != NAME) {
-//     b.message('Praise me');
-//   }
-// });
+app.post('api/bot', function(req, res) {
+  var request = JSON.parse(this.req.chunks[0]),
+    botRegex = /[Hh]ans/;
+
+  if (request.text && botRegex.test(request.text)) {
+    API.Bots.post(process.env.TOKEN, process.env.BOT_ID, 'i am hans', {}, function(err, ret) {});
+  }
+});
 
 
 function getSchedules() {
-    schedules.find(function(err, schedules) {
+  schedules.find(function(err, schedules) {
 
-      // if there is an error retrieving, send the error. nothing after res.send(err) will execute
-      if (err) {
-        res.send(err);
-      }
-      curSchedule = schedules;
+    // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+    if (err) {
+      res.send(err);
+    }
+    curSchedule = schedules;
+    return schedules;
   });
 }
 
-function postSchedules(req, res) {
-  // create a message, information comes from AJAX request from Angular
+
+function postSchedules(message, when) {
   schedules.create({
-    message: req.body.message,
-    when: req.body.when
+    message: message,
+    when: when
   }, function(err, schedule) {
     if (err) {
       res.send(err);
     }
-
-    getSchedules(req, res);
   });
 }
 
-function postSchedules(message, when) {
-    schedules.create({
-      message: message,
-      when: when
-    }, function(err, schedule) {
-      if (err) {
-        res.send(err);
-      }
-      getSchedules();
-    });
-}
-
 function deleteSchedule(id) {
-    schedules.remove({
-      _id: id
-    }, function(err, schedule) {
-      if (err) {
-        res.send(err);
-      }
-      getSchedules();
-    });
+  schedules.remove({
+    _id: id
+  }, function(err, schedule) {
+    if (err) {
+      res.send(err);
+    }
+  });
 }
 
 app.get('/api/schedules', function(req, res) {
-    getSchedules();
-    res.json(curSchedule);
+  getSchedules();
+  res.json(curSchedule);
 });
 
 // create message and send back all messages after creation
 app.post('/api/schedules', function(req, res) {
-    postSchedules(req.body.message, req.body.when);
-    res.json(curSchedule);
+  postSchedules(req.body.message, req.body.when);
+  getSchedules();
+  res.json(curSchedule);
 });
 
 // delete a message
 app.delete('/api/schedules/:schedule_id', function(req, res) {
-    deleteSchedule(req.params.schedule_id);
-    res.json(curSchedule);
+  deleteSchedule(req.params.schedule_id);
+  getSchedules();
+  res.json(curSchedule);
 });
 
 
