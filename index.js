@@ -16,15 +16,38 @@ env('./.env');
 // local configuration read from env.
 
 
-//var mybot = bot(CONFIG);
+var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } }, };
 
-//mongoose.connect('mongodb://sho854:kai1483@ds025389.mlab.com:25389/messagebase');
+var mongodbUri = 'mongodb://foo:bar@ds025389.mlab.com:25389/messagebase';
+//var mongodbUri = 'mongodb://ds025389.mlab.com:25389/messagebase';
+//var mongodbUri = 'mongodb://localhost/test';
 
-mongoose.connect('mongodb://localhost/test');
-mongoose.connection.on('error', function(err) {
-  // Do something
-  console.log('databse connection error');
+mongoose.connect(mongodbUri, options);
+var conn = mongoose.connection;
+
+conn.on('error', console.error.bind(console, 'connection error:'));
+
+conn.once('open', function() {
+  // Wait for the database connection to establish, then start the app.
+    console.log('connection opened');
+    getSchedules();
+    app.listen(8080);
+    console.log("App listening on port 8080");
 });
+
+
+
+
+
+
+// mongoose.connect('mongodb://sho854:kai1483@ds025389.mlab.com:25389/messagebase');
+// //mongoose.connect('mongodb://' + process.env.DBUSER + ':' + process.env.DBPASS + '@ds025459.mlab.com:25459/heroku_w850c5rk')
+// //mongoose.connect('mongodb://localhost/test');
+// mongoose.connection.on('error', function(err) {
+//   // Do something
+//   console.log('databse connection error');
+// });
 
 app.use(express.static(__dirname + '/public')); // set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
@@ -115,10 +138,9 @@ app.post('api/bot', function(req, res) {
 
 function getSchedules() {
   schedules.find(function(err, schedules) {
-
     // if there is an error retrieving, send the error. nothing after res.send(err) will execute
     if (err) {
-      res.send(err);
+      throw err;
     }
     curSchedule = schedules;
     return schedules;
@@ -132,7 +154,7 @@ function postSchedules(message, when) {
     when: when
   }, function(err, schedule) {
     if (err) {
-      res.send(err);
+      throw err;
     }
   });
 }
@@ -142,7 +164,7 @@ function deleteSchedule(id) {
     _id: id
   }, function(err, schedule) {
     if (err) {
-      res.send(err);
+      throw err;
     }
   });
 }
@@ -229,8 +251,7 @@ app.get('*', function(req, res) {
 });
 
 // listen (start app with node server.js) ======================================
-app.listen(8080);
-console.log("App listening on port 8080");
+
 
 
 /*

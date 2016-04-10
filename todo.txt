@@ -1,7 +1,7 @@
 todo:
 
 ORDER
-fix async
+fix callback functions
 clean up front end
 add regex
 
