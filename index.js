@@ -138,7 +138,7 @@ app.post('/api/groupme', function(req, res) {
   });
 });
 
-app.post('api/bot', function(req, res) {
+app.post('/api/bot', function(req, res) {
 
   console.log(req);
   //var request = JSON.parse(req.chunks[0]);
