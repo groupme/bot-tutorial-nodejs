@@ -144,6 +144,7 @@ app.post('api/bot', function(req, res) {
   //var request = JSON.parse(req.chunks[0]);
   var botRegex = /[Hh]ans/;
   var request = req.body.text;
+  console.log(reqest);
 
   if (request.text && botRegex.test(request.text)) {
     API.Bots.post(process.env.TOKEN, process.env.BOT_ID, 'i am hans', {}, function(err, ret) {
