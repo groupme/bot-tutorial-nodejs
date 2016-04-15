@@ -144,6 +144,7 @@ app.post('/api/bot', function(req, res) {
   var botRegex = /[Hh]ans/;
   var request = req.body.text;
   console.log(req.body.name != process.env.NAME);
+  console.lg(process.env.NAME);
 
 
   if (req.body.name != process.env.NAME && botRegex.test(request)) {
