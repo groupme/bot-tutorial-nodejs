@@ -16,8 +16,20 @@ env('./.env');
 // local configuration read from env.
 
 
-var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
-                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } }, };
+var options = {
+  server: {
+    socketOptions: {
+      keepAlive: 300000,
+      connectTimeoutMS: 30000
+    }
+  },
+  replset: {
+    socketOptions: {
+      keepAlive: 300000,
+      connectTimeoutMS: 30000
+    }
+  },
+};
 
 var mongodbUri = 'mongodb://foo:bar@ds025389.mlab.com:25389/messagebase';
 //var mongodbUri = 'mongodb://ds025389.mlab.com:25389/messagebase';
@@ -30,10 +42,10 @@ conn.on('error', console.error.bind(console, 'connection error:'));
 
 conn.once('open', function() {
   // Wait for the database connection to establish, then start the app.
-    console.log('connection opened');
-    getSchedules();
-    app.listen(process.env.PORT || 8080);
-    console.log("App listening on port 8080");
+  console.log('connection opened');
+  getSchedules();
+  app.listen(process.env.PORT || 8080);
+  console.log("App listening on port 8080");
 });
 
 
@@ -94,8 +106,8 @@ timeplan.repeat({
       if (now >= time) {
         console.log(cur.message);
         API.Bots.post(process.env.TOKEN, process.env.BOT_ID, cur.message, {}, function(err, ret) {
-            console.log(cur._id);
-            deleteSchedule(cur._id);
+          console.log(cur._id);
+          deleteSchedule(cur._id);
         });
       }
     }
@@ -130,9 +142,11 @@ app.post('api/bot', function(req, res) {
   var request = JSON.parse(this.req.chunks[0]),
     botRegex = /[Hh]ans/;
 
+  console.log(request);
+
   if (request.text && botRegex.test(request.text)) {
     API.Bots.post(process.env.TOKEN, process.env.BOT_ID, 'i am hans', {}, function(err, ret) {
-        res.end('');
+      res.end('');
     });
   }
 });
