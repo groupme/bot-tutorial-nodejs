@@ -140,11 +140,11 @@ app.post('/api/groupme', function(req, res) {
 
 app.post('/api/bot', function(req, res) {
 
-  console.log(req);
+  console.log(req.body);
   //var request = JSON.parse(req.chunks[0]);
   var botRegex = /[Hh]ans/;
   var request = req.body.text;
-  console.log(reqest);
+  console.log(request);
 
   if (request.text && botRegex.test(request.text)) {
     API.Bots.post(process.env.TOKEN, process.env.BOT_ID, 'i am hans', {}, function(err, ret) {
