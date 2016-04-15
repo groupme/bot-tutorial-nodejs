@@ -147,7 +147,7 @@ app.post('/api/bot', function(req, res) {
   console.log(process.env.NAME);
 
 
-  if (req.body.name != process.env.NAME && botRegex.test(request)) {
+  if (req.body.name.toLowerCase() != process.env.NAME.toLowerCase() && botRegex.test(request)) {
     API.Bots.post(process.env.TOKEN, process.env.BOT_ID, 'i am hans', {}, function(err, ret) {
       res.end('');
     });
