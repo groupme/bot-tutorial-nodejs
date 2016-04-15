@@ -150,6 +150,7 @@ app.post('api/bot', function(req, res) {
       res.end('');
     });
   }
+  res.end('');
 });
 
 
