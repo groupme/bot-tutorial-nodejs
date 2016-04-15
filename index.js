@@ -84,7 +84,7 @@ getSchedules();
 
 
 timeplan.repeat({
-  period: "60s",
+  period: "10s",
   task: function() {
     console.log('checking schedule, length is ' + curSchedule.length);
     for (var i = 0; i < curSchedule.length; i++) {
