@@ -131,7 +131,9 @@ app.post('api/bot', function(req, res) {
     botRegex = /[Hh]ans/;
 
   if (request.text && botRegex.test(request.text)) {
-    API.Bots.post(process.env.TOKEN, process.env.BOT_ID, 'i am hans', {}, function(err, ret) {});
+    API.Bots.post(process.env.TOKEN, process.env.BOT_ID, 'i am hans', {}, function(err, ret) {
+        res.end('');
+    });
   }
 });
 
