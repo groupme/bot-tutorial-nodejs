@@ -32,7 +32,7 @@ conn.once('open', function() {
   // Wait for the database connection to establish, then start the app.
     console.log('connection opened');
     getSchedules();
-    app.listen(8080);
+    app.listen(process.env.PORT || 8080);
     console.log("App listening on port 8080");
 });
 
