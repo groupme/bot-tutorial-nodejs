@@ -184,16 +184,17 @@ app.get('/api/schedules', function(req, res) {
       res.send(error);
     }
     curSchedule = schedules;
+    res.json(curSchedule);
     return schedules;
   });
-  res.json(curSchedule);
+
 });
 
 // create message and send back all messages after creation
 app.post('/api/schedules', function(req, res) {
   schedules.create({
-    message: message,
-    when: when
+    message: res.body.message,
+    when: res.body.when
   }, function(err, schedule) {
     if (err) {
       res.send(err);
@@ -204,17 +205,16 @@ app.post('/api/schedules', function(req, res) {
         res.send(error);
       }
       curSchedule = schedules;
+      res.json(curSchedule);
       return schedules;
     });
-    res.json(curSchedule);
   });
-
 });
 
 // delete a message
 app.delete('/api/schedules/:schedule_id', function(req, res) {
   schedules.remove({
-    _id: id
+    _id: res.body._id
   }, function(err, schedule) {
     if (err) {
       res.send(err);
@@ -225,9 +225,9 @@ app.delete('/api/schedules/:schedule_id', function(req, res) {
         res.send(error);
       }
       curSchedule = schedules;
+      res.json(curSchedule);
       return schedules;
     });
-    res.json(curSchedule);
   });
 });
 
