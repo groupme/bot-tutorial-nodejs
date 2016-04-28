@@ -10,6 +10,8 @@ angular.module('messageApp', ['ui.bootstrap'])
     $scope.popup = false;
     $scope.date = new Date();
     $scope.regexes = [];
+    $scope.curExp = "";
+    $scope.curResp = [];
 
 
     /** Date and Time **/
@@ -112,8 +114,8 @@ angular.module('messageApp', ['ui.bootstrap'])
 
     $scope.updateRegex = function() {
         item = {};
-        item.exp = ;
-        item.responses = ;
+        item.exp = curExp;
+        item.responses = curResp;
         $http.post('/api/expressions', item)
         .success(function(data) {
             $scope.regexes = data;

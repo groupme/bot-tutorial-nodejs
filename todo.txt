@@ -3,6 +3,7 @@ todo:
 ORDER
 update view to show regexes
 process regexes in model
+fix schedule bug
 clean up front end
 
 BACKEND
