@@ -73,9 +73,14 @@ var schema2 = new mongoose.Schema({
     default: Date.now
   }
 });
+var schema3 = new mongoose.Schema({
+  exp: String,
+  responses: [String]
+});
 
 var messages = mongoose.model('messages', schema1);
 var schedules = mongoose.model('schedules', schema2);
+var expressions = mongoose.model('expressions', schema3);
 
 //set up timeplan ==================
 
@@ -156,32 +161,12 @@ function getSchedules() {
 }
 
 
-function postSchedules(message, when) {
-  schedules.create({
-    message: message,
-    when: when
-  }, function(err, schedule) {
-    if (err) {
-      throw err;
-    }
-  });
-}
-
-function deleteSchedule(id) {
-  schedules.remove({
-    _id: id
-  }, function(err, schedule) {
-    if (err) {
-      throw err;
-    }
-  });
-}
 
 app.get('/api/schedules', function(req, res) {
   schedules.find(function(err, schedules) {
     // if there is an error retrieving, send the error. nothing after res.send(err) will execute
     if (err) {
-      res.send(error);
+      res.send(err);
     }
     curSchedule = schedules;
     res.json(curSchedule);
@@ -202,7 +187,7 @@ app.post('/api/schedules', function(req, res) {
     schedules.find(function(err, schedules) {
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
-        res.send(error);
+        res.send(err);
       }
       curSchedule = schedules;
       res.json(curSchedule);
@@ -214,7 +199,7 @@ app.post('/api/schedules', function(req, res) {
 // delete a message
 app.delete('/api/schedules/:schedule_id', function(req, res) {
   schedules.remove({
-    _id: req.body._id
+    _id: req.params.message_id
   }, function(err, schedule) {
     if (err) {
       res.send(err);
@@ -222,7 +207,7 @@ app.delete('/api/schedules/:schedule_id', function(req, res) {
     schedules.find(function(err, schedules) {
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
-        res.send(error);
+        res.send(err);
       }
       curSchedule = schedules;
       res.json(curSchedule);
@@ -231,6 +216,49 @@ app.delete('/api/schedules/:schedule_id', function(req, res) {
   });
 });
 
+app.get('/api/expressions', function(req, res) {
+  schedules.find(function(err, expressions) {
+    if (err) {
+      res.send(err);
+    }
+    res.json(expressions);
+  });
+});
+
+app.post('/api/expressions', function(req, res) {
+  expressions.create({
+    exp: req.body.exp,
+    responses: req.body.responses
+  }, function(err, schedule) {
+    if (err) {
+      res.send(err);
+    }
+    expressions.find(function(err, expressions) {
+      if (err) {
+        res.send(err);
+      }
+      res.json(expressions);
+    });
+  });
+});
+
+app.delete('/api/expressions/:exp_id', function(req, res) {
+  expressions.remove({
+    _id: req.params.exp_id
+  }, function(err, expression) {
+    if (err) {
+      res.send(err);
+    }
+
+    // get and return all the messages after you create another
+    expressions.find(function(err, expressions) {
+      if (err) {
+        res.send(err);
+      }
+      res.json(expressions);
+    });
+  });
+});
 
 // get all messages
 app.get('/api/messages', function(req, res) {
@@ -256,7 +284,6 @@ app.post('/api/messages', function(req, res) {
     if (err) {
       res.send(err);
     }
-
     // get and return all the messages after you create another
     messages.find(function(err, messages) {
       if (err) {
@@ -265,8 +292,8 @@ app.post('/api/messages', function(req, res) {
       res.json(messages);
     });
   });
-
 });
+
 
 // delete a message
 app.delete('/api/messages/:message_id', function(req, res) {
