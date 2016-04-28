@@ -1,9 +1,9 @@
 todo:
 
 ORDER
-fix callback functions
+update view to show regexes
+process regexes in model
 clean up front end
-add regex
 
 BACKEND
 fix async of schedule

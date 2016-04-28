@@ -9,6 +9,7 @@ angular.module('messageApp', ['ui.bootstrap'])
     $scope.groupme = null;
     $scope.popup = false;
     $scope.date = new Date();
+    $scope.regexes = [];
 
 
     /** Date and Time **/
@@ -72,8 +73,8 @@ angular.module('messageApp', ['ui.bootstrap'])
     $scope.createSchedule = function() {
       item = {};
 
-      item['message']= $scope.scheduleInput;
-      item['when'] = $scope.date;
+      item.message = $scope.scheduleInput;
+      item.when = $scope.date;
 
       $http.post('/api/schedules', item)
         .success(function(data) {
@@ -96,6 +97,45 @@ angular.module('messageApp', ['ui.bootstrap'])
         });
     };
 
+
+    /* Regexes and responses */
+
+    $scope.getRegexes = function() {
+      $http.get('/api/schedules')
+        .success(function(data) {
+          $scope.regexes = data;
+        })
+        .error(function(data) {
+          console.log('Error: ' + data);
+        });
+    };
+
+    $scope.updateRegex = function() {
+        item = {};
+        item.exp = ;
+        item.responses = ;
+        $http.post('/api/expressions', item)
+        .success(function(data) {
+            $scope.regexes = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
+    };
+
+    $scope.deleteRegex = function(id) {
+        $http.delete('/api/expressions/' + id)
+          .success(function(data) {
+            $scope.regexes = data;
+          })
+          .error(function(data) {
+            console.log('Error: ' + data);
+          });
+      };
+
+
+
+
     /* Message Pool */
 
     // when landing on the page, get all messages and show them
@@ -113,7 +153,7 @@ angular.module('messageApp', ['ui.bootstrap'])
     // when submitting the add form, send the text to the node API
     $scope.createMessage = function() {
       item = {};
-      item['text'] = $scope.poolInput;
+      item.text = $scope.poolInput;
       $http.post('/api/messages', item)
         .success(function(data) {
           $scope.poolInput = ""; // clear the form so our user is ready to enter another
