@@ -49,18 +49,6 @@ conn.once('open', function() {
 });
 
 
-
-
-
-
-// mongoose.connect('mongodb://sho854:kai1483@ds025389.mlab.com:25389/messagebase');
-// //mongoose.connect('mongodb://' + process.env.DBUSER + ':' + process.env.DBPASS + '@ds025459.mlab.com:25459/heroku_w850c5rk')
-// //mongoose.connect('mongodb://localhost/test');
-// mongoose.connection.on('error', function(err) {
-//   // Do something
-//   console.log('databse connection error');
-// });
-
 app.use(express.static(__dirname + '/public')); // set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
 app.use(bodyParser.urlencoded({
@@ -190,22 +178,57 @@ function deleteSchedule(id) {
 }
 
 app.get('/api/schedules', function(req, res) {
-  getSchedules();
+  gschedules.find(function(err, schedules) {
+    // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+    if (err) {
+      res.send(error);
+    }
+    curSchedule = schedules;
+    return schedules;
+  });
   res.json(curSchedule);
 });
 
 // create message and send back all messages after creation
 app.post('/api/schedules', function(req, res) {
-  postSchedules(req.body.message, req.body.when);
-  getSchedules();
-  res.json(curSchedule);
+  schedules.create({
+    message: message,
+    when: when
+  }, function(err, schedule) {
+    if (err) {
+      res.send(err);
+    }
+    gschedules.find(function(err, schedules) {
+      // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+      if (err) {
+        res.send(error);
+      }
+      curSchedule = schedules;
+      return schedules;
+    });
+    res.json(curSchedule);
+  });
+
 });
 
 // delete a message
 app.delete('/api/schedules/:schedule_id', function(req, res) {
-  deleteSchedule(req.params.schedule_id);
-  getSchedules();
-  res.json(curSchedule);
+  schedules.remove({
+    _id: id
+  }, function(err, schedule) {
+    if (err) {
+      res.send(err);
+    }
+    gschedules.find(function(err, schedules) {
+      // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+      if (err) {
+        res.send(error);
+      }
+      curSchedule = schedules;
+      return schedules;
+    });
+    res.json(curSchedule);
+  });
 });
 
 
@@ -269,44 +292,3 @@ app.delete('/api/messages/:message_id', function(req, res) {
 app.get('*', function(req, res) {
   res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
-
-// listen (start app with node server.js) ======================================
-
-
-
-/*
-
-var http, director, cool, bot, router, server, port;
-
-http        = require('http');
-director    = require('director');
-cool        = require('cool-ascii-faces');
-bot         = require('./bot.js');
-
- router = new director.http.Router({
-  '/' : {
-    post: bot.respond,
-    get: ping
-  }
-});
-
-server = http.createServer(function (req, res) {
-  req.chunks = [];
-  req.on('data', function (chunk) {
-    req.chunks.push(chunk.toString());
-  });
-
-  router.dispatch(req, res, function(err) {
-    res.writeHead(err.status, {"Content-Type": "text/plain"});
-    res.end(err.message);
-  });
-});
-
-port = Number(process.env.PORT || 5000);
-server.listen(port);
-
-function ping() {
-  this.res.writeHead(200);
-  this.res.end("Hey, I'm Cool Guy.");
-}
-*/
