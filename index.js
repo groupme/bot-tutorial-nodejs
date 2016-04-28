@@ -178,7 +178,7 @@ function deleteSchedule(id) {
 }
 
 app.get('/api/schedules', function(req, res) {
-  gschedules.find(function(err, schedules) {
+  schedules.find(function(err, schedules) {
     // if there is an error retrieving, send the error. nothing after res.send(err) will execute
     if (err) {
       res.send(error);
@@ -198,7 +198,7 @@ app.post('/api/schedules', function(req, res) {
     if (err) {
       res.send(err);
     }
-    gschedules.find(function(err, schedules) {
+    schedules.find(function(err, schedules) {
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
         res.send(error);
@@ -219,7 +219,7 @@ app.delete('/api/schedules/:schedule_id', function(req, res) {
     if (err) {
       res.send(err);
     }
-    gschedules.find(function(err, schedules) {
+    schedules.find(function(err, schedules) {
       // if there is an error retrieving, send the error. nothing after res.send(err) will execute
       if (err) {
         res.send(error);
