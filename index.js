@@ -193,8 +193,8 @@ app.get('/api/schedules', function(req, res) {
 // create message and send back all messages after creation
 app.post('/api/schedules', function(req, res) {
   schedules.create({
-    message: res.body.message,
-    when: res.body.when
+    message: req.body.message,
+    when: req.body.when
   }, function(err, schedule) {
     if (err) {
       res.send(err);
@@ -214,7 +214,7 @@ app.post('/api/schedules', function(req, res) {
 // delete a message
 app.delete('/api/schedules/:schedule_id', function(req, res) {
   schedules.remove({
-    _id: res.body._id
+    _id: req.body._id
   }, function(err, schedule) {
     if (err) {
       res.send(err);
