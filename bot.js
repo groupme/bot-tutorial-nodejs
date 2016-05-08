@@ -25,7 +25,7 @@ function respond() {
     this.res.end();
   } 
   
-  else if(request.text && botRegexDL.test(request.text)) {
+  else if(request.text && botRegexOW.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://kt-media.knowtechie.netdna-cdn.com/wp-content/uploads/2016/03/Overwatch-Tracer-Over-The-Shoulder.png");
     this.res.end();
