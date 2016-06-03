@@ -9,7 +9,7 @@ function respond() {
 	  
 	var input = request.text;
 
-  if(request.text && input === "/when is raid") {
+  if(request.text && input.includes("/when is raid")) {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
