@@ -13,7 +13,7 @@ function respond() {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
-  } else if (request.text && request.text.includes("/setnextraid:")){
+  } else if (request.text && input.indexOf("/setnextraid:") > -1){
 	this.res.writeHead(200);
     postMessage();
     this.res.end();
