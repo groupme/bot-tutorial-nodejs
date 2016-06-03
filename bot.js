@@ -1,5 +1,5 @@
 var HTTPS = require('https');
-var nextRaid = "Friday 8:30PM EST";
+var nextRaid = "No message set. Use /setraidmsg: to set one.";
 
 var botID = process.env.BOT_ID;
 
