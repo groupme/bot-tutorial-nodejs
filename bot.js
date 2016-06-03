@@ -13,10 +13,8 @@ function respond() {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
-  } else if (request.text && input.indexOf("/setnextraid:") > -1){
-	this.res.writeHead(200);
-    postMessage();
-    this.res.end();
+  } else if (request.text && input.indexOf("/setraidmsg:") > -1){
+	nextRaid = input.replace("/setraidmsg:", "");
   } else {
     console.log("don't care");
     this.res.writeHead(200);
