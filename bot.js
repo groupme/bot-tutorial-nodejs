@@ -11,6 +11,10 @@ function respond() {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
+  } else if (request.text && request.text.includes("/setnextraid:")){
+	this.res.writeHead(200);
+    postMessage();
+    this.res.end();
   } else {
     console.log("don't care");
     this.res.writeHead(200);
