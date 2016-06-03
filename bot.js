@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
   var nextRaidRegex = /^\/when is raid$/;
-  var nextRaidRegex2 = /^\/raid?$/;
+  var nextRaidRegex2 = /^\/raid$/;
   var input = request.text;
 
   if(request.text && (nextRaidRegex.test(input) || nextRaidRegex2.text(input))) {
