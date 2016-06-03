@@ -1,11 +1,11 @@
 var HTTPS = require('https');
-var cool = require('cool-ascii-faces');
+var nextRaid = "Friday 8:30PM EST";
 
 var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy$/;
+      botRegex = /^\/next raid?$/;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -21,7 +21,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
+  botResponse = nextRaid;
 
   options = {
     hostname: 'api.groupme.com',
