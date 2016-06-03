@@ -6,8 +6,10 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);//,
       //nextRaidRegex = /^\/next raid when$/;
+	  
+	var input = request.text;
 
-  if(request.text && request.text.includes("/when is raid")) {
+  if(request.text && input === "/when is raid") {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
