@@ -4,12 +4,12 @@ var nextRaid = "Friday 8:30PM EST";
 var botID = process.env.BOT_ID;
 
 function respond() {
-  var request = JSON.parse(this.req.chunks[0]);//,
-      //nextRaidRegex = /^\/next raid when$/;
-	  
-	var input = request.text;
+  var request = JSON.parse(this.req.chunks[0]);
+  var nextRaidRegex = /^\/when is raid$/;
+  var nextRaidRegex2 = /^\/raid?$/;
+  var input = request.text;
 
-  if(request.text && input.indexOf("/when is raid") > -1) {
+  if(request.text && (nextRaidRegex.test(input) || nextRaidRegex2.text(input))) {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
