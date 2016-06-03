@@ -7,7 +7,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]);//,
       //nextRaidRegex = /^\/next raid when$/;
 
-  if(request.text && request.text === "/when is raid" ) {
+  if(request.text && request.text.includes("/when is raid")) {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
