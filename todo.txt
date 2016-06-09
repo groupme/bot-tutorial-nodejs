@@ -1,7 +1,12 @@
 todo:
 
 ORDER
-update view to show regexes
+update regex functions
+    add responses
+    delete responses
+    add regex
+    delete regex
+
 process regexes in model
 fix schedule bug
 clean up front end

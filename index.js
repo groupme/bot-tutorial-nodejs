@@ -160,7 +160,15 @@ function getSchedules() {
   });
 }
 
-
+function deleteSchedule(id) {
+  schedules.remove({
+    _id: id
+  }, function(err, schedule) {
+    if (err) {
+      throw err;
+    }
+  });
+}
 
 app.get('/api/schedules', function(req, res) {
   schedules.find(function(err, schedules) {

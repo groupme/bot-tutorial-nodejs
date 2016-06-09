@@ -10,9 +10,7 @@ angular.module('messageApp', ['ui.bootstrap'])
     $scope.popup = false;
     $scope.date = new Date();
     $scope.regexes = [];
-    $scope.curExp = "";
-    $scope.curResp = [];
-
+    $scope.curExp = {};
 
     /** Date and Time **/
     $scope.openPopup = function() {
@@ -24,7 +22,9 @@ angular.module('messageApp', ['ui.bootstrap'])
     };
     //$scope.today();
 
-
+    $scope.setCurretExp = function(regex) {
+        curExp = regex;
+    };
 
     /** API Interface **/
 
@@ -140,7 +140,7 @@ angular.module('messageApp', ['ui.bootstrap'])
 
     /* Message Pool */
 
-    // when landing on the page, get all messages and show them
+    // when landing on the page, get all and show them
     $scope.getMessages = function() {
       $http.get('/api/messages')
         .success(function(data) {
