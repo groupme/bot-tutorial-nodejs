@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.2",
-  "description": "A sample Node.js app using Express 4",
+  "name": "Honeysuckle",
+  "version": "0.0.1",
+  "description": "A GroupMe bot to troll fellow interns",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -15,12 +15,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/nucle0tides/Honeysuckle"
   },
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express",
+    "groupme"
   ],
   "license": "MIT"
 }
