@@ -1,0 +1,24 @@
+todo:
+
+ORDER
+
+fix schedule bug
+clean up front end
+move mongo stuff to .env
+
+BACKEND
+fix async of schedule
+
+
+FRONT END
+clean shit up
+
+OTHER
+create interface to add/change regex and responses
+
+
+BUGS
+rename variables, api sections
+fix mongo bug
+fix date box bug
+fix AM/PM selector
