@@ -99,19 +99,29 @@
                     </ul>
                 </div>
 
+                <button type="button" class="btn btn-default" class='messagepool' ng-click="deleteRegex()">
+                    D
+                </button>
+
                 <ul>
                     <li ng-repeat="response in currentExp.responses">
                         <p class='messagepool'>{{ response }}</p>
-                        <button type="button" class="btn btn-default" class='messagepool' ng-click="deleteRegex(response)">
+                        <button type="button" class="btn btn-default" class='messagepool' ng-click="deleteResponse(response)">
                             D
                         </button>
                     </li>
                 </ul>
 
                 <form>
+                    <label>New Regex</label>
+                    <input ng-model="newExp" type="text">
+                    <button type="submit" ng-click="addRegex()">Add</button>
+                </form>
+
+                <form>
                     <label>New Response</label>
-                    <input ng-model="poolInput" type="text">
-                    <button type="submit" ng-click="createMessage()">Add</button>
+                    <input ng-model="newResp" type="text">
+                    <button type="submit" ng-click="addResponse()">Add</button>
                 </form>
 
             </div>

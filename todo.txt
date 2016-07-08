@@ -1,25 +1,10 @@
 todo:
 
 ORDER
-update regex functions
-    add responses
-    delete responses
-    add regex
-    delete regex
-    dude you should just redo all the regex shit probably.
-        get regexes
-        post regexes
-        delete regexes
-
-        get regexes
-        new regex
-        new response - update an existing regex
-        delete regex
-        delete response 
-
 
 fix schedule bug
 clean up front end
+move mongo stuff to .env
 
 BACKEND
 fix async of schedule

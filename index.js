@@ -236,8 +236,9 @@ app.get('/api/expressions', function(req, res) {
 app.post('/api/expressions', function(req, res) {
   expressions.create({
     exp: req.body.exp,
-    responses: req.body.responses
-  }, function(err, schedule) {
+    responses: req.body.responses,
+    _id: req.body.exp_id || new mongoose.mongo.ObjectID()
+}, function(err, expression) {
     if (err) {
       res.send(err);
     }
@@ -264,61 +265,6 @@ app.delete('/api/expressions/:exp_id', function(req, res) {
         res.send(err);
       }
       res.json(expressions);
-    });
-  });
-});
-
-// get all messages
-app.get('/api/messages', function(req, res) {
-  // use mongoose to get all messages in the database
-  messages.find(function(err, messages) {
-
-    // if there is an error retrieving, send the error. nothing after res.send(err) will execute
-    if (err) {
-      res.send(err);
-    }
-
-    res.json(messages); // return all messages in JSON format
-  });
-});
-
-// create message and send back all messages after creation
-app.post('/api/messages', function(req, res) {
-
-  // create a message, information comes from AJAX request from Angular
-  messages.create({
-    text: req.body.text
-  }, function(err, message) {
-    if (err) {
-      res.send(err);
-    }
-    // get and return all the messages after you create another
-    messages.find(function(err, messages) {
-      if (err) {
-        res.send(err);
-      }
-      res.json(messages);
-    });
-  });
-});
-
-
-// delete a message
-app.delete('/api/messages/:message_id', function(req, res) {
-  messages.remove({
-    _id: req.params.message_id
-  }, function(err, message) {
-    if (err) {
-      res.send(err);
-    }
-
-    // get and return all the messages after you create another
-    messages.find(function(err, messages) {
-      if (err) {
-
-        res.send(err);
-      }
-      res.json(messages);
     });
   });
 });
