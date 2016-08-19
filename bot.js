@@ -36,7 +36,7 @@ function respond() {
   }  
     else if(request.text && botRegexReid.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://apornpictures.com/wp-content/uploads/2016/02/Riley-Reid.jpg");
+    postMessage("https://media4.giphy.com/media/g9RplpKZNkT5u/giphy.gif");
     this.res.end();
   }
   else if(request.text && botRegexBurn.test(request.text)) {
