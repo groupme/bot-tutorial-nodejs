@@ -21,7 +21,7 @@ function respond() {
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/PMC/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/nlb/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
