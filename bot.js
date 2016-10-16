@@ -9,7 +9,7 @@ function respond() {
       botRegexAd=/^\/advance/;botRegexTrades = /^\/trades/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
-      botRegexBurn = /^\/burn/; botRegexStop = /^\/stop/;
+      botRegexBurn = /^\/burn/; botRegexDrink = /^\/drink/;
       botRegexProp = /^\/prop/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexLyd = /^\/lyd/;
       botRegexGian = /^\/gian/; botRegexScrotes = /^\/scrotes/; botRegexShaki = /^\/shaki/;
       botRegexDaf = /^\/dafuq/; botRegexAyy = /^\/ayy/;
@@ -28,9 +28,9 @@ function respond() {
     postMessage("https://media.giphy.com/media/pQmWjYrz39YAg/giphy.gif");
     this.res.end();
   } 
-  else if(request.text && botRegexStop.test(request.text)) {
+  else if(request.text && botRegexDrink.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Stop appropriating black culture");
+    postMessage("https://media.giphy.com/media/3o7TKBcK5ywsaeBm4U/giphy.gif");
     this.res.end();
   } 
   else if(request.text && botRegexProp.test(request.text)) {
