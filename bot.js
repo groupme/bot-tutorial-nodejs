@@ -7,12 +7,12 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
-      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/; 
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
       botRegexSlut = /^\/slut/; botRegexStop = /^\/stop/;
       botRegexProp = /^\/prop/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexBrye = /^\/brye/;
       botRegexGian = /^\/gian/; botRegexScrotes = /^\/scrotes/; botRegexShaki = /^\/shaki/;
-      botRegexDaf = /^\/dafuq/; botRegexAyy = /^\/ayy/; botRegexSchedule = /^\/schedule/;
+      botRegexDaf = /^\/dafuq/; botRegexAyy = /^\/ayy/; botRegexSchedule = /^\/schedule/; botRegexSMB = /^\/balls/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -76,7 +76,7 @@ function respond() {
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
-    postMessage("http://daddyleagues.com/maddenall32/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/mcfslM17/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
   
@@ -108,14 +108,14 @@ function respond() {
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
     
-    postMessage("http://daddyleagues.com/maddenall32/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/mcfslM17/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/maddenall32/players?name="+rep+"&position=all&team=all");
+    postMessage("http://daddyleagues.com/mcfslM17/players?name="+rep+"&position=all&team=all");
     
     this.res.end();
   }  
@@ -176,7 +176,11 @@ function respond() {
       postMessage(siege2);
     this.res.end();
   }
-  
+  else if(request.text && botRegexSMB.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://i.imgur.com/BtlG3v1.png");
+    this.res.end();
+  }
   else {
     console.log("don't care");
     this.res.writeHead(200);
