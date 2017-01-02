@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 
-PostMessage("PollBotPlus Restarted" + "\n" + "for list of possible commands /help");
+//PostMessage("PollBotPlus Restarted" + "\n" + "for list of possible commands /help");
 
 function respond() {
 	var request = JSON.parse(this.req.chunks[0]);

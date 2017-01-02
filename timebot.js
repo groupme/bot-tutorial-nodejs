@@ -1,11 +1,12 @@
 var HTTPS = require('https');
 var botID = process.env.BOT_ID;
 
-PostMessage("Dinner at 5:30?");
+
 
 function respond() {
 	var request = JSON.parse(this.req.chunks[0]);
 	this.res.writeHead(200);
+	PostMessage("Dinner at 5:30?");
 	this.res.end();
 }
 
@@ -35,4 +36,3 @@ function PostMessage(botResponse) {
   botReq.end(JSON.stringify(body));
 }
 exports.respond = respond;
-this.exit;
