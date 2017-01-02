@@ -29,7 +29,7 @@ function respond() {
 }
 function called(){
 	this.res.writeHead(200);
-	PostMessage("hello");
+	PostMessage("The repeted task has been completed");
 	this.res.end();
 }
 function PostMessage(botResponse) {
