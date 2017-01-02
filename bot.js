@@ -22,9 +22,11 @@ function respond() {
     this.res.end();
   }
   else if(request.text && help.test(request.text)){
+	this.res.writeHead(200);
   	PostMessage("PollBotPlus Commands" + "\n" 
 	  + "face: shows face" + "\n" 
 	  + "time: shows UTC Time" + "\n");
+	this.res.end();
   }
 }
 

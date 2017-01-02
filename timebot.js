@@ -4,7 +4,7 @@ var botID = process.env.BOT_ID;
 
 PostMessage("PollBotPlus's timer function has been started");
 
-function alert(){
+function respond(){
 	this.res.writeHead(200);
 	PostMessage("The repeted task has been completed");
 	this.res.end();
@@ -36,4 +36,4 @@ function PostMessage(botResponse) {
   });
   botReq.end(JSON.stringify(body));
 }
-exports.respond = alert;
+exports.respond = respond;
