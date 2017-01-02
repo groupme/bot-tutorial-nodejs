@@ -31,4 +31,4 @@ function PostMessage(botResponse) {
   });
   botReq.end(JSON.stringify(body));
 }
-exports.respond = alert;
+exports.respond = respond;
