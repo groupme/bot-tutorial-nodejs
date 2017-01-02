@@ -1,5 +1,5 @@
 bot         = require('./bot.js');
 function sayHello() {
-    bot.called;
+    index.called();
 }
 sayHello();
