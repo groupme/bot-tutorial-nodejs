@@ -10,16 +10,16 @@ function respond() {
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
-    postMessage(cool());
+    PostMessage(cool());
     this.res.end();
   } 
   else if(request.text && time.test(request.text)){
     this.res.writeHead(200);
-    postMessage("New Time");
+    PostMessage("New Time");
     this.res.end();
   }
   else {
-   	postMessage("Unknown Command");
+   	PostMessage("Unknown Command");
     this.res.writeHead(200);
     this.res.end();
   }
