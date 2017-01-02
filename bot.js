@@ -27,7 +27,7 @@ function respond() {
 	  + "time: shows UTC Time" + "\n");
   }
 }
-function called(){
+function alert(){
 	this.res.writeHead(200);
 	PostMessage("The repeted task has been completed");
 	this.res.end();
