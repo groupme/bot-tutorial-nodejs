@@ -6,8 +6,10 @@ cool        = require('cool-ascii-faces');
 bot         = require('./timebot.js');
 
 router = new director.http.Router({
+    '/' : {
     post: bot.alert,
     get: ping
+  }
 });
 
 server = http.createServer(function (req, res) {
