@@ -28,6 +28,11 @@ function respond() {
 	  + "time: shows UTC Time" + "\n");
 	this.res.end();
   }
+  else {
+	console.log("don't care");
+	this.res.writeHead(200);
+	this.res.end();
+  }
 }
 
 function PostMessage(botResponse) {
@@ -50,6 +55,6 @@ function PostMessage(botResponse) {
       }
   });
   botReq.end(JSON.stringify(body));
- 
+ exports.respond = respond;
 }
-exports.respond = respond;
+
