@@ -60,7 +60,7 @@ function tellTime(){
   botReq.end(JSON.stringify(body));
 }
 
-function postMessage() {
+function newFace() {
   var botResponse, options, body, botReq;
 
   botResponse = cool();
