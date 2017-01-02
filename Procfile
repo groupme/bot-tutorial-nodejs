@@ -1,2 +1,2 @@
 web: node index.js
-worker: node worker.js
+timer: node worker.js
