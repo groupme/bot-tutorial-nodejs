@@ -1,4 +1,4 @@
-bot         = require('./bot.js');
+index         = require('./index.js');
 function sayHello() {
     index.called();
 }
