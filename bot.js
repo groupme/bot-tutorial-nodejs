@@ -27,6 +27,11 @@ function respond() {
 	  + "time: shows UTC Time" + "\n");
   }
 }
+function called(){
+	this.res.writeHead(200);
+	PostMessage("hello");
+	this.res.end();
+}
 function PostMessage(botResponse) {
   var botResponse, options, body, botReq;
   options = {
