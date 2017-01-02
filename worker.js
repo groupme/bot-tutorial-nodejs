@@ -3,7 +3,7 @@ var http, director, cool, bot, router, server, port;
 http        = require('http');
 director    = require('director');
 cool        = require('cool-ascii-faces');
-bot         = require('./bot.js');
+bot         = require('./timebot.js');
 
 router = new director.http.Router({
     post: bot.alert,
