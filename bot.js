@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 
-PostMessage("PollBotPlus Restarted" + "/n" + "for list of possible command /help");
+PostMessage("PollBotPlus Restarted" + "\n" + "for list of possible command /help");
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
@@ -17,7 +17,7 @@ function respond() {
   else if(request.text && time.test(request.text)){
     this.res.writeHead(200);
 	date = new Date();
-    PostMessage(date.toLocaleDateString());
+    PostMessage(date.toLocaleTimeString());
     this.res.end();
   }
 }
