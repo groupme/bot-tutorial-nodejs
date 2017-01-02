@@ -1,5 +1,5 @@
-index         = require('./index.js');
+bot = require('./bot.js');
 function sayHello() {
-    index.call;
+    bot.call;
 }
 sayHello();
