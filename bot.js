@@ -22,7 +22,7 @@ function respond() {
     PostMessage(date.toLocaleTimeString());
     this.res.end();
   }
-  else if(request.text && request.test(command.text)){
+  else if(request.text && request.text.contains("/"){
 	  this.res.writeHead(200);
   	PostMessage("PollBotPlus Commands" + "\n" 
 	  + "face: shows face" + "\n" 
