@@ -19,8 +19,8 @@ function respond() {
     this.res.end();
   }
   else {
+	this.res.writeHead(200);
    	PostMessage("Unknown Command");
-    this.res.writeHead(200);
     this.res.end();
   }
 }
