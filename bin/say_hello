@@ -1,6 +1,0 @@
-#! /app/bin/node
-function sayHello() {
-  bot.called;
-}
-sayHello();
-process.exit();
