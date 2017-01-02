@@ -16,12 +16,15 @@ function PostMessage(botResponse) {
   };
   console.log('sending ' + botResponse + ' to ' + botID);
   botReq = HTTPS.request(options, function(res) {
+	console.log('Line 19');
       if(res.statusCode == 202) {
         //neat
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
       }
+	  console.log('Line 25');
   });
+  console.log('Line 27');
   botReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
   });
