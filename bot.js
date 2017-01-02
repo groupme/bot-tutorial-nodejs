@@ -9,7 +9,7 @@ function respond() {
 	var face = /^\/face$/;
 	var time = /^\/time$/;
 	var help = /^\/help$/;
-	var command = /^\................................................./$/;;
+	var command = /^\.................................................$/;
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
