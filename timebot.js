@@ -1,7 +1,15 @@
 var HTTPS = require('https');
 var botID = process.env.BOT_ID;
 
+
+this.res.writeHead(200);
 PostMessage("Dinner at 5:30?");
+this.res.end();
+
+function respond() {
+	var request = JSON.parse(this.req.chunks[0]);
+}
+
 
 function PostMessage(botResponse) {
   var botResponse, options, body, botReq;
@@ -25,11 +33,6 @@ function PostMessage(botResponse) {
 	  console.log('Line 25');
   });
   console.log('Line 27');
-  botReq.on('error', function(err) {
-    console.log('error posting message '  + JSON.stringify(err));
-  });
-  botReq.on('timeout', function(err) {
-    console.log('timeout posting message '  + JSON.stringify(err));
-  });
   botReq.end(JSON.stringify(body));
 }
+exports.respond = respond;
