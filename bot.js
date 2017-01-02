@@ -20,7 +20,7 @@ function respond() {
   }
   else {
 	this.res.writeHead(200);
-   	PostMessage("Unknown Command");
+   	//PostMessage("Unknown Command");
     this.res.end();
   }
 }
