@@ -5,10 +5,10 @@ var botID = process.env.BOT_ID;
 PostMessage("PollBotPlus Restarted" + "\n" + "for list of possible commands /help");
 
 function respond() {
-  var request = JSON.parse(this.req.chunks[0]);
-  var face = /^\/face$/;
-  var time = /^\/time$/;
-	var help = /^\/help$/
+	var request = JSON.parse(this.req.chunks[0]);
+	var face = /^\/face$/;
+	var time = /^\/time$/;
+	var help = /^\/help$/;
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
