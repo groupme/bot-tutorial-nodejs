@@ -50,18 +50,5 @@ function PostMessage(botResponse) {
       }
   });
   botReq.end(JSON.stringify(body));
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
 exports.respond = respond;
-
-=======
- 
-}
-exports.respond = respond;
->>>>>>> parent of 0a49f74... combining changes
-=======
- 
-}
-exports.respond = respond;
->>>>>>> parent of 0a49f74... combining changes
