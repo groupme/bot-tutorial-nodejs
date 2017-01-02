@@ -9,6 +9,7 @@ function respond() {
 	var face = /^\/face$/;
 	var time = /^\/time$/;
 	var help = /^\/help$/;
+	var command = /^\/$/;
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
@@ -22,10 +23,17 @@ function respond() {
     this.res.end();
   }
   else if(request.text && help.test(request.text)){
+	  this.res.writeHead(200);
   	PostMessage("PollBotPlus Commands" + "\n" 
 	  + "face: shows face" + "\n" 
 	  + "time: shows UTC Time" + "\n");
+	  this.res.end();
   }
+else if(request.text && command.test(request.text)){
+	this.res.writeHead(200);
+    PostMessage("Unknown Command: Type /help for a list of valid commands");
+    this.res.end();
+}
 }
 function alert(){
 	this.res.writeHead(200);
