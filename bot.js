@@ -28,11 +28,6 @@ function respond() {
 	  + "time: shows UTC Time" + "\n");
 	this.res.end();
   }
-  else {
-	console.log("don't care");
-	this.res.writeHead(200);
-	this.res.end();
-  }
 }
 
 function PostMessage(botResponse) {
@@ -55,6 +50,12 @@ function PostMessage(botResponse) {
       }
   });
   botReq.end(JSON.stringify(body));
+<<<<<<< HEAD
 }
 exports.respond = respond;
 
+=======
+ 
+}
+exports.respond = respond;
+>>>>>>> parent of 0a49f74... combining changes
