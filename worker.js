@@ -25,7 +25,6 @@ server = http.createServer(function (req, res) {
 });
 
 port = Number(process.env.PORT || 5000);
-server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
