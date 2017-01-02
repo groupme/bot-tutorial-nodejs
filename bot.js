@@ -9,6 +9,7 @@ function respond() {
 	var face = /^\/face$/;
 	var time = /^\/time$/;
 	var help = /^\/help$/;
+	var command = /^\/$/;
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
@@ -21,16 +22,18 @@ function respond() {
     PostMessage(date.toLocaleTimeString());
     this.res.end();
   }
-  else if(request.text && help.test(request.text)){
+  else if(request.text && request.text.contains("/")){
+	  this.res.writeHead(200);
   	PostMessage("PollBotPlus Commands" + "\n" 
 	  + "face: shows face" + "\n" 
 	  + "time: shows UTC Time" + "\n");
+	  this.res.end();
   }
-}
-function alert(){
+else if(request.text && command.test(request.text)){
 	this.res.writeHead(200);
-	PostMessage("The repeted task has been completed");
-	this.res.end();
+    PostMessage("Unknown Command: Type /help for a list of valid commands");
+    this.res.end();
+}
 }
 function PostMessage(botResponse) {
   var botResponse, options, body, botReq;

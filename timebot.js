@@ -2,13 +2,8 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 
-PostMessage("PollBotPlus's timer function has been started");
+PostMessage("The repeted task has been completed");
 
-function called(){
-	this.res.writeHead(200);
-	PostMessage("The repeted task has been completed");
-	this.res.end();
-}
 function PostMessage(botResponse) {
   var botResponse, options, body, botReq;
   options = {
@@ -36,4 +31,3 @@ function PostMessage(botResponse) {
   });
   botReq.end(JSON.stringify(body));
 }
-exports.respond = respond;
