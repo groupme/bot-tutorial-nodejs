@@ -33,5 +33,6 @@ function PostMessage(botResponse) {
   });
   console.log('Line 27');
   botReq.end(JSON.stringify(body));
+  throw new Error();
 }
 exports.respond = respond;
