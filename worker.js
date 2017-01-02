@@ -7,7 +7,7 @@ bot         = require('./timebot.js');
 
 router = new director.http.Router({
     '/' : {
-    post: bot.PostMessage("TimeTask"),
+    post: bot.alert
     get: ping
   }
 });
