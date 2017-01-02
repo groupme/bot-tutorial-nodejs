@@ -31,6 +31,3 @@ function ping() {
   this.res.writeHead(200);
   this.res.end("Hey");
 }
-function call(){
-  bot.call();
-}
