@@ -35,11 +35,6 @@ else if(request.text && command.test(request.text)){
     this.res.end();
 }
 }
-function alert(){
-	this.res.writeHead(200);
-	PostMessage("The repeted task has been completed");
-	this.res.end();
-}
 function PostMessage(botResponse) {
   var botResponse, options, body, botReq;
   options = {
