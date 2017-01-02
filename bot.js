@@ -20,6 +20,7 @@ function respond() {
   }
   else if(request.text){
 	this.res.writeHead(200);
+	PostMessage(request.text);
    	PostMessage("Unknown Command");
     this.res.end();
   }
