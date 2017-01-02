@@ -56,7 +56,7 @@ function faceMessage() {
 
 function timeMessage() {
   var botResponse, options, body, botReq;
-  botResponse = Date.now();
+  botResponse = new Date.now();
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
