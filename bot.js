@@ -1,5 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var rdg = require('random-qoutes-generator');
 var botID = process.env.BOT_ID;
 
 //PostMessage("Thumb Thumb Restarted" + "\n" + "for list of possible commands /help");
@@ -43,7 +44,7 @@ function respond() {
   }
    else if(request.text && dogme.test(request.text)){
 	this.res.writeHead(200);
-  	PostImage(getDog());
+  	PostImage(rdg());
 	this.res.end();
   }
 }
