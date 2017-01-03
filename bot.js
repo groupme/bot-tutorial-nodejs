@@ -9,6 +9,8 @@ function respond() {
 	var face = /^\/face$/;
 	var time = /^\/time$/;
 	var help = /^\/help$/;
+	var bees = /^\bees$/;
+	var thumb = /^\thumb$/;
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
@@ -26,6 +28,16 @@ function respond() {
   	PostMessage("Thumb Thumb Commands" + "\n" 
 	  + "face: shows face" + "\n" 
 	  + "time: shows UTC Time" + "\n");
+	this.res.end();
+  }
+  else if(request.text && bees.test(request.text)){
+	this.res.writeHead(200);
+  	PostMessage("Did someone say bees");
+	this.res.end();
+  }
+  else if(request.text && thumb.test(request.text)){
+	this.res.writeHead(200);
+  	PostMessage("Are you talking to me?");
 	this.res.end();
   }
 }
