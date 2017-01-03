@@ -9,8 +9,8 @@ function respond() {
 	var face = /^\/face$/;
 	var time = /^\/time$/;
 	var help = /^\/help$/;
-	var bees = "bees";
-	var thumb = "thumb";
+	var bees = /bees/;
+	var thumb = /thumb/;
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
