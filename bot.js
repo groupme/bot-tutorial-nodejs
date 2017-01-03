@@ -10,9 +10,14 @@ function respond() {
 	var face = /^\/face$/;
 	var time = /^\/time$/;
 	var help = /^\/help$/;
+<<<<<<< HEAD
 	var bees = /bees$/;
 	var thumb = /thumb$/;
 	var dogme = /dog me$/;
+=======
+	var bees = /bees/;
+	var thumb = /thumb/;
+>>>>>>> parent of 50e069a... Commit
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
@@ -34,7 +39,7 @@ function respond() {
   }
   else if(request.text && bees.test(request.text)){
 	this.res.writeHead(200);
-  	PostMessage("Did someone say bees?");
+  	PostMessage("Did someone say bees");
 	this.res.end();
   }
   else if(request.text && thumb.test(request.text)){
