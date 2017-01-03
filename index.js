@@ -4,10 +4,14 @@ http        = require('http');
 director    = require('director');
 cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
+var rqg = require('random-qoutes-generator');
+ 
+
 
 router = new director.http.Router({
   '/' : {
-    post: bot.respond,
+    //post: bot.respond,
+	  post: random-qoutes-generator(),
     get: ping
   }
 });
