@@ -1,6 +1,5 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var getDog = require('hubot-subreddit');
 var botID = process.env.BOT_ID;
 
 //PostMessage("Thumb Thumb Restarted" + "\n" + "for list of possible commands /help");
@@ -10,14 +9,9 @@ function respond() {
 	var face = /^\/face$/;
 	var time = /^\/time$/;
 	var help = /^\/help$/;
-<<<<<<< HEAD
 	var bees = /bees$/;
 	var thumb = /thumb$/;
 	var dogme = /dog me$/;
-=======
-	var bees = /bees/;
-	var thumb = /thumb/;
->>>>>>> parent of 50e069a... Commit
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
