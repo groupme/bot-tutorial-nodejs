@@ -1,6 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var rdg = require('random-dog-generator');
+var rdg = require('random-dogs-generator');
 var botID = process.env.BOT_ID;
 
 //PostMessage("Thumb Thumb Restarted" + "\n" + "for list of possible commands /help");
