@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 
-//PostMessage("PollBotPlus Restarted" + "\n" + "for list of possible commands /help");
+//PostMessage("Thumb Thumb Restarted" + "\n" + "for list of possible commands /help");
 
 function respond() {
 	var request = JSON.parse(this.req.chunks[0]);
@@ -23,7 +23,7 @@ function respond() {
   }
   else if(request.text && help.test(request.text)){
 	this.res.writeHead(200);
-  	PostMessage("PollBotPlus Commands" + "\n" 
+  	PostMessage("Thumb Thumb Commands" + "\n" 
 	  + "face: shows face" + "\n" 
 	  + "time: shows UTC Time" + "\n");
 	this.res.end();
