@@ -13,6 +13,7 @@ function respond() {
 	var bees = /bees$/;
 	var thumb = /thumb$/;
 	var dogme = /dog me$/;
+	var doubledogme = /double dog me$/;
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
@@ -45,6 +46,12 @@ function respond() {
    else if(request.text && dogme.test(request.text)){
 	this.res.writeHead(200);
   	PostImage(rdg());
+	this.res.end();
+  }
+   else if(request.text && doubledogme.test(request.text)){
+	this.res.writeHead(200);
+  	PostImage(rdg());
+	PostImage(rdg());
 	this.res.end();
   }
 }
