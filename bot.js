@@ -35,7 +35,7 @@ function respond() {
   }
   else if(request.text && bees.test(request.text)){
 	this.res.writeHead(200);
-  	PostMessage("Did someone say bees");
+  	PostMessage("Did someone say bees?");
 	this.res.end();
   }
   else if(request.text && thumb.test(request.text)){
