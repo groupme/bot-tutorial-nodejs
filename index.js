@@ -5,7 +5,7 @@ director    = require('director');
 cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
 var rqg = require('random-qoutes-generator');
-console.log(random-qoutes-generator());
+console.log(rqg());
 
 
 router = new director.http.Router({
