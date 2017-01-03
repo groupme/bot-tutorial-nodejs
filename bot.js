@@ -1,5 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var getDog = require('hubot-subreddit');
 var botID = process.env.BOT_ID;
 
 //PostMessage("Thumb Thumb Restarted" + "\n" + "for list of possible commands /help");
@@ -11,6 +12,7 @@ function respond() {
 	var help = /^\/help$/;
 	var bees = /bees$/;
 	var thumb = /thumb$/;
+	var dogme = /dog me$/;
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
@@ -40,7 +42,41 @@ function respond() {
   	PostMessage("Are you talking to me?");
 	this.res.end();
   }
+   else if(request.text && dogme.test(request.text)){
+	this.res.writeHead(200);
+  	PostImage(getDog());
+	this.res.end();
+  }
 }
+
+function PostImage(botResponse) {
+  var botResponse, options, body, botReq;
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+  body = {
+    "bot_id" : botID,
+    "text" : 'Dog for you',
+	"attachments" : [
+    {
+      "type"  : "image",
+      "url"   : botResponse
+    }
+  ]
+  };
+  console.log('sending ' + botResponse + ' to ' + botID);
+  botReq = HTTPS.request(options, function(res) {
+      if(res.statusCode == 202) {
+        //neat
+      } else {
+        console.log('rejecting bad status code ' + res.statusCode);
+      }
+  });
+  botReq.end(JSON.stringify(body));
+}
+
 
 function PostMessage(botResponse) {
   var botResponse, options, body, botReq;

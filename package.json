@@ -9,6 +9,7 @@
   "dependencies": {
     "cool-ascii-faces": "~1.3.x",
     "director": "",
+    "hubot-subreddit": "^1.1.1",
     "random-qoutes-generator": "0.0.1"
   },
   "engines": {
