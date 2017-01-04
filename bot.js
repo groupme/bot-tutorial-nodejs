@@ -102,7 +102,7 @@ function respond() {
   } 
   else if(request.text && botRegexTrades.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://www.daddyleagues.com/NLB/forum/forum/6003");
+    postMessage("https://www.daddyleagues.com/NLB/forum");
     this.res.end();
   } 
   else if(request.text && botRegexSC.test(request.text)) {
