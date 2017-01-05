@@ -1,7 +1,8 @@
-var HTTPS = require('https');
-var cool = require('cool-ascii-faces');
-var rdg = require('random-dogs-generator');
-var botID = process.env.BOT_ID;
+var HTTPS = require('https'),
+	cool = require('cool-ascii-faces'),
+	rdg = require('random-dogs-generator'),
+	rcg = require('random-cats-generator'),
+	botID = process.env.BOT_ID;
 
 //PostMessage("Thumb Thumb Restarted" + "\n" + "for list of possible commands /help");
 
@@ -14,12 +15,13 @@ function respond() {
 	var thumb = /thumb$/;
 	var dogme = /dog me$/;
 	var doubledogme = /double dog me$/;
+	var cat = /cat/gi;
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
     PostMessage(cool());
     this.res.end();
-  } 
+  }
   else if(request.text && time.test(request.text)){
     this.res.writeHead(200);
 	date = new Date();
@@ -28,8 +30,8 @@ function respond() {
   }
   else if(request.text && help.test(request.text)){
 	this.res.writeHead(200);
-  	PostMessage("Thumb Thumb Commands" + "\n" 
-	  + "face: shows face" + "\n" 
+  	PostMessage("Thumb Thumb Commands" + "\n"
+	  + "face: shows face" + "\n"
 	  + "time: shows UTC Time" + "\n");
 	this.res.end();
   }
@@ -45,18 +47,23 @@ function respond() {
   }
    else if(request.text && doubledogme.test(request.text)){
 	this.res.writeHead(200);
-  	PostImage(rdg());
-	PostImage(rdg());
+  	PostImage(rdg(), "Dog for you");
+	PostImage(rdg(), "More dogs for you");
 	this.res.end();
   }
    else if(request.text && dogme.test(request.text)){
 	this.res.writeHead(200);
-  	PostImage(rdg());
+  	PostImage(rdg(), "Dog for you");
 	this.res.end();
   }
+	else if(request.text && cat.test(request.text)){
+	 this.res.writeHead(200);
+		 PostImage(rcg(), "Kitty!!!");
+	 this.res.end();
+ }
 }
 
-function PostImage(botResponse) {
+function PostImage(botResponse, text) {
   var botResponse, options, body, botReq;
   options = {
     hostname: 'api.groupme.com',
@@ -65,7 +72,7 @@ function PostImage(botResponse) {
   };
   body = {
     "bot_id" : botID,
-    "text" : 'Dog for you',
+    "text" : text,
 	"attachments" : [
     {
       "type"  : "image",
