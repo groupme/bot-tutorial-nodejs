@@ -13,8 +13,8 @@ function respond() {
 	var help = /^\/help/gi;
 	var bees = /bees/gi;
 	var thumb = /thumb/gi;
-	var dogme = /dog me/gi;
-	var doubledogme = /double dog me/gi;
+	var dogme = /dog/gi;
+	var doubledogme = /double dog/gi;
 	var cat = /cat/gi;
 
   if(request.text && face.test(request.text)) {
