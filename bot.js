@@ -8,13 +8,13 @@ var HTTPS = require('https'),
 
 function respond() {
 	var request = JSON.parse(this.req.chunks[0]);
-	var face = /^\/face$/;
-	var time = /^\/time$/;
-	var help = /^\/help$/;
-	var bees = /bees$/;
-	var thumb = /thumb$/;
-	var dogme = /dog me$/;
-	var doubledogme = /double dog me$/;
+	var face = /^\/face/gi;
+	var time = /^\/time/gi;
+	var help = /^\/help/gi;
+	var bees = /bees/gi;
+	var thumb = /thumb/gi;
+	var dogme = /dog me/gi;
+	var doubledogme = /double dog me/gi;
 	var cat = /cat/gi;
 
   if(request.text && face.test(request.text)) {
