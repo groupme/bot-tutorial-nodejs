@@ -47,13 +47,13 @@ function respond() {
   }
    else if(request.text && doubledogme.test(request.text)){
 	this.res.writeHead(200);
-  	PostImage(rdg(), "Doggo for you");
-	PostImage(rdg(), "More doggos for you");
+  	PostImage(rdg(), "Pupper for you");
+	PostImage(rdg(), "More pupper for you");
 	this.res.end();
   }
    else if(request.text && dogme.test(request.text)){
 	this.res.writeHead(200);
-  	PostImage(rdg(), "Doggo for you");
+  	PostImage(rdg(), "Pupper for you");
 	this.res.end();
   }
 	else if(request.text && cat.test(request.text)){
