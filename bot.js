@@ -16,6 +16,8 @@ function respond() {
 	var dogme = /dog me$/;
 	var doubledogme = /double dog me$/;
 	var cat = /cat/gi;
+	var comm = /(?:commie|communism|communist)/gi;
+	var dead = /(?:dead|death|dying|die)/gi;
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
@@ -61,6 +63,16 @@ function respond() {
 		 PostImage(rcg(), "Kitty!!!");
 	 this.res.end();
  }
+ else if(request.text && comm.test(request.text)){
+		this.res.writeHead(200);
+		PostMessage("https://www.youtube.com/watch?v=U06jlgpMtQs");
+		this.res.end();
+	}
+	else if(request.text && dead.test(request.text)){
+ 		this.res.writeHead(200);
+ 		PostMessage("Rest in spaghetti");
+ 		this.res.end();
+ 	}
 }
 
 function PostImage(botResponse, text) {
