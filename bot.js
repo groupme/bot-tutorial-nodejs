@@ -18,7 +18,6 @@ function respond() {
 	var cat = /cat/gi;
 	var comm = /(?:commie|communism|communist)/gi;
 	var dead = /(?:dead|death|dying|die)/gi;
-console.log(request);
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
     PostMessage(cool());
