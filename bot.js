@@ -2,8 +2,15 @@ var HTTPS = require('https'),
 	cool = require('cool-ascii-faces'),
 	rdg = require('random-dogs-generator'),
 	rcg = require('random-cats-generator'),
+	cleverbot = require('cleverbot.io'),
 	botID = process.env.BOT_ID;
 
+var bot = new cleverbot('OpsjgDH1YeMW4Qov','iQejZJJ04VrlWlpS0MknyJy31EBx6OOx');
+bot.setNick('Thumb');
+
+bot.create(function(err, session) {
+  console.log('Created bot');
+});
 //PostMessage("Thumb Thumb Restarted" + "\n" + "for list of possible commands /help");
 
 function respond() {
@@ -12,7 +19,7 @@ function respond() {
 	var time = /^\/time/gi;
 	var help = /^\/help/gi;
 	var bees = /bees/gi;
-	var thumb = /thumb/gi;
+	var thumb = /@thumb/gi;
 	var dogme = /dog/gi;
 	var doubledogme = /double dog/gi;
 	var cat = /cat/gi;
@@ -43,7 +50,15 @@ function respond() {
   }
   else if(request.text && thumb.test(request.text)){
 	this.res.writeHead(200);
-  	PostMessage("Are you talking to me?");
+
+	request.text = request.text.replace(thumb, "");
+	request.text = request.text.trim();
+
+	bot.ask(request.text, function(err, response) {
+    console.log('Bot: '+response);
+		PostMessage(response);
+  });
+
 	this.res.end();
   }
    else if(request.text && doubledogme.test(request.text)){
