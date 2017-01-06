@@ -2,8 +2,15 @@ var HTTPS = require('https'),
 	cool = require('cool-ascii-faces'),
 	rdg = require('random-dogs-generator'),
 	rcg = require('random-cats-generator'),
+	cleverbot = require('cleverbot.io'),
 	botID = process.env.BOT_ID;
 
+var bot = new cleverbot('OpsjgDH1YeMW4Qov','iQejZJJ04VrlWlpS0MknyJy31EBx6OOx');
+bot.setNick('Thumb');
+
+bot.create(function(err, session) {
+  console.log('Created bot');
+});
 //PostMessage("Thumb Thumb Restarted" + "\n" + "for list of possible commands /help");
 
 function respond() {
