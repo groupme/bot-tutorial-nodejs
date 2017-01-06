@@ -7,10 +7,11 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "cleverbot.io": "^1.0.4",
     "cool-ascii-faces": "~1.3.x",
     "director": "",
-    "random-qoutes-generator": "0.0.1",
-	 "random-dogs-generator": "0.0.1"
+    "random-dogs-generator": "0.0.1",
+    "random-qoutes-generator": "0.0.1"
   },
   "engines": {
     "node": "0.10.x"

@@ -19,7 +19,7 @@ function respond() {
 	var time = /^\/time/gi;
 	var help = /^\/help/gi;
 	var bees = /bees/gi;
-	var thumb = /thumb/gi;
+	var thumb = /@thumb/gi;
 	var dogme = /dog/gi;
 	var doubledogme = /double dog/gi;
 	var cat = /cat/gi;
@@ -51,7 +51,15 @@ function respond() {
   }
   else if(request.text && thumb.test(request.text)){
 	this.res.writeHead(200);
-  	PostMessage("Are you talking to me?");
+
+	request.text = request.text.replace(thumb, "");
+	request.text = request.text.trim();
+
+	bot.ask(request.text, function(err, response) {
+    console.log('Bot: '+response);
+		PostMessage(response);
+  });
+
 	this.res.end();
   }
    else if(request.text && doubledogme.test(request.text)){
