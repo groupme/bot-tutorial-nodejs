@@ -65,7 +65,7 @@ function respond() {
   } 
   else if(request.text && botRegexGooden.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://s1298.photobucket.com/user/Mike888/media/IMG-1658484014_zpsgg1ieq6e.jpg.html");
+    postMessage("https://scontent.ford1-1.fna.fbcdn.net/v/t1.0-9/15826744_10209145069717099_8029939462810176348_n.jpg?oh=7a85b5c900234acca9a516e4de1f5e36&oe=592150A9");
     this.res.end();
   } 
   else if(request.text && botRegexShaki.test(request.text)) {
