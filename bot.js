@@ -65,7 +65,7 @@ function respond() {
   } 
   else if(request.text && botRegexGooden.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("pbs.twimg.com/media/C1ltrzkWEAEs45m?format=jpg&name=large");
+    postMessage("http://s1298.photobucket.com/user/Mike888/media/IMG-1658484014_zpsgg1ieq6e.jpg.html");
     this.res.end();
   } 
   else if(request.text && botRegexShaki.test(request.text)) {
