@@ -65,7 +65,7 @@ function respond() {
   } 
   else if(request.text && botRegexGooden.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://lh3.googleusercontent.com/GEjt3sEqUlRASNydTc2eq1bVbiCeN0ui7WcrikYjg9WRN_i2LlWMQCX1rw-_0qAXbeB_Dw=s155");
+    postMessage("pbs.twimg.com/media/C1ltrzkWEAEs45m?format=jpg&name=large");
     this.res.end();
   } 
   else if(request.text && botRegexShaki.test(request.text)) {
