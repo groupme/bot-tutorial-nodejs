@@ -1,4 +1,5 @@
 var HTTPS = require('https'),
+	http = require('https'),
 	cool = require('cool-ascii-faces'),
 	rdg = require('random-dogs-generator'),
 	rcg = require('random-cats-generator'),
