@@ -71,22 +71,18 @@ function respond() {
 	if(request.text.length==0) {
 
 		var options = {
-			host: 'http://api.giphy.com',
-			path: '/v1/gifs/random?api_key=dc6zaTOxFJmzC'
+		  host: 'example.com',
+		  port: 80,
+		  path: '/foo.html'
 		};
 
-		callback = function(response) {
-			var str = '';
-			response.on(data, function(chunk){
-				str+=chunk;
-			});
-
-			response.on('end', function () {
-		    console.log(str);
+		http.get(options, function(resp){
+		  resp.on('data', function(chunk){
+		    console.log(chunk);
 		  });
-		}
-
-		http.request(options, callback).end();
+		}).on("error", function(e){
+		  console.log("Got error: " + e.message);
+		});
 	}
 	else {
 
