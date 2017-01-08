@@ -11,7 +11,8 @@
     "cool-ascii-faces": "~1.3.x",
     "director": "",
     "random-dogs-generator": "0.0.1",
-    "random-qoutes-generator": "0.0.1"
+    "random-qoutes-generator": "0.0.1",
+    "request": "^2.79.0"
   },
   "engines": {
     "node": "0.10.x"
