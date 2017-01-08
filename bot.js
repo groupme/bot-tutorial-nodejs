@@ -67,7 +67,7 @@ function respond() {
 	else if(request.text && gif.test(request.text)){
 	this.res.writeHead(200);
 
-	request.text = request.text.replace(thumb, "");
+	request.text = request.text.replace(gif, "");
 	request.text = request.text.trim();
 	if(request.text.length==0) {
 		request('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC', function(error, response, body) {
