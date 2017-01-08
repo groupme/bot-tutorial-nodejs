@@ -72,9 +72,9 @@ function respond() {
 	if(request.text.length==0) {
 
 		var options = {
-		  host: 'example.com',
+		  host: 'http://api.giphy.com',
 		  port: 80,
-		  path: '/foo.html'
+		  path: '/v1/gifs/random?api_key=dc6zaTOxFJmzC'
 		};
 
 		http.get(options, function(resp){
