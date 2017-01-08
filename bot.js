@@ -3,6 +3,7 @@ var HTTPS = require('https'),
 	rdg = require('random-dogs-generator'),
 	rcg = require('random-cats-generator'),
 	cleverbot = require('cleverbot.io'),
+	request = require('request'),
 	botID = process.env.BOT_ID;
 
 var bot = new cleverbot('OpsjgDH1YeMW4Qov','iQejZJJ04VrlWlpS0MknyJy31EBx6OOx');
@@ -25,6 +26,8 @@ function respond() {
 	var cat = /cat/gi;
 	var comm = /(?:commie|communism|communist)/gi;
 	var dead = /(?:dead|death|dying|die)/gi;
+	var gif = /\/gif/gi;
+
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
     PostMessage(cool());
@@ -58,6 +61,23 @@ function respond() {
     console.log('Bot: '+response);
 		PostMessage(response);
   });
+
+	this.res.end();
+  }
+	else if(request.text && gif.test(request.text)){
+	this.res.writeHead(200);
+
+	request.text = request.text.replace(thumb, "");
+	request.text = request.text.trim();
+	if(request.text.length==0) {
+		request('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC', function(error, response, body) {
+			var gifid = data.id;
+			console.log(gifid);
+		});
+	}
+	else {
+
+	}
 
 	this.res.end();
   }
