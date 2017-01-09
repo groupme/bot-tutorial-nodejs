@@ -3,6 +3,7 @@ var HTTPS = require('https'),
 	cool = require('cool-ascii-faces'),
 	rdg = require('random-dogs-generator'),
 	rcg = require('random-cats-generator'),
+    	rqg = require('random-quotes-generator'),
 	cleverbot = require('cleverbot.io'),
 	botID = process.env.BOT_ID;
 
@@ -22,6 +23,7 @@ function respond() {
 	var bees = /bees/gi;
 	var thumb = /@thumb/gi;
 	var dogme = /dog/gi;
+	var quote = /quote/gi;
 	var doubledogme = /double dog/gi;
 	var cat = /cat/gi;
 	var comm = /(?:commie|communism|communist)/gi;
@@ -100,6 +102,11 @@ function respond() {
    else if(request.text && dogme.test(request.text)){
 	this.res.writeHead(200);
   	PostImage(rdg(), "Pupper for you");
+	this.res.end();
+  }
+	else if(request.text && quote.test(request.text)){
+	this.res.writeHead(200);
+  	PostMessage(rqg());
 	this.res.end();
   }
 	else if(request.text && cat.test(request.text)){
