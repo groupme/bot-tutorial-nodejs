@@ -3,7 +3,7 @@ var HTTPS = require('https'),
 	cool = require('cool-ascii-faces'),
 	rdg = require('random-dogs-generator'),
 	rcg = require('random-cats-generator'),
-    	rqg = require('random-quotes-generator'),
+    	rqg = require('random-qoutes-generator'),
 	cleverbot = require('cleverbot.io'),
 	botID = process.env.BOT_ID;
 
