@@ -104,10 +104,10 @@ function respond() {
   	PostImage(rdg(), "Pupper for you");
 	this.res.end();
   }
-	else if(request.text && quote.test(request.text)){
-	this.res.writeHead(200);
-  	PostMessage(rqg());
-	this.res.end();
+// 	else if(request.text && quote.test(request.text)){
+// 	this.res.writeHead(200);
+//   	PostMessage(rqg());
+// 	this.res.end();
   }
 	else if(request.text && cat.test(request.text)){
 	 this.res.writeHead(200);
