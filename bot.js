@@ -23,7 +23,7 @@ function respond() {
 	var bees = /bees/gi;
 	var thumb = /@thumb/gi;
 	var dogme = /dog/gi;
-	var quote = /quote/gi;
+	//var quote = /quote/gi;
 	var doubledogme = /double dog/gi;
 	var cat = /cat/gi;
 	var comm = /(?:commie|communism|communist)/gi;
