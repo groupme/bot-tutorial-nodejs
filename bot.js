@@ -160,7 +160,7 @@ function respond() {
     postMessage("(☞ﾟヮﾟ)☞");
     this.res.end();
   }
-  else if(request.text && botRegexSchedule.test(request.text)) {
+  else if(request.text && botRegexTrade.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://docs.google.com/forms/d/e/1FAIpQLSdrbe5iBRaBC7EWoodVm8z6285-dG2EdHXAOMOgz8md8T1jwQ/viewform");
     this.res.end();
