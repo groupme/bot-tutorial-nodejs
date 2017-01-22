@@ -70,7 +70,7 @@ function respond() {
   } 
   else if(request.text && botRegexCheesy.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://giphy.com/gifs/television-90s-oGBw7OaVBei1W");
+    postMessage("https://media.giphy.com/media/oGBw7OaVBei1W/giphy.gif");
     this.res.end();
   } 
   else if(request.text && botRegexDL.test(request.text)) {
