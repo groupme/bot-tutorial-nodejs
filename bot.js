@@ -29,6 +29,7 @@ function respond() {
 	var comm = /(?:commie|communism|communist)/gi;
 	var dead = /(?:dead|death|dying|die)/gi;
 	var gif = /\/gif/gi;
+	var outside = /outsider/gi;
 
   if(request.text && face.test(request.text)) {
     this.res.writeHead(200);
@@ -53,6 +54,11 @@ function respond() {
   	PostMessage("Did someone say bees?");
 	this.res.end();
   }
+else if(request.text && outside.test(request.text)){
+	this.res.writeHead(200);
+  	PostMessage("Please Stop");
+	this.res.end();
+  }	
   else if(request.text && thumb.test(request.text)){
 	this.res.writeHead(200);
 
