@@ -6,7 +6,7 @@ PostMessage("Dinner at 5:30?");
 function respond() {
 	var request = JSON.parse(this.req.chunks[0]);
 	this.res.writeHead(200);
-	PostMessage("Dinner at 5:30?");
+	PostMessage("Dinner at 5:00?");
 	this.res.end();
 }
 
