@@ -1,12 +1,12 @@
 var HTTPS = require('https');
 var botID = process.env.BOT_ID;
 
-PostMessage("Dinner at " + Math.floor((Math.random() * 12) + 1) + Math.floor((Math.random() * 60) + 1));
+PostMessage("Dinner at " + Math.floor((Math.random() * 12) + 1) + ":" +  Math.floor((Math.random() * 60) + 1));
 
 function respond() {
 	var request = JSON.parse(this.req.chunks[0]);
 	this.res.writeHead(200);
-	PostMessage("Dinner at " + Math.floor((Math.random() * 12) + 1) + Math.floor((Math.random() * 60) + 1));
+	PostMessage("Dinner at " + Math.floor((Math.random() * 12) + 1) + ":" + Math.floor((Math.random() * 60) + 1));
 	this.res.end();
 }
 
