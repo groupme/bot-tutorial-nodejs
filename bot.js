@@ -5,12 +5,12 @@ var botID = process.env.BOT_ID;
 //INPUTS
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegexRoll = /\![Rr][Oo][Ll][Ll]/;
-      botRegexYesno = /\![Yy][Ee][Ss][Nn][Oo]/;
+	botRegexRoll = /\![Rr][Oo][Ll][Ll]/;
+	botRegexYesno = /\![Yy][Ee][Ss][Nn][Oo]/;
 
   if(request.text && (botRegexRoll.test(request.text) || botRegexYesno.test(request.text))) {
-    this.res.writeHead(200);
-    postMessageRoll(request.text);
+	this.res.writeHead(200);
+    postMessage(request.text);
     this.res.end();
   }else {
     console.log("don't care");
@@ -19,15 +19,23 @@ function respond() {
   }
 }
 
-//reponse when !roll
-function postMessageRoll(request) {
-  if (/\![Rr][Oo][Ll][Ll]/.test(request)){
-  
-  var botResponse, options, body, botReq;
-  var x = Math.floor((Math.random() * 10) + 1);
-  botResponse = x.toString();
-  } else{
-	  botResponse = "try agin";
+//reponse
+function postMessage(request) {
+	var botResponse, options, body, botReq;
+	
+	if (/\![Rr][Oo][Ll][Ll]/.test(request)){
+		
+		var x = Math.floor((Math.random() * 10) + 1);
+		botResponse = x.toString();
+  }else if (/\![Yy][Ee][Ss][Nn][Oo]/.test(request)){
+		var x = Math.floor((Math.random() * 3) + 1);
+		if (x == 1) {
+			botResponse = "yes";
+		} else if (x == 2) {
+			botResponse = "no";
+		} else if (x == 3) {
+			botResponse = "maybe";
+    }
   }
 
 
