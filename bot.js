@@ -5,8 +5,8 @@ var botID = process.env.BOT_ID;
 //inputs
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-	botRegexRoll = /\!roll/ig;
-	botRegexYesno = /\!yesno/ig;
+	botRegexRoll = /\!roll/i;
+	botRegexYesno = /\!yesno/i;
 
   if(request.text && (botRegexRoll.test(request.text) || botRegexYesno.test(request.text))) {
 	this.res.writeHead(200);
@@ -23,10 +23,10 @@ function respond() {
 function postMessage(request) {
 	var botResponse, options, body, botReq;
 	
-	if (/\!roll/ig.test(request)){
+	if (/\!roll/i.test(request)){
 		var x = Math.floor((Math.random() * 10) + 1);
 		botResponse = x.toString();
-	}else if (/\!yesno/ig.test(request)){
+	}else if (/\!yesno/i.test(request)){
 		var x = Math.floor((Math.random() * 3) + 1);
 		if (x == 1) {
 			botResponse = "yes";
