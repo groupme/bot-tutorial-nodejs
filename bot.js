@@ -27,7 +27,7 @@ function postMessageRoll(request) {
   var x = Math.floor((Math.random() * 10) + 1);
   botResponse = x.toString();
   } else{
-	  botResponse = "try agin";
+	  botResponse = request;
   }
 
 
