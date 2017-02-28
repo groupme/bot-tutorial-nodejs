@@ -21,7 +21,7 @@ function respond() {
 
 //reponse when !roll
 function postMessageRoll(request) {
-  if (request == /\![Rr][Oo][Ll][Ll]/){
+  if (/\![Rr][Oo][Ll][Ll]/.test(request)){
   
   var botResponse, options, body, botReq;
   var x = Math.floor((Math.random() * 10) + 1);
