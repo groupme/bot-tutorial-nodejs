@@ -1,32 +1,25 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-
 var botID = process.env.BOT_ID;
 
-function gotData(data){
-	weather = data;
-}
-
+//INPUTS
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegexRoll = /\![Rr][Oo][Ll][Ll]/;
       botRegexYesno = /\![Yy][Ee][Ss][Nn][Oo]/;
 
-  if(request.text && botRegexRoll.test(request.text)) {
+  if(request.text && (botRegexRoll.test(request.text) || botRegexYesno.test(request.text))) {
     this.res.writeHead(200);
     postMessageRoll();
     this.res.end();
-  } else if(request.text && botRegexYesno.test(request.text)) {
-    this.res.writeHead(200);
-    postMessageYesno();
-    this.res.end();
-  } else {
+  }else {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
   }
 }
 
+//reponse when !roll
 function postMessageRoll() {
   var botResponse, options, body, botReq;
   var x = Math.floor((Math.random() * 10) + 1);
@@ -64,6 +57,7 @@ function postMessageRoll() {
   botReq.end(JSON.stringify(body));
 }
 
+//reponse when !yesno
 function postMessageYesno() {
   var botResponse, options, body, botReq;
   var x = Math.floor((Math.random() * 3) + 1);
