@@ -10,7 +10,7 @@ function respond() {
 
   if(request.text && (botRegexRoll.test(request.text) || botRegexYesno.test(request.text))) {
     this.res.writeHead(200);
-    postMessageRoll();
+    postMessageRoll(request.text);
     this.res.end();
   }else {
     console.log("don't care");
@@ -20,10 +20,15 @@ function respond() {
 }
 
 //reponse when !roll
-function postMessageRoll() {
+function postMessageRoll(request) {
+  if (request == /\![Rr][Oo][Ll][Ll]/){
+  
   var botResponse, options, body, botReq;
   var x = Math.floor((Math.random() * 10) + 1);
   botResponse = x.toString();
+  } else{
+	  botResponse = "try agin";
+  }
 
 
   
