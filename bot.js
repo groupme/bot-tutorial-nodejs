@@ -10,8 +10,6 @@ function gotData(data){
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegexRoll = /\![Rr][Oo][Ll][Ll]/;
-	  
-  var request = JSON.parse(this.req.chunks[0]),
       botRegexYesno = /\![Yy][Ee][Ss][Nn][Oo]/;
 
   if(request.text && botRegexRoll.test(request.text)) {
