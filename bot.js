@@ -112,7 +112,7 @@ else if(request.text && outside.test(request.text)){
   }
 	else if(request.text && quote.test(request.text)){
 	this.res.writeHead(200);
-  	PostMessage(rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg());
+  	PostMessage(rqg() + " " + rqg() + " " + rqg() + " " + rqg() + " " + rqg() + " " + rqg() + " " + rqg() + " " + rqg() + " " + rqg() + " " + rqg());
 	this.res.end();
 }
 	else if(request.text && cat.test(request.text)){
