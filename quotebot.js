@@ -2,12 +2,12 @@ var HTTPS = require('https');
 var botID = process.env.BOT_ID;
 var rqg = require('random-qoutes-generator');
 
-PostMessage(rqg());
+PostMessage(rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg());
 
 function respond() {
 	var request = JSON.parse(this.req.chunks[0]);
 	this.res.writeHead(200);
-	PostMessage(rqg());
+	PostMessage(rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg());
 	this.res.end();
 }
 
