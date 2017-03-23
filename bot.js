@@ -23,7 +23,7 @@ function respond() {
 	var bees = /bees/gi;
 	var thumb = /@thumb/gi;
 	var dogme = /dog/gi;
-	//var quote = /quote/gi;
+	var quote = /quote/gi;
 	var doubledogme = /double dog/gi;
 	var cat = /cat/gi;
 	var comm = /(?:commie|communism|communist)/gi;
@@ -110,11 +110,11 @@ else if(request.text && outside.test(request.text)){
   	PostImage(rdg(), "Pupper for you");
 	this.res.end();
   }
-// 	else if(request.text && quote.test(request.text)){
-// 	this.res.writeHead(200);
-//   	PostMessage(rqg());
-// 	this.res.end();
-// }
+	else if(request.text && quote.test(request.text)){
+	this.res.writeHead(200);
+  	PostMessage(rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg() + rqg());
+	this.res.end();
+}
 	else if(request.text && cat.test(request.text)){
 	 this.res.writeHead(200);
 		 PostImage(rcg(), "Kitty!!!");
