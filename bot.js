@@ -13,8 +13,6 @@ bot.setNick('Thumb1');
 bot.create(function(err, session) {
   console.log('Created bot');
 });
-//PostMessage("Thumb Thumb Restarted" + "\n" + "for list of possible commands /help");
-
 function respond() {
 	var request = JSON.parse(this.req.chunks[0]);
 	var face = /^\/face/gi;
