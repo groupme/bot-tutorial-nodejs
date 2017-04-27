@@ -8,7 +8,7 @@ var HTTPS = require('https'),
 	botID = process.env.BOT_ID;
 
 var bot = new cleverbot('OpsjgDH1YeMW4Qov','iQejZJJ04VrlWlpS0MknyJy31EBx6OOx');
-bot.setNick('Thumb1');
+bot.setNick('Thumb2');
 
 bot.create(function(err, session) {
   console.log('Created bot');
