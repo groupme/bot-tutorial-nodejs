@@ -8,8 +8,9 @@ function respond() {
 	botRegexRoll = /\!roll/i;
 	botRegexYesno = /\!yesno/i;
 	botRegexQYes = /is kyle gay\?|is erica rich\?|is jayjay cool\?/i;
+	botRegexDoggopls = /\!doggopls/i;
 
-  if(request.text && (botRegexRoll.test(request.text) || botRegexYesno.test(request.text)|| botRegexQYes.test(request.text))) {
+  if(request.text && (botRegexRoll.test(request.text) || botRegexYesno.test(request.text)|| botRegexQYes.test(request.text) || botRegexDoggopls.test(request.text))) {
 	this.res.writeHead(200);
     postMessage(request.text);
     this.res.end();
@@ -37,8 +38,17 @@ function postMessage(request) {
 			botResponse = "maybe";
 		}
 	}else if (/is kyle gay\?|is erica rich\?|is jayjay cool\?/i.test(request)){
-			botResponse = "yes";
+		botResponse = "yes";
    
+	}else if (/\!doggopls/i.test(request)){
+		var x = Math.floor((Math.random() * 3) + 1);
+		if (x == 1) {
+			botResponse = "yes";
+		} else if (x == 2) {
+			botResponse = "no";
+		} else if (x == 3) {
+			botResponse = "maybe";
+		}
 	}
 
   options = {
