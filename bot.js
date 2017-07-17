@@ -50,16 +50,10 @@ function postMessage(request) {
 		} else if (x == 3) {
 			botResponse = "maybe";
 		}*/
-		switch(Math.floor((Math.random() * 3) + 1);
-		case 0: 
-			botResponse = "yes"; 
-			break;
-		case 1: 
-			botResponse = "no";
-			break;
-		case 2: 
-			botResponse = "maybe"; 
-			break;
+		switch(Math.floor((Math.random() * 3) + 1){
+		case 1: botResponse = "yes"; break;
+		case 2: botResponse = "no"; break;
+		case 3: botResponse = "maybe"; break;}
 		
 	}
 
