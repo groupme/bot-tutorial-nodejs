@@ -7,8 +7,9 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
 	botRegexRoll = /\!roll/i;
 	botRegexYesno = /\!yesno/i;
+	botRegexQYes = /is kyle gay\?|is erica rich\?|is jayjay cool\?/i;
 
-  if(request.text && (botRegexRoll.test(request.text) || botRegexYesno.test(request.text))) {
+  if(request.text && (botRegexRoll.test(request.text) || botRegexYesno.test(request.text)|| botRegexQYes.test(request.text))) {
 	this.res.writeHead(200);
     postMessage(request.text);
     this.res.end();
@@ -34,8 +35,11 @@ function postMessage(request) {
 			botResponse = "no";
 		} else if (x == 3) {
 			botResponse = "maybe";
-    }
-  }
+		}
+	}else if (/is kyle gay\?|is erica rich\?|is jayjay cool\?/i.test(request)){
+			botResponse = "yes";
+   
+	}
 
   options = {
     hostname: 'api.groupme.com',
