@@ -41,7 +41,6 @@ function postMessage(request) {
 		botResponse = "yes";
    
 	}else if (/\!doggopls/i.test(request)){
-		/*
 		var x = Math.floor((Math.random() * 3) + 1);
 		if (x == 1) {
 			botResponse = "yes";
@@ -49,12 +48,7 @@ function postMessage(request) {
 			botResponse = "no";
 		} else if (x == 3) {
 			botResponse = "maybe";
-		}*/
-		switch(Math.floor((Math.random() * 3) + 1){
-		case 1: botResponse = "yes"; break;
-		case 2: botResponse = "no"; break;
-		case 3: botResponse = "maybe"; break;}
-		
+		}	
 	}
 
   options = {
