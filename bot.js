@@ -122,7 +122,7 @@ function respond() {
   } 
   else if(request.text && botRegexSb.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.reddit.com/r/maddenall32");
+    postMessage("https://www.reddit.com/r/TheNiceMaddenLeague/");
     this.res.end();
   } 
   else if(request.text && botRegexSh.test(request.text)) {
