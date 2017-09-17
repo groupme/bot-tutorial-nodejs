@@ -9,7 +9,7 @@ function respond() {
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
-      botRegexSlut = /^\/slut/;
+      botRegexSlut = /^\/slut/; botRegexMason = /^\/mason/;
       botRegexProp = /^\/prop/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexBrye = /^\/brye/;
       botRegexGian = /^\/gian/; botRegexScrotes = /^\/scrotes/; botRegexShaki = /^\/shaki/;
       botRegexDaf = /^\/dafuq/; botRegexMA32 = /^\/pending/; botRegexTrade = /^\/trade/; 
@@ -135,9 +135,9 @@ function respond() {
     postMessage("https://docs.google.com/spreadsheets/d/1zRLaUZ12vUOORFdNQbPCzJW5T0zFBrkth_osH9b7d34/edit?usp=drivesdk");
     this.res.end();
   } 
-  else if(request.text && botODB.test(request.text)) {
+  else if(request.text && botRegexMason.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("OBJ*");
+    postMessage("https://i.groupme.com/845x1170.jpeg.002f5f8a4b6c4afbb858f474f99506ad");
     this.res.end();
   } 
   else if(request.text && botDuck.test(request.text)) {
