@@ -5,16 +5,16 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/Eric$/,
-      secondRegex = /^\/Cool$/;
+      winRegex = /^\/Eric we won$/,
+      lostRegex = /^\/Eric we lost$/;
 
-  if(request.text && secondRegex.test(request.text)) {
+  if(request.text && lostRegex.test(request.text)) {
     this.res.writeHead(200);
-    postMessage2();
+    postLostMessage();
     this.res.end();
-  }else if(request.text && botRegex.test(request.text)) {
+  }else if(request.text && winRegex.test(request.text)) {
     this.res.writeHead(200);
-    postMessage();
+    postWinMessage();
     this.res.end();
   }else {
     console.log("don't care");
@@ -23,10 +23,10 @@ function respond() {
   }
 }
 
-function postMessage() {
+function postWinMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = "hello";
+  botResponse = cool();
 
   options = {
     hostname: 'api.groupme.com',
@@ -58,10 +58,10 @@ function postMessage() {
   botReq.end(JSON.stringify(body));
 }
 
-function postMessage2() {
+function postLostMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
+  botResponse = "(╯°□°）╯︵ ┻━┻";
 
   options = {
     hostname: 'api.groupme.com',
