@@ -12,7 +12,7 @@ function respond() {
     this.res.writeHead(200);
     postMessage2();
     this.res.end();
-  }elseif(request.text && botRegex.test(request.text)) {
+  }else if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
