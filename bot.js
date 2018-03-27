@@ -12,10 +12,6 @@ function respond() {
     this.res.writeHead(200);
     postMessage2();
     this.res.end();
-  } elseif(request.text && secondRegex.test(request.text)){
-    this.res.writeHead(200);
-    postMessage();
-    this.res.end();
   }
   else {
     console.log("don't care");
