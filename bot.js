@@ -141,7 +141,7 @@ function postLostMessage() {
 function postDoghouseMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = "I can really tell that Lucas really loves Brooke. What's even more important is that Lucas definitely didn't program me to say this in case there's a day he's in the doghouse.";
+  botResponse = "I can tell that Lucas really loves Brooke. What's even more important is that Lucas definitely didn't program me to say this in case there's a day he's in the doghouse. That is all.";
 
   options = {
     hostname: 'api.groupme.com',
