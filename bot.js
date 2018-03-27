@@ -6,9 +6,9 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/Eric$/,
-      secondRegex = /^\Cool$/;
+      secondRegex = /^\/Cool$/;
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text && secondRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage2();
     this.res.end();
