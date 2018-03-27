@@ -1,5 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var starwars = require("starwars")
 
 var botID = process.env.BOT_ID;
 
@@ -44,7 +45,7 @@ function respond() {
 function postQuoteMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = data;
+  botResponse = starwars();
   
   options = {
     hostname: 'api.groupme.com',
