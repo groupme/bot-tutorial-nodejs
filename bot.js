@@ -26,7 +26,7 @@ function respond() {
 function postWinMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
+  botResponse = "Great work team! https://i.groupme.com/245x170.gif.d26e616bac8e4ff092d24d399b167915.large";
 
   options = {
     hostname: 'api.groupme.com',
