@@ -5,8 +5,8 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      winRegex = /^\/Eric we won$/,
-      lostRegex = /^\/Eric we lost$/;
+      winRegex = /^\Eric we won$/,
+      lostRegex = /^\Eric we lost$/;
 
   if(request.text && lostRegex.test(request.text)) {
     this.res.writeHead(200);
