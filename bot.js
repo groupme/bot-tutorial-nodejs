@@ -1,6 +1,5 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var quotes = require('awesome-quotes');
 
 var botID = process.env.BOT_ID;
 
@@ -45,12 +44,7 @@ function respond() {
 function postQuoteMessage() {
   var botResponse, options, body, botReq;
 
-  quotes.getQuote('football','en', function(err, data) {
-    if(!err) {
-        console.log(data);
-        botResponse = data;
-    }
-  });
+  botResponse = data;
   
   options = {
     hostname: 'api.groupme.com',
