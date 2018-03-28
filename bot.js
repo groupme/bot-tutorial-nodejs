@@ -49,7 +49,7 @@ function respond() {
 function postJokeMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = oneLinerJoke.getRandomJoke();
+  botResponse = oneLinerJoke.getRandomJoke().body;
   
   options = {
     hostname: 'api.groupme.com',
