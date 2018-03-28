@@ -9,7 +9,8 @@
   "dependencies": {
     "director": "",
     "cool-ascii-faces": "~1.3.x",
-    "starwars": "1.0.0"
+    "starwars": "1.0.0",
+    "one-liner-joke":"1.0.0"
   },
   "engines": {
     "node": "0.10.x"
