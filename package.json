@@ -10,7 +10,8 @@
     "director": "",
     "cool-ascii-faces": "~1.3.x",
     "starwars": "1.0.0",
-    "one-liner-joke":"1.0.0"
+    "one-liner-joke":"1.0.0",
+    "chuck-norris-jokes":"0.1.1"
   },
   "engines": {
     "node": "0.10.x"
