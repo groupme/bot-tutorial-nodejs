@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var starwars = require("starwars")
 var oneLinerJoke = require("one-liner-joke");
-//var chuckNorrisJokes = require("chuck-norris-jokes")
+var chuckNorrisJokes = require("chuck-norris-jokes")
 
 var botID = process.env.BOT_ID;
 
