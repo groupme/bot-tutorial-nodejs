@@ -54,7 +54,7 @@ function respond() {
 function postChuckMessage() {
   var botResponse, options, body, botReq, jokePromise;
   
-  jokePromise = chuckNorrisJokes.hitme();
+  //jokePromise = chuckNorrisJokes.hitme();
  /* jokePromise.then(function(value){
     botResponse = value;
     options = {
