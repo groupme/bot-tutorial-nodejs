@@ -55,7 +55,7 @@ function postChuckMessage() {
   var botResponse, options, body, botReq, jokePromise;
   
   jokePromise = chuckNorrisJokes.hitme();
-  jokePromise.then(function(value){
+ /* jokePromise.then(function(value){
     botResponse = value;
     options = {
     hostname: 'api.groupme.com',
@@ -85,7 +85,7 @@ function postChuckMessage() {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   botReq.end(JSON.stringify(body));
-});
+});*/
 
   //botResponse =  oneLinerJoke.getRandomJokeWithTag('dirty', 'stupid', 'insults', 'blonde').body;
   
