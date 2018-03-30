@@ -52,11 +52,14 @@ function respond() {
 }
 
 function postChuckMessage() {
-  var botResponse, options, body, botReq;
-
-  botResponse =  oneLinerJoke.getRandomJokeWithTag('dirty', 'stupid', 'insults', 'blonde').body;
+  var botResponse, options, body, botReq, jokePromise;
   
-  options = {
+  jokePromise = chuckNorrisJokes.hitme();
+
+  jokePromise.then(function(value){
+    botResponse = value;
+    
+    options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
     method: 'POST'
@@ -84,6 +87,13 @@ function postChuckMessage() {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   botReq.end(JSON.stringify(body));
+    
+    console.log(botResponse)
+  });
+
+  //botResponse =  oneLinerJoke.getRandomJokeWithTag('dirty', 'stupid', 'insults', 'blonde').body;
+  
+  
 }
 
 function postJokeMessage() {
