@@ -99,8 +99,8 @@ function postChuckMessage() {
 function postJokeMessage() {
   var botResponse, options, body, botReq;
 
-  //botResponse =  oneLinerJoke.getRandomJokeWithTag('dirty', 'stupid', 'insults', 'blonde').body;
-  botResponse =  oneLinerJoke.getRandomJokeWithTag('blonde').body;
+  botResponse =  oneLinerJoke.getRandomJokeWithTag('dirty', 'stupid', 'insults', 'blonde').body;
+  //botResponse =  oneLinerJoke.getRandomJokeWithTag('blonde').body;
   
   options = {
     hostname: 'api.groupme.com',
