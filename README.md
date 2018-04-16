@@ -139,7 +139,7 @@ becomes:
 
 To test your bot locally, open terminal and run the following command to start a local server.
 
-    $ foreman start
+    $ yarn start
 
 Then navigate to `http://127.0.0.1:5000/` in a browser.
 
