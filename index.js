@@ -29,5 +29,5 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end('Hey, check me out: <a href="http://nvn.io">nvn.io</a>');
+  this.res.end('Hey, check me out: <a href="http://nvn.io">nvn.io</a>!');
 }
