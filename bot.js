@@ -31,14 +31,35 @@ function postMessage() {
 
   body = {
     "bot_id" : botID,
-    "text" : botResponse + '☃☃☃',
+    "text" : botResponse + '☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃',
     "attachments": [{
       "type": "emoji",
       "placeholder": "☃",
       "charmap": [
-        [1, 42],
-        [2, 34],
-        [4, 36] //rip
+      [1, 64], // 100
+      [6, 21], // make it rain
+      [4, 36], //rip
+      [6, 20], // shaka brah
+      [6, 33],
+      [6, 10],
+      [1, 64], // 100
+      [6, 21], // make it rain
+      [4, 36], //rip
+      [6, 20], // shaka brah
+      [6, 33],
+      [6, 10],
+      [1, 64], // 100
+      [6, 21], // make it rain
+      [4, 36], //rip
+      [6, 20], // shaka brah
+      [6, 33],
+      [6, 10],
+      [1, 64], // 100
+      [6, 21], // make it rain
+      [4, 36], //rip
+      [6, 20], // shaka brah
+      [6, 33], //
+      [6, 10]
       ]
     }]
   };
