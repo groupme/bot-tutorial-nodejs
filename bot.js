@@ -8,7 +8,6 @@ function respond() {
       botRegex = /^!hype([1-3])/;
 
   if (request.text && botRegex.test(request.text)) {
-    console.log(request.text);
     this.res.writeHead(200);
     postMessage();
     this.res.end();
