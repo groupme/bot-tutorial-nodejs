@@ -38,7 +38,7 @@ function postMessage() {
       "charmap": [
         [1, 42],
         [2, 34],
-        [4, 32]
+        [4, 36] //rip
       ]
     }]
   };
