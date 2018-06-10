@@ -10,11 +10,11 @@ function respond() {
 
   if (request.text && hypeCalls.test(request.text)) {
     this.res.writeHead(200);
-    postMessage();
+    postEmojis(1);
     this.res.end();
   } else if (request.text && hypeMode.test(request.text)) {
     this.res.writeHead(200);
-    this.res.write('You want hype? YOU GOT IT!');
+    postMessage('You want hype? YOU GOT IT!');
     this.res.end();
   } else {
     console.log("don't care");
@@ -22,8 +22,7 @@ function respond() {
     this.res.end();
   }
 }
-
-function postMessage() {
+function postMessage(message) {
   var botResponse, options, body, botReq;
 
   botResponse = cool();
@@ -36,19 +35,82 @@ function postMessage() {
 
   body = {
     "bot_id" : botID,
-    "text" : botResponse + '☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃',
-    "attachments": [{
-      "type": "emoji",
-      "placeholder": "☃",
-      "charmap": [
+    "text" : message
+  };
+
+  console.log('sending ' + botResponse + ' to ' + botID);
+
+  botReq = HTTPS.request(options, function(res) {
+      if (res.statusCode == 202) {
+        //neat
+      } else {
+        console.log('rejecting bad status code ' + res.statusCode);
+      }
+  });
+
+  botReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+
+  botReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+
+  botReq.end(JSON.stringify(body));
+}
+
+function postEmojis(emojiSet) {
+  var botResponse, options, body, botReq;
+
+  botResponse = cool();
+
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  emojis = {
+    1: [
         [1, 64], // 100
         [18, 21], // thumbs up
         [4, 36], //rip
         [9, 20], // shaka brah
         [9, 21], // make it rain
-        [9, 33],
-        [9, 10]
-      ]
+        [9, 33], // rainbow flag
+        [9, 10] // mind blown
+    ],
+    2: [
+        [4, 36], // lots of rips
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36]
+    ],
+    3: [
+        [1, 64], // 100
+        [9, 10], // mind blown
+        [1, 64], // 100
+        [9, 10], // mind blown
+        [1, 64], // 100
+        [9, 10], // mind blown
+        [1, 64], // 100
+        [9, 10], // mind blown
+        [1, 64], // 100
+        [9, 10] // mind blown
+    ]
+  };
+
+  body = {
+    "bot_id" : botID,
+    "text" : botResponse + '☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃',
+    "attachments": [{
+      "type": "emoji",
+      "placeholder": "☃",
+      "charmap": emojis[emojiSet]
     }]
   };
 
