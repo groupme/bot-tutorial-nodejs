@@ -5,15 +5,22 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
 
-  var hypemodeReg = /^!hypemode/im,
-      hypesReg = /^!hype([1-3])/im;
+  var hypemode = /^!hypemode/im.test(request.text),
+      hype1 = /^!hype1/im.test(request.text),
+      hype2 = /^!hype2/im.test(request.text),
+      hype3 = /^!hype3/im.test(request.text);
 
-  var hypemodeMatch = hypemodeReg.exec(request.text),
-      hypesMatch = hypesReg.exec(request.text);
-
-  if (request.text && hypesMatch !== null) {
+  if (request.text && hype1) {
     this.res.writeHead(200);
-    postEmojis(hypesMatch[0]);
+    postEmojis(1);
+    this.res.end();
+  } else if (request.text && hype2) {
+    this.res.writeHead(200);
+    postEmojis(2);
+    this.res.end();
+  } else if (request.text && hype3) {
+    this.res.writeHead(200);
+    postEmojis(3);
     this.res.end();
   } else if (request.text && hypemodeMatch !== null) {
     this.res.writeHead(200);
