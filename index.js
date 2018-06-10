@@ -29,5 +29,5 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end('All aboard the hype train.');
+  this.res.end('I am Deej! v0.1.13');
 }
