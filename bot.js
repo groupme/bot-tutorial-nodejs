@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      hypeMode = /^!hypemode/im;
+      hypeMode = /^!hypemode/im,
       hypeCalls = /^!hype([1-3])/im;
 
   if (request.text && hypeCalls.test(request.text)) {
