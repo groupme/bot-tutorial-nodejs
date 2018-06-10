@@ -36,13 +36,14 @@ function postMessage() {
       "type": "emoji",
       "placeholder": "☃",
       "charmap": [
-      [1, 64], // 100
-      [6, 21], // thumbs up
-      [4, 36], //rip
-      [9, 20], // shaka brah
-      [9, 21], // make it rain
-      [9, 33],
-      [9, 10]
+        [1, 64], // 100
+        [18, 21], // thumbs up
+        [4, 36], //rip
+        [9, 20], // shaka brah
+        [9, 21], // make it rain
+        [9, 33],
+        [9, 10]
+      ]
     }]
   };
 
