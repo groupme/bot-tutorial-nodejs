@@ -1,18 +1,21 @@
 var HTTPS = require('https');
-var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
 function respond() {
-  var request = JSON.parse(this.req.chunks[0]),
-      hypeMode = /^!hypemode/im,
-      hypeCalls = /^!hype([1-3])/im;
+  var request = JSON.parse(this.req.chunks[0]);
 
-  if (request.text && hypeCalls.test(request.text)) {
+  var hypemodeReg = /^!hypemode/im,
+      hypesReg = /^!hype([1-3])/im;
+
+  var hypemodeMatch = hypemodeReg.exec(request.text),
+      hypesMatch = hypesReg.exec(request.text);
+
+  if (request.text && hypesMatch) {
     this.res.writeHead(200);
-    postEmojis(1);
+    postEmojis(hypesMatch[0]);
     this.res.end();
-  } else if (request.text && hypeMode.test(request.text)) {
+  } else if (request.text && hypemodeMatch) {
     this.res.writeHead(200);
     postMessage('You want hype? YOU GOT IT!');
     this.res.end();
@@ -62,8 +65,6 @@ function postMessage(message) {
 function postEmojis(emojiSet) {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
-
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
@@ -106,7 +107,7 @@ function postEmojis(emojiSet) {
 
   body = {
     "bot_id" : botID,
-    "text" : botResponse + '☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃',
+    "text" : '☃☃☃☃☃☃☃',
     "attachments": [{
       "type": "emoji",
       "placeholder": "☃",
