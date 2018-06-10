@@ -28,9 +28,7 @@ function respond() {
   this.res.end();
 }
 function postMessage(message) {
-  var botResponse, options, body, botReq;
-
-  botResponse = cool();
+  var options, body, botReq;
 
   options = {
     hostname: 'api.groupme.com',
@@ -43,7 +41,7 @@ function postMessage(message) {
     "text" : message
   };
 
-  console.log('sending ' + botResponse + ' to ' + botID);
+  console.log('sending ' + message + ' to ' + botID);
 
   botReq = HTTPS.request(options, function(res) {
       if (res.statusCode == 202) {
@@ -65,7 +63,7 @@ function postMessage(message) {
 }
 
 function postEmojis(emojiSet) {
-  var botResponse, options, body, botReq;
+  var options, body, botReq;
 
   options = {
     hostname: 'api.groupme.com',
@@ -117,8 +115,7 @@ function postEmojis(emojiSet) {
     }]
   };
 
-
-  console.log('sending ' + botResponse + ' to ' + botID);
+  console.log('sending emojis to ' + botID);
 
   botReq = HTTPS.request(options, function(res) {
       if (res.statusCode == 202) {
