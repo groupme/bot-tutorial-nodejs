@@ -11,11 +11,11 @@ function respond() {
   var hypemodeMatch = hypemodeReg.exec(request.text),
       hypesMatch = hypesReg.exec(request.text);
 
-  if (request.text && hypesMatch) {
+  if (request.text && hypesMatch !== null) {
     this.res.writeHead(200);
     postEmojis(hypesMatch[0]);
     this.res.end();
-  } else if (request.text && hypemodeMatch) {
+  } else if (request.text && hypemodeMatch !== null) {
     this.res.writeHead(200);
     postMessage('You want hype? YOU GOT IT!');
     this.res.end();
