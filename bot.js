@@ -10,27 +10,22 @@ function respond() {
       hype2 = /^!hype2/im.test(request.text),
       hype3 = /^!hype3/im.test(request.text);
 
-  if (request.text && hype1) {
-    this.res.writeHead(200);
-    postEmojis(1);
-    this.res.end();
-  } else if (request.text && hype2) {
-    this.res.writeHead(200);
-    postEmojis(2);
-    this.res.end();
-  } else if (request.text && hype3) {
-    this.res.writeHead(200);
-    postEmojis(3);
-    this.res.end();
-  } else if (request.text && hypemodeMatch !== null) {
-    this.res.writeHead(200);
-    postMessage('You want hype? YOU GOT IT!');
-    this.res.end();
-  } else {
-    console.log("don't care");
-    this.res.writeHead(200);
-    this.res.end();
+  // she goes for the badboy type
+  this.res.writeHead(200);
+  if (request.text) {
+    if (hype1) {
+      postEmojis(1);
+    } else if (hype2) {
+      postEmojis(2);
+    } else if (hype3) {
+      postEmojis(3);
+    } else if (hypemode) {
+      postMessage('You want hype? YOU GOT IT!');
+    } else {
+      console.log("don't care");
+    }
   }
+  this.res.end();
 }
 function postMessage(message) {
   var botResponse, options, body, botReq;
