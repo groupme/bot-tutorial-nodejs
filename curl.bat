@@ -1,0 +1,3 @@
+curl -d '{ "bot_id" : "08c384669f3d01eb2a2dad9a54", "text" : "☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃", "attachments": [{"type": "emoji","placeholder": "☃","charmap": [[1, 64], [4, 36], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1], [11, 1], [12, 1], [13, 1], [14, 1], [15, 1], [16, 1], [17, 1], [18, 1], [19, 1]]}] }' https://api.groupme.com/v3/bots/post
+
+curl -d '{ "bot_id" : "08c384669f3d01eb2a2dad9a54", "text" : "☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃", "attachments": [{"type": "emoji", "placeholder": "☃", "charmap": [[1, 64], [18, 21], [4, 36], [9, 20], [18, 33], [18, 10]]}] }' https://api.groupme.com/v3/bots/post

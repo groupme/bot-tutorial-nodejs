@@ -37,30 +37,12 @@ function postMessage() {
       "placeholder": "☃",
       "charmap": [
       [1, 64], // 100
-      [7, 21], // make it rain
+      [6, 21], // thumbs up
       [4, 36], //rip
-      [6, 20], // shaka brah
-      [6, 33],
-      [6, 10],
-      [1, 64], // 100
-      [6, 21], // make it rain
-      [4, 36], //rip
-      [6, 20], // shaka brah
-      [6, 33],
-      [6, 10],
-      [1, 64], // 100
-      [6, 21], // make it rain
-      [4, 36], //rip
-      [6, 20], // shaka brah
-      [6, 33],
-      [6, 10],
-      [6, 18], // 100
-      [6, 19], // make it rain
-      [6, 20], //rip
-      [6, 21], // shaka brah
-      [6, 22], //
-      [6, 23]
-      ]
+      [9, 20], // shaka brah
+      [9, 21], // make it rain
+      [9, 33],
+      [9, 10]
     }]
   };
 
