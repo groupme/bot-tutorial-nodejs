@@ -5,11 +5,16 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^!hype([1-3])/im;
+      hypeMode = /^!hypemode/im;
+      hypeCalls = /^!hype([1-3])/im;
 
-  if (request.text && botRegex.test(request.text)) {
+  if (request.text && hypeCalls.test(request.text)) {
     this.res.writeHead(200);
     postMessage();
+    this.res.end();
+  } else if (request.text && hypeMode.test(request.text)) {
+    this.res.writeHead(200);
+    this.res.write('You want hype? YOU GOT IT!');
     this.res.end();
   } else {
     console.log("don't care");
