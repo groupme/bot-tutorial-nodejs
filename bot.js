@@ -10,7 +10,8 @@ function respond() {
       hype2 = /^!hype2/im.test(request.text),
       hype3 = /^!hype3/im.test(request.text),
       rip = /^!rip/im.test(request.text),
-      bird = /^!bird/im.test(request.text);
+      bird = /^!bird/im.test(request.text),
+      nope = /^!nope/im.test(request.text);
 
   // she goes for the badboy type
   this.res.writeHead(200);
@@ -27,6 +28,8 @@ function respond() {
       postEmojis(4);
     } else if (bird) {
       postMessage('http://www.reactiongifs.com/wp-content/uploads/2013/07/finger.gif');
+    } else if (nope) {
+      postMessage('http://gif-finder.com/wp-content/uploads/2017/04/Danny-DeVito-Nope.gif');
     } else {
       console.log("don't care");
     }
@@ -76,6 +79,12 @@ function postEmojis(emojiSet) {
     path: '/v3/bots/post',
     method: 'POST'
   };
+  placeholders = {
+  1: ['☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃'],
+  2: ['☃☃☃☃☃☃'],
+  3: ['☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃'],
+  4: ['☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃']
+  };
 
   emojis = {
     1: [
@@ -97,22 +106,12 @@ function postEmojis(emojiSet) {
       [9, 33] // rainbow flag
     ],
     2: [
-        [8, 16],
         [3, 11],
         [3, 83],
         [3, 96],
         [3, 93],
         [3, 81],
-        [3, 11],
-        [8, 16],
-        [8, 16],
-        [8, 16],
-        [8, 16],
-        [8, 16],
-        [8, 16],
-        [8, 16],
-        [8, 16],
-        [8, 16]
+        [3, 11]
     ],
     3: [
         [1, 64], // 100
@@ -154,7 +153,7 @@ function postEmojis(emojiSet) {
 
   body = {
     "bot_id" : botID,
-    "text" : '☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃',
+    "text" : placeholders[emojiSet],
     "attachments": [{
       "type": "emoji",
       "placeholder": '☃',
