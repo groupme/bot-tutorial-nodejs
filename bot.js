@@ -74,16 +74,33 @@ function postEmojis(emojiSet) {
 
   emojis = {
     1: [
-        [1, 64], // 100
-        [18, 21], // thumbs up
-        [4, 36], //rip
-        [9, 20], // shaka brah
-        [9, 21], // make it rain
-        [9, 33], // rainbow flag
-        [9, 10] // mind blown
+      [1, 64], // 100
+      [9, 20], // shaka brah
+      [9, 21], // make it rain
+      [9, 33], // rainbow flag
+      [1, 64], // 100
+      [9, 20], // shaka brah
+      [9, 21], // make it rain
+      [9, 33], // rainbow flag
+      [1, 64], // 100
+      [9, 20], // shaka brah
+      [9, 21], // make it rain
+      [9, 33], // rainbow flag
+      [1, 64], // 100
+      [9, 20], // shaka brah
+      [9, 21], // make it rain
+      [9, 33] // rainbow flag
     ],
     2: [
         [4, 36], // lots of rips
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
         [4, 36],
         [4, 36],
         [4, 36],
@@ -102,13 +119,19 @@ function postEmojis(emojiSet) {
         [1, 64], // 100
         [9, 10], // mind blown
         [1, 64], // 100
+        [9, 10], // mind blown
+        [1, 64], // 100
+        [9, 10], // mind blown
+        [1, 64], // 100
+        [9, 10], // mind blown
+        [1, 64], // 100
         [9, 10] // mind blown
     ]
   };
 
   body = {
     "bot_id" : botID,
-    "text" : emojiPlaceholder.repeat(10),
+    "text" : emojiPlaceholder.repeat(16),
     "attachments": [{
       "type": "emoji",
       "placeholder": emojiPlaceholder,
