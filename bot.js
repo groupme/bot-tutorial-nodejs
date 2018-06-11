@@ -109,7 +109,7 @@ function postEmojis(emojiSet) {
 
   body = {
     "bot_id" : botID,
-    "text" : emojiPlaceholder.repeat(emojis[emojiSet].lenth),
+    "text" : emojiPlaceholder.repeat(emojis[emojiSet].length),
     "attachments": [{
       "type": "emoji",
       "placeholder": emojiPlaceholder,
