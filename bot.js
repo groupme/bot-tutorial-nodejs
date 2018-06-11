@@ -131,7 +131,7 @@ function postEmojis(emojiSet) {
 
   body = {
     "bot_id" : botID,
-    "text" : emojiPlaceholder.repeat(16),
+    "text" : emojiPlaceholder,
     "attachments": [{
       "type": "emoji",
       "placeholder": emojiPlaceholder,
