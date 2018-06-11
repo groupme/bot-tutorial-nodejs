@@ -64,7 +64,6 @@ function postMessage(message) {
 
 function postEmojis(emojiSet) {
   var options, body, botReq;
-  var emojiPlaceholder = '☃';
 
   options = {
     hostname: 'api.groupme.com',
@@ -131,10 +130,10 @@ function postEmojis(emojiSet) {
 
   body = {
     "bot_id" : botID,
-    "text" : emojiPlaceholder,
+    "text" : '☃'.repeat(16),
     "attachments": [{
       "type": "emoji",
-      "placeholder": emojiPlaceholder,
+      "placeholder": '☃',
       "charmap": emojis[emojiSet]
     }]
   };
