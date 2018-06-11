@@ -8,7 +8,9 @@ function respond() {
   var hypemode = /^!hypemode/im.test(request.text),
       hype1 = /^!hype1/im.test(request.text),
       hype2 = /^!hype2/im.test(request.text),
-      hype3 = /^!hype3/im.test(request.text);
+      hype3 = /^!hype3/im.test(request.text),
+      rip = /^!rip/im.test(request.text),
+      bird = /^!bird/im.test(request.text);
 
   // she goes for the badboy type
   this.res.writeHead(200);
@@ -21,6 +23,10 @@ function respond() {
       postEmojis(3);
     } else if (hypemode) {
       postMessage('You want hype? YOU GOT IT!');
+    } else if (rip) {
+      postEmojis(4);
+    } else if (bird) {
+      postMessage('http://www.reactiongifs.com/wp-content/uploads/2013/07/finger.gif');
     } else {
       console.log("don't care");
     }
@@ -73,40 +79,40 @@ function postEmojis(emojiSet) {
 
   emojis = {
     1: [
-      [1, 64], // 100
+      [18, 21], // 100
       [9, 20], // shaka brah
       [9, 21], // make it rain
       [9, 33], // rainbow flag
-      [1, 64], // 100
+      [18, 21], // 100
       [9, 20], // shaka brah
       [9, 21], // make it rain
       [9, 33], // rainbow flag
-      [1, 64], // 100
+      [18, 21], // 100
       [9, 20], // shaka brah
       [9, 21], // make it rain
       [9, 33], // rainbow flag
-      [1, 64], // 100
+      [18, 21], // 100
       [9, 20], // shaka brah
       [9, 21], // make it rain
       [9, 33] // rainbow flag
     ],
     2: [
-        [4, 36], // lots of rips
-        [4, 36],
-        [4, 36],
-        [4, 36],
-        [4, 36],
-        [4, 36],
-        [4, 36],
-        [4, 36],
-        [4, 36],
-        [4, 36],
-        [4, 36],
-        [4, 36],
-        [4, 36],
-        [4, 36],
-        [4, 36],
-        [4, 36]
+        [8, 16],
+        [3, 11],
+        [3, 83],
+        [3, 96],
+        [3, 93],
+        [3, 81],
+        [3, 11],
+        [8, 16],
+        [8, 16],
+        [8, 16],
+        [8, 16],
+        [8, 16],
+        [8, 16],
+        [8, 16],
+        [8, 16],
+        [8, 16]
     ],
     3: [
         [1, 64], // 100
@@ -125,7 +131,25 @@ function postEmojis(emojiSet) {
         [9, 10], // mind blown
         [1, 64], // 100
         [9, 10] // mind blown
-    ]
+    ],
+    4: [
+        [4, 36], // lots of rips
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36],
+        [4, 36]
+      ],
   };
 
   body = {
