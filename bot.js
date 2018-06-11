@@ -5,8 +5,6 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
 
-  var emojiPlaceholder = '☃';
-
   var hypemode = /^!hypemode/im.test(request.text),
       hype1 = /^!hype1/im.test(request.text),
       hype2 = /^!hype2/im.test(request.text),
@@ -66,7 +64,8 @@ function postMessage(message) {
 
 function postEmojis(emojiSet) {
   var options, body, botReq;
-
+  var emojiPlaceholder = '☃';
+  
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
