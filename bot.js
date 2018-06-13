@@ -12,7 +12,7 @@ function respond() {
     this.res.writeHead(200);
     if (botRegex.test(request.text)) {
       postMessage('Mosaic time!');
-    } else if (poonamRegex.test) {
+    } else if (poonamRegex.test(request.text)) {
       postMessage('CHHE CHHE CHHE!');
     }
     this.res.end();
