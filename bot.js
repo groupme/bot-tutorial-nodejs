@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /(W|w)hat time is it\?*/;
-      poonamRegex = /(P|p)oonam (N|n)i (R|r)aat (C|c)hhe\!*/;
+      poonamRegex = /^(P|p)oonam (N|n)i (R|r)aat (C|c)hhe\!*$/;
 
   if(request.text) {
     this.res.writeHead(200);
