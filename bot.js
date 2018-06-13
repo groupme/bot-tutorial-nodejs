@@ -5,11 +5,16 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy$/;
+      botRegex = /(W|w)hat time is it\?*/;
+      poonamRegex = /^(P|p)oonam (N|n)i (R|r)aat (C|c)hhe\!*$/;
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text) {
     this.res.writeHead(200);
-    postMessage();
+    if (botRegex.test(request.text)) {
+      postMessage('Mosaic time!');
+    } else if (poonamRegex.test(request.text)) {
+      postMessage('CHHE CHHE CHHE!');
+    }
     this.res.end();
   } else {
     console.log("don't care");
@@ -18,10 +23,10 @@ function respond() {
   }
 }
 
-function postMessage() {
+function postMessage(message) {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
+  botResponse = message + ' ' + cool();
 
   options = {
     hostname: 'api.groupme.com',
