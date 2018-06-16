@@ -216,9 +216,8 @@ function postQuote() {
 }
 
 function postHelp() {
-  var msg = 'Test message\n
-            Command! SOME CRAP
-            NEW LINE?';
+  var msg;
+  msg = 'Test message\nCommand! SOME CRAP\nNEW LINE?';
 
   postMessage(msg);
 }
