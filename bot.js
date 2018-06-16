@@ -91,19 +91,12 @@ function postMessage(message) {
 }
 
 function postEmojis(emojiSet) {
-  var options, body, botReq;
+  var options, body, botReq, emojis;
 
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
     method: 'POST'
-  };
-
-  placeholders = {
-    1: ['☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃'],
-    2: ['☃☃☃☃☃☃'],
-    3: ['☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃'],
-    4: ['☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃']
   };
 
   emojis = {
@@ -131,7 +124,17 @@ function postEmojis(emojiSet) {
         [3, 96],
         [3, 93],
         [3, 81],
-        [3, 11]
+        [3, 11],
+        [3, 83],
+        [3, 96],
+        [3, 93],
+        [3, 81],
+        [3, 11],
+        [3, 83],
+        [3, 96],
+        [3, 93],
+        [3, 81],
+        [18, 21]
     ],
     3: [
         [1, 64], // 100
@@ -173,7 +176,7 @@ function postEmojis(emojiSet) {
 
   body = {
     "bot_id" : botID,
-    "text" : placeholders[emojiSet],
+    "text" : '☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃☃',
     "attachments": [{
       "type": "emoji",
       "placeholder": '☃',
