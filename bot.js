@@ -3,22 +3,7 @@ var botID = process.env.BOT_ID;
 
 var quotes = [
   '"Asher! Guess what we did!" - Ghost',
-  '"From the unbearable racket! My head!" - Asher Mir',
-  '"We\'re great at this! Good thing we already have a day job, huh?" - Ghost',
-  '"No Vex can vex us, no Taken can take us down." - Ghost',
-  '"You know what I say about you Guardian? You do things big and you do them with style." - Devrim Kay',
-  '"It\'s that falcon again. Is it following us, or are we following it?" - Ghost',
-  '"Do you feel it? Hold on to your helmet! Do you feel it? The light is back!" - Ghost',
-  '"Rawwwr, I\'m a big scary monster!" Not when the ghost and his guardian are around! "Oh no, you have defeated me! Ahhh!" - Ghost',
-  '"If information is power, then we just got a whole lot more... of... the... you know, I can\'t even finish it." - Ghost',
-  '"Woah wait wait wait wait, I\'m not ready! I had a whole thing for this... I had a charts and pictures, knew it, one time I did it all the... jeeze forget it! You know what, just forget it." - Cayde-6',
-  '"Oh Failsafe, Cayde, we cleared out your baddies and did it with style." - Ghost',
-  '"Ghost and guardian collection agency, that\'s us!" - Ghost',
-  '"And that\'s a good haul. Go us!" - Ghost',
-  '"Close the page on that guy. Are you hungry? I could eat." - Ghost',
-  '"Oh look! Look! It\'s a Vex milk waterfall! Can we stop and... awww." - Ghost',
-  '"I\'m so glad I can hear myself in the feed again. *Dooooo. Do re me fa so la ti dooooo!*" - Cayde-6',
-  '"The translation software I have here is a bit rusty, but I believe they\'re saying some extremely rude things about your mother." - Devrim Kay'
+  '"From the unbearable racket! My head!" - Asher Mir'
 ]
 
 function respond() {
