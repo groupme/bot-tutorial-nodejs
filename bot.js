@@ -9,7 +9,7 @@ var quotes = [
   '"You know what I say about you Guardian? You do things big and you do them with style." - Devrim Kay',
   '"It\'s that falcon again. Is it following us, or are we following it?" - Ghost',
   '"Do you feel it? Hold on to your helmet! Do you feel it? The light is back!" - Ghost',
-  '"\"Rawwwr, I\'m a big scary monster!\" Not when the ghost and his guardian are around! \"Oh no, you have defeated me! Ahhh!\"" - Ghost',
+  '"Rawwwr, I\'m a big scary monster!" Not when the ghost and his guardian are around! "Oh no, you have defeated me! Ahhh!" - Ghost',
   '"If information is power, then we just got a whole lot more... of... the... you know, I can\'t even finish it." - Ghost',
   '"Woah wait wait wait wait, I\'m not ready! I had a whole thing for this... I had a charts and pictures, knew it, one time I did it all the... jeeze forget it! You know what, just forget it." - Cayde-6',
   '"Oh Failsafe, Cayde, we cleared out your baddies and did it with style." - Ghost',
