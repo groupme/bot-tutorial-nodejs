@@ -18,8 +18,7 @@ var quotes = [
   '"Close the page on that guy. Are you hungry? I could eat." - Ghost',
   '"Oh look! Look! It\'s a Vex milk waterfall! Can we stop and... awww." - Ghost',
   '"I\'m so glad I can hear myself in the feed again. *Dooooo. Do re me fa so la ti dooooo!*" - Cayde-6',
-  '"The translation software I have here is a bit rusty, but I believe they\'re saying some extremely rude things about your mother." - Devrim Kay',
-  'JB was here'
+  '"The translation software I have here is a bit rusty, but I believe they\'re saying some extremely rude things about your mother." - Devrim Kay'
 ]
 
 function respond() {
@@ -32,7 +31,8 @@ function respond() {
       bird = /^!bird/im.test(request.text),
       nope = /^!nope/im.test(request.text),
       quote = /^!quote/im.test(request.text),
-      help = /^!help/im.test(request.text);
+      help = /^!help/im.test(request.text),
+      clap = /^!clap/im.test(request.text);
 
   // she goes for the badboy type
   this.res.writeHead(200);
@@ -53,6 +53,8 @@ function respond() {
       postQuote();
     } else if (help) {
       postHelp();
+    } else if (clap) {
+      postMessage('https://i.groupme.com/450x234.gif.b81338002ff74cd289b9b58e6ded81f1.large');
     } else {
       console.log("don't care");
     }
