@@ -30,7 +30,8 @@ function respond() {
       rip = /^!rip/im.test(request.text),
       bird = /^!bird/im.test(request.text),
       nope = /^!nope/im.test(request.text),
-      quote = /^!quote/im.test(request.text);
+      quote = /^!quote/im.test(request.text),
+      help = /^!help/im.test(request.text);
 
   // she goes for the badboy type
   this.res.writeHead(200);
@@ -49,6 +50,8 @@ function respond() {
       postMessage('http://gif-finder.com/wp-content/uploads/2017/04/Danny-DeVito-Nope.gif');
     } else if (quote) {
       postQuote();
+    } else if (help) {
+      postHelp();
     } else {
       console.log("don't care");
     }
@@ -210,6 +213,14 @@ function postQuote() {
   var x = Math.floor(Math.random() * i);
 
   postMessage(quotes[x]);
+}
+
+function postHelp() {
+  var msg = 'Test message\n
+            Command! SOME CRAP
+            NEW LINE?';
+
+  postMessage(msg);
 }
 
 exports.respond = respond;
