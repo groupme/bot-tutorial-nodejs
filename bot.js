@@ -1,6 +1,11 @@
 var HTTPS = require('https');
-
 var botID = process.env.BOT_ID;
+
+var quotes = [
+  'Quote 1',
+  'Quote 2',
+  'Quote 3'
+]
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]);
@@ -11,7 +16,8 @@ function respond() {
       hype3 = /^!hype3/im.test(request.text),
       rip = /^!rip/im.test(request.text),
       bird = /^!bird/im.test(request.text),
-      nope = /^!nope/im.test(request.text);
+      nope = /^!nope/im.test(request.text),
+      quote = /^!quote/im.test(request.text);
 
   // she goes for the badboy type
   this.res.writeHead(200);
@@ -30,6 +36,8 @@ function respond() {
       postMessage('http://www.reactiongifs.com/wp-content/uploads/2013/07/finger.gif');
     } else if (nope) {
       postMessage('http://gif-finder.com/wp-content/uploads/2017/04/Danny-DeVito-Nope.gif');
+    } else if (quote) {
+      postQuote();
     } else {
       console.log("don't care");
     }
@@ -183,5 +191,11 @@ function postEmojis(emojiSet) {
   botReq.end(JSON.stringify(body));
 }
 
+function postQuote() {
+  var i = quotes.length;
+  var x = Math.floor(Math.random() * i);
+
+  postMessage(quotes[x]);
+}
 
 exports.respond = respond;
