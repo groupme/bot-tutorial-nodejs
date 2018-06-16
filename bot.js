@@ -4,7 +4,7 @@ var botID = process.env.BOT_ID;
 var quotes = [
   'Quote',
   'Quote1',
-  'Quote2'
+  'Quote'
 ]
 
 function respond() {
