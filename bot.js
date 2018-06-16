@@ -2,8 +2,9 @@ var HTTPS = require('https');
 var botID = process.env.BOT_ID;
 
 var quotes = [
-  '"Asher! Guess what we did!" - Ghost',
-  '"From the unbearable racket! My head!" - Asher Mir'
+  'Quote',
+  'Quote1',
+  'Quote2'
 ]
 
 function respond() {
