@@ -4,12 +4,12 @@ var botID = process.env.BOT_ID;
 var quotes = [
   'Asher! Guess what we did! - Ghost',
   'Ooh, look! Look! It\'s a Vex milk waterfall! - Ghost',
-  'From the unbearable racket! My head! - Asher Mir'.
+  'From the unbearable racket! My head! - Asher Mir',
   'We\'re great at this! Good thing we already have a day job, huh? - Ghost',
   'No Vex can vex us, no Taken can take us down.',
   'You know what I say about you Guardian? You do things big and you do them with style. - Devrim Kay',
   'It\'s that falcon again. Is it following us, or are we following it? - Ghost',
-  'Do you feel it? Hold on to your helmet! Do you feel it? The light is back! - Ghost'
+  'Do you feel it? Hold on to your helmet! Do you feel it? The light is back!'
 ]
 
 function respond() {
