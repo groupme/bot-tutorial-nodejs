@@ -217,7 +217,7 @@ function postQuote() {
 
 function postHelp() {
   var msg;
-  msg = 'Test message\nCommand! SOME CRAP\nNEW LINE?';
+  msg = 'Deej Help\n!hype1, !hype2, !hype3: Post awesome hype message!\n!quote: Post awesome Destiny 2 quote!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!rip: riiiiip';
 
   postMessage(msg);
 }
