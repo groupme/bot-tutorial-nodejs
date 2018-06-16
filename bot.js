@@ -173,7 +173,7 @@ function postEmojis(emojiSet) {
 
   body = {
     "bot_id" : botID,
-    "text" : '☃☃☃☃☃☃☃☃',
+    "text" : placeholders[emojiSet],
     "attachments": [{
       "type": "emoji",
       "placeholder": '☃',
