@@ -23,7 +23,8 @@ var quotes = [
   '"Does that fallen look like a transmat thieving thief to you? He looks like a transmat theieving theif to me." - Ghost',
   '"That one. That one\'s gotta me a transmat thieving thief. He looks even thiefier than the first one." - Ghost',
   '"While I cannot condone theft, I do appreciate payback." - Zavala',
-  '"Only my captain can access those memories. And he\'s super dead." - Failsafe'
+  '"Only my captain can access those memories. And he\'s super dead." - Failsafe',
+  '"Got em! We got their spire. You should have seen us, we were amazing!" - Ghost'
 ]
 
 function respond() {
