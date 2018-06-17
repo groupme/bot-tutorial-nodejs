@@ -19,7 +19,8 @@ var quotes = [
   '"Oh look! Look! It\'s a Vex milk waterfall! Can we stop and... awww." - Ghost',
   '"I\'m so glad I can hear myself in the feed again. *Dooooo. Do re me fa so la ti dooooo!*" - Cayde-6',
   '"The translation software I have here is a bit rusty, but I believe they\'re saying some extremely rude things about your mother." - Devrim Kay',
-  '"I used a pretty nasty word to describe Ghaul. I don\'t want to repeat it here." - Ghost'
+  '"I used a pretty nasty word to describe Ghaul. I don\'t want to repeat it here." - Ghost',
+  '"Does that fallen look like a transmat thieving thief to you? He looks like a transmat theieving theif to me." - Ghost'
 ]
 
 function respond() {
