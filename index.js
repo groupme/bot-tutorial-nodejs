@@ -1,8 +1,9 @@
-var http, director, cool, bot, router, server, port;
+var dVer = 'v1.0.3'
+
+var http, director, bot, router, server, port;
 
 http        = require('http');
 director    = require('director');
-cool        = require('cool-ascii-faces');
 bot         = require('./bot.js');
 
 router = new director.http.Router({
@@ -29,5 +30,5 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end('I am Deej! v0.1.13');
+  this.res.end('I am Deej! ' + dVer);
 }
