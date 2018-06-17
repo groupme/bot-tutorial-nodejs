@@ -218,7 +218,7 @@ function postQuote() {
   var i = quotes.length;
   var x = Math.floor(Math.random() * i);
 
-  postMessage(quotes[x]);
+  postMessage(quotes[x] + ' ('+x+'/'+i+')');
 }
 
 function postHelp() {
