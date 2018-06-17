@@ -18,7 +18,8 @@ var quotes = [
   '"Close the page on that guy. Are you hungry? I could eat." - Ghost',
   '"Oh look! Look! It\'s a Vex milk waterfall! Can we stop and... awww." - Ghost',
   '"I\'m so glad I can hear myself in the feed again. *Dooooo. Do re me fa so la ti dooooo!*" - Cayde-6',
-  '"The translation software I have here is a bit rusty, but I believe they\'re saying some extremely rude things about your mother." - Devrim Kay'
+  '"The translation software I have here is a bit rusty, but I believe they\'re saying some extremely rude things about your mother." - Devrim Kay',
+  '"I used a pretty nasty word to describe Ghaul. I don\'t want to repeat it here." - Ghost'
 ]
 
 function respond() {
@@ -220,7 +221,7 @@ function postQuote() {
 
 function postHelp() {
   var msg;
-  msg = 'Deej Help\n!hype1, !hype2, !hype3: Post awesome hype message!\n!quote: Post awesome Destiny 2 quote!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!rip: riiiiip\n!clap: Applause!';
+  msg = 'Deej Help\n!hype1, !hype2, !hype3: Post awesome hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!rip: riiiiip\n!clap: Applause!';
 
   postMessage(msg);
 }
