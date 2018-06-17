@@ -222,7 +222,7 @@ function postQuote() {
   var i = quotes.length;
   var x = Math.floor(Math.random() * i);
 
-  postMessage(quotes[x] + ' ('+x+'/'+i+')');
+  postMessage(quotes[x] + ' (' + (x+1) + '/' + i + ')');
 }
 
 function postHelp() {
