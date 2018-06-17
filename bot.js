@@ -24,7 +24,8 @@ var quotes = [
   '"That one. That one\'s gotta me a transmat thieving thief. He looks even thiefier than the first one." - Ghost',
   '"While I cannot condone theft, I do appreciate payback." - Zavala',
   '"Only my captain can access those memories. And he\'s super dead." - Failsafe',
-  '"Got em! We got their spire. You should have seen us, we were amazing!" - Ghost'
+  '"Got em! We got their spire. You should have seen us, we were amazing!" - Ghost',
+  '"Stay in the shadows. THE SHADOWS!" - Ghost'
 ]
 
 function respond() {
