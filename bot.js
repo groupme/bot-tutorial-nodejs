@@ -39,7 +39,8 @@ function respond() {
       nope = /^!nope/im.test(request.text),
       quote = /^!quote/im.test(request.text),
       help = /^!help/im.test(request.text),
-      clap = /^!clap/im.test(request.text);
+      clap = /^!clap/im.test(request.text),
+      twab = /^!twab/im.test(request.text);
 
   // she goes for the badboy type
   this.res.writeHead(200);
@@ -62,6 +63,8 @@ function respond() {
       postHelp();
     } else if (clap) {
       postMessage('https://i.groupme.com/450x234.gif.b81338002ff74cd289b9b58e6ded81f1.large');
+    } else if (twab) {
+      postMessage('http://vaporl.ink/twab');
     } else {
       console.log("don't care");
     }
@@ -227,7 +230,7 @@ function postQuote() {
 
 function postHelp() {
   var msg;
-  msg = 'Deej Help\n!hype1, !hype2, !hype3: Post awesome hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!rip: riiiiip\n!clap: Applause!';
+  msg = 'Deej Help\n!hype1, !hype2, !hype3: Post awesome hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!rip: riiiiip\n!clap: Applause!\n!twab: This Week at Bungie link';
 
   postMessage(msg);
 }
