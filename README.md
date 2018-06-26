@@ -1,15 +1,15 @@
-# Sample GroupMe NodeJS Callback Bot
+# GroupMe Destiny 2 Bot **"Deej"**
 
 ## Introduction
 
-This project shows the capability of a bot to react to messages sent within a group.
+This bot will hang out in your group and respond to commands.
 
 ## Contents
 
   * [Quickly get our sample bot up and running in your groups](#deploy)
     * Deploy the code to heroku
     * Create a bot
-    * Configure to your bot's credentials
+    * Configure your bot's credentials
   * [Make changes to the bot](#pull)
     * Pull the code down to your local machine
     * Configure the local environment variables to your bot's credentials
@@ -146,4 +146,3 @@ Then navigate to `http://127.0.0.1:5000/` in a browser.
 ![Local bot](http://i.groupme.com/502x133.png.f06c630467954f5dab4c742dc67b71bf)
 
 ## All done! Go play around and make the bot your own.
-
