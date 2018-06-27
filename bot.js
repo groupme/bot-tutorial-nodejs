@@ -49,16 +49,15 @@ function respond() {
   if (request.text) {
     if (hype) {
       var rn = Math.floor(Math.random() * Math.floor(2));
-      rn = rn + 1;
       postEmojis(rn);
     } else if (hype1) {
-      postEmojis(1);
+      postEmojis(0);
     } else if (hype2) {
-      postEmojis(2);
+      postEmojis(1);
     } else if (hype3) {
-      postEmojis(3);
+      postEmojis(2);
     } else if (rip) {
-      postEmojis(4);
+      postEmojis(3);
     } else if (bird) {
       postMessage('http://www.reactiongifs.com/wp-content/uploads/2013/07/finger.gif');
     } else if (nope) {
@@ -124,7 +123,7 @@ function postEmojis(emojiSet) {
   };
 
   emojis = {
-    1: [
+    0: [
       [18, 21], // 100
       [9, 20], // shaka brah
       [9, 21], // make it rain
@@ -142,7 +141,7 @@ function postEmojis(emojiSet) {
       [9, 21], // make it rain
       [9, 33] // rainbow flag
     ],
-    2: [
+    1: [
         [3, 11],
         [3, 83],
         [3, 96],
@@ -160,7 +159,7 @@ function postEmojis(emojiSet) {
         [3, 81],
         [3, 11]
     ],
-    3: [
+    2: [
         [1, 64], // 100
         [9, 10], // mind blown
         [1, 64], // 100
@@ -178,7 +177,7 @@ function postEmojis(emojiSet) {
         [1, 64], // 100
         [9, 10] // mind blown
     ],
-    4: [
+    3: [
         [4, 36], // lots of rips
         [4, 36],
         [4, 36],
