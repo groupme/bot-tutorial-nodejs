@@ -48,7 +48,9 @@ function respond() {
   this.res.writeHead(200);
   if (request.text) {
     if (hype) {
-      postEmojis(Random().nextInt(2)+1)
+      var rn = Math.floor(Math.random() * Math.floor(2));
+      rn = rn + 1;
+      postEmojis(rn);
     } else if (hype1) {
       postEmojis(1);
     } else if (hype2) {
