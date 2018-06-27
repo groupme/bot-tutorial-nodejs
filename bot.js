@@ -237,7 +237,7 @@ function postQuote() {
 
 function postHelp() {
   var msg;
-  msg = 'Deej Help\n!hype1, !hype2, !hype3: Post awesome hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!rip: riiiiip\n!clap: Applause!\n!twab: This Week at Bungie link\n!kujay: Live picture of THE MAN HIMSELF';
+  msg = 'Deej Help\n!hype: Post random hype message!\n!hype1, !hype2, !hype3: Post a specific hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!rip: riiiiip\n!clap: Applause!\n!twab: This Week at Bungie link\n!kujay: Live picture of THE MAN HIMSELF';
   postMessage(msg);
 }
 
