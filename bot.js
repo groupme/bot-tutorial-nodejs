@@ -41,12 +41,15 @@ function respond() {
       help = /^!help/im.test(request.text),
       clap = /^!clap/im.test(request.text),
       twab = /^!twab/im.test(request.text),
-      kujay = /^!kujay/im.test(request.text);
+      kujay = /^!kujay/im.test(request.text),
+      hype = /!hype$/im.test(request.text);
 
   // she goes for the badboy type
   this.res.writeHead(200);
   if (request.text) {
-    if (hype1) {
+    if (hype) {
+      postEmojis(Random().nextInt(2)+1)
+    } else if (hype1) {
       postEmojis(1);
     } else if (hype2) {
       postEmojis(2);
