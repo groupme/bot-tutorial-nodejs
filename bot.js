@@ -25,7 +25,9 @@ var quotes = [
   '"While I cannot condone theft, I do appreciate payback." - Zavala',
   '"Only my captain can access those memories. And he\'s super dead." - Failsafe',
   '"Got em! We got their spire. You should have seen us, we were amazing!" - Ghost',
-  '"Stay in the shadows. THE SHADOWS!" - Ghost'
+  '"Stay in the shadows. THE SHADOWS!" - Ghost',
+  '"And that\'s a good haul. GO US!" - Ghost',
+  '"Dear Failsafe and Cayde, we got your stuff and we are awesome. Signed Ghost" - Ghost'
 ]
 
 function respond() {
