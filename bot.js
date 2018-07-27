@@ -44,6 +44,7 @@ function respond() {
       clap = /^!clap/im.test(request.text),
       twab = /^!twab/im.test(request.text),
       kujay = /^!kujay/im.test(request.text),
+      yep = /^!yep/im.test(request.text),
       hype = /!hype$/im.test(request.text);
 
   // she goes for the badboy type
@@ -74,6 +75,8 @@ function respond() {
       postMessage('http://vaporl.ink/twab');
     } else if (kujay) {
       postMessage('https://static-cdn.jtvnw.net/previews-ttv/live_user_kujay-640x360.jpg');
+    } else if (yep) {
+      postMessage('http://nvn.io/img/yep.gif');
     } else {
       console.log("don't care");
     }
@@ -234,12 +237,12 @@ function postQuote() {
   var i = quotes.length;
   var x = Math.floor(Math.random() * i);
 
-  postMessage(quotes[x] + ' (' + (x+1) + '/' + i + ')');
+  postMessage(quotes[x]);
 }
 
 function postHelp() {
   var msg;
-  msg = 'Deej Help\n!hype: Post random hype message!\n!hype1, !hype2, !hype3: Post a specific hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!rip: riiiiip\n!clap: Applause!\n!twab: This Week at Bungie link\n!kujay: Live picture of THE MAN HIMSELF';
+  msg = 'Deej Help\n!hype: Post random hype message!\n!hype1, !hype2, !hype3: Post a specific hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!yep: YEP\n!rip: riiiiip\n!clap: Applause!\n!twab: This Week at Bungie link\n!kujay: Live picture of THE MAN HIMSELF';
   postMessage(msg);
 }
 
