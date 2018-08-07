@@ -45,6 +45,7 @@ function respond() {
       twab = /^!twab/im.test(request.text),
       kujay = /^!kujay/im.test(request.text),
       yep = /^!yep/im.test(request.text),
+      goose = /^!goose/im.test(request.text),
       hype = /!hype$/im.test(request.text);
 
   // she goes for the badboy type
@@ -71,6 +72,8 @@ function respond() {
       postHelp();
     } else if (clap) {
       postMessage('https://i.groupme.com/450x234.gif.b81338002ff74cd289b9b58e6ded81f1.large');
+    } else if (goose) {
+      postMessage('https://i.groupme.com/327x266.gif.1214f9ea0a9045dd99fbe6d8b757838f.large');
     } else if (twab) {
       postMessage('http://vaporl.ink/twab');
     } else if (kujay) {
@@ -242,7 +245,7 @@ function postQuote() {
 
 function postHelp() {
   var msg;
-  msg = 'Deej Help\n!hype: Post random hype message!\n!hype1, !hype2, !hype3: Post a specific hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!yep: YEP\n!rip: riiiiip\n!clap: Applause!\n!twab: This Week at Bungie link\n!kujay: Live picture of THE MAN HIMSELF';
+  msg = 'Deej Help\n!hype: Post random hype message!\n!hype1, !hype2, !hype3: Post a specific hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!yep: YEP\n!rip: riiiiip\n!clap: Applause!\n!twab: This Week at Bungie link\n!kujay: Live picture of THE MAN HIMSELF\n!goose: goose is ANGRY';
   postMessage(msg);
 }
 
