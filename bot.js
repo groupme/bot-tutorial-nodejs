@@ -13,25 +13,13 @@ function respond() {
       chuckRegex = /^\/chuck/,
       ligmaRegex = /Ligma/;
 
-  if(request.text && lostRegex.test(request.text)) {
-    this.res.writeHead(200);
-    postLostMessage();
-    this.res.end();
-  }else if(request.text && winRegex.test(request.text)) {
-    this.res.writeHead(200);
-    postWinMessage();
-    this.res.end();
-  }else if(request.text && helloRegex.test(request.text)) {
-    this.res.writeHead(200);
-    postHelloMessage();
-    this.res.end();
-  }else if(request.text && dogHouseRegex.test(request.text)) {
-    this.res.writeHead(200);
-    postDoghouseMessage();
-    this.res.end();
-  }else if(request.text && quoteRegex.test(request.text)) {
+  if(request.text && quoteRegex.test(request.text)) {
     this.res.writeHead(200);
     postQuoteMessage();
+    this.res.end();
+  }else if(request.text && ligmaRegex.test(request.text)) {
+    this.res.writeHead(200);
+    postLigmaMessage();
     this.res.end();
   }else if(request.text && jokeRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -164,10 +152,10 @@ function postQuoteMessage() {
   botReq.end(JSON.stringify(body));
 }
 
-function postHelloMessage() {
+function postLigmaMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
+  botResponse = "What's Ligma?";
 
   options = {
     hostname: 'api.groupme.com',
