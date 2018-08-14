@@ -31,6 +31,10 @@ function respond() {
     this.res.writeHead(200);
     postChuckMessage();
     this.res.end();
+  }else if(request.text && request.text=="Who's that Pokemon?" && request.user_id=="26558043") {
+    this.res.writeHead(200);
+    postPokemonMessage();
+    this.res.end();
   }else {
     console.log("don't care");
     this.res.writeHead(200);
@@ -189,10 +193,10 @@ function postLigmaMessage() {
   botReq.end(JSON.stringify(body));
 }
 
-function postWinMessage() {
+function postPokemonMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = "https://i.groupme.com/245x170.gif.d26e616bac8e4ff092d24d399b167915.large";
+  botResponse = "Gulpin";
 
   options = {
     hostname: 'api.groupme.com',
