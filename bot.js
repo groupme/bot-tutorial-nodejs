@@ -8,13 +8,10 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      winRegex = /^\E we won$/,
-      lostRegex = /^\E we lost$/,
-      helloRegex = /^\Hey E$/,
-      dogHouseRegex = /^\/Doghouse$/,
       quoteRegex = /^\/quote/,
       jokeRegex = /^\/joke/,
-      chuckRegex = /^\/chuck/;
+      chuckRegex = /^\/chuck/,
+      ligmaRegex = /Ligma/;
 
   if(request.text && lostRegex.test(request.text)) {
     this.res.writeHead(200);
