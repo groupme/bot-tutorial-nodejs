@@ -21,7 +21,7 @@ function respond() {
     this.res.writeHead(200);
     postLigmaMessage();
     this.res.end();
-  }else if(request.text && jokeRegex.test(request.text) && !request.text.test("What's Ligma?")) {
+  }else if(request.text && jokeRegex.test(request.text) && request.text!="What's Ligma?") {
     this.res.writeHead(200);
     postJokeMessage();
     this.res.end();
