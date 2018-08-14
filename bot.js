@@ -13,7 +13,7 @@ function respond() {
       chuckRegex = /^\/chuck/,
       ligmaRegex = /Ligma/;
 
-  console.log(request.id);
+  console.log(request.user_id);
   
   if(request.text && quoteRegex.test(request.text)) {
     this.res.writeHead(200);
