@@ -17,11 +17,11 @@ function respond() {
     this.res.writeHead(200);
     postQuoteMessage();
     this.res.end();
-  }else if(request.text && ligmaRegex.test(request.text)) {
+  }else if(request.text && ligmaRegex.test(request.text) && request.text!="What's Ligma?") {
     this.res.writeHead(200);
-    //postLigmaMessage();
+    postLigmaMessage();
     this.res.end();
-  }else if(request.text && jokeRegex.test(request.text) && request.text!="What's Ligma?") {
+  }else if(request.text && jokeRegex.test(request.text)) {
     this.res.writeHead(200);
     postJokeMessage();
     this.res.end();
