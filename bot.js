@@ -19,14 +19,14 @@ function respond() {
     this.res.writeHead(200);
     postQuoteMessage();
     this.res.end();
-  }else if(request.text && ligmaRegex.test(request.text) && request.sender_type!="bot") {
-    this.res.writeHead(200);
-    postLigmaMessage();
-    this.res.end();  
   }else if(request.text && (request.text=="What's Ligma?"||request.text=="what's ligma?"||request.text=="What's ligma?"||request.text=="whats ligma?") && request.sender_type!="bot") {
     this.res.writeHead(200);
     postLigmaBallsMessage();
     this.res.end();
+  }else if(request.text && ligmaRegex.test(request.text) && request.sender_type!="bot") {
+    this.res.writeHead(200);
+    postLigmaMessage();
+    this.res.end();  
   }else if(request.text && jokeRegex.test(request.text)) {
     this.res.writeHead(200);
     postJokeMessage();
