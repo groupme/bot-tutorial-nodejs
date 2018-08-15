@@ -8,14 +8,17 @@
   },
   "dependencies": {
     "director": "",
-    "cool-ascii-faces": "~1.3.x"
+    "cool-ascii-faces": "~1.3.x",
+    "starwars": "1.0.0",
+    "one-liner-joke":"1.0.0",
+    "chuck-norris-jokes":"0.1.1"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "8.11.x"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/GTLucas/bot-tutorial-nodejs"
   },
   "keywords": [
     "node",
