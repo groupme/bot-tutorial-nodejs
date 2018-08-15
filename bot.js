@@ -22,7 +22,12 @@ function respond() {
   }else if(request.text && ligmaRegex.test(request.text) && request.text!="What's Ligma?") {
     this.res.writeHead(200);
     postLigmaMessage();
+    this.res.end();  
+  }else if(request.text && (request.text=="What's Ligma?"||request.text=="what's ligma?"||request.text=="What's ligma?"||request.text=="whats ligma?") && request.sender_type!="bot") {
+    this.res.writeHead(200);
+    postLigmaBallsMessage();
     this.res.end();
+  
   }else if(request.text && jokeRegex.test(request.text)) {
     this.res.writeHead(200);
     postJokeMessage();
@@ -162,6 +167,41 @@ function postLigmaMessage() {
   var botResponse, options, body, botReq;
 
   botResponse = "What's Ligma?";
+
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  body = {
+    "bot_id" : botID,
+    "text" : botResponse
+  };
+
+  console.log('sending ' + botResponse + ' to ' + botID);
+
+  botReq = HTTPS.request(options, function(res) {
+      if(res.statusCode == 202) {
+        //neat
+      } else {
+        console.log('rejecting bad status code ' + res.statusCode);
+      }
+  });
+
+  botReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  botReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  botReq.end(JSON.stringify(body));
+}
+
+function postLigmaBallsMessage() {
+  var botResponse, options, body, botReq;
+
+  botResponse = "Ligma balls";
 
   options = {
     hostname: 'api.groupme.com',
