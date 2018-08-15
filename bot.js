@@ -19,7 +19,7 @@ function respond() {
     this.res.writeHead(200);
     postQuoteMessage();
     this.res.end();
-  }else if(request.text && ligmaRegex.test(request.text) && request.text!="What's Ligma?") {
+  }else if(request.text && ligmaRegex.test(request.text) && request.sender_type!="bot") {
     this.res.writeHead(200);
     postLigmaMessage();
     this.res.end();  
@@ -27,7 +27,6 @@ function respond() {
     this.res.writeHead(200);
     postLigmaBallsMessage();
     this.res.end();
-  
   }else if(request.text && jokeRegex.test(request.text)) {
     this.res.writeHead(200);
     postJokeMessage();
