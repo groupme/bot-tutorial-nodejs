@@ -21,7 +21,10 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = 'ram ranch rocks';
+  botResponse = '18 naked cowboys in the showers at Ram Ranch! Big hard 
+throbbing c*cks wanting to be sucked! 18 naked cowboys wanting to be 
+f*cked! Cowboys in the showers at Ram Ranch! On their knees wanting to  
+suck cowboy c*cks! Ram Ranch really rocks!';
 
   options = {
     hostname: 'api.groupme.com',
