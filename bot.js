@@ -1,11 +1,11 @@
 var HTTPS = require('https');
-var cool = require('ram ranch!');
+var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\ram ranch?$/;
+      botRegex = /^\/cool guy$/;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
