@@ -21,7 +21,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
+  botResponse = 'ram ranch rocks';
 
   options = {
     hostname: 'api.groupme.com',
