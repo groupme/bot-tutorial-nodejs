@@ -2,7 +2,7 @@ var http, director, cool, bot, router, server, port;
 
 http        = require('http');
 director    = require('director');
-cool        = require('cool-ascii-faces');
+cool        = require('ram ranch!');
 bot         = require('./bot.js');
 
 router = new director.http.Router({

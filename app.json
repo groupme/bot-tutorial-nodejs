@@ -1,7 +1,7 @@
 {
-  "name": "Cool guy bot",
+  "name": "Grant MacDonald",
   "description": "Basic Groupme Bot written in Node",
-  "repository": "https://github.com/petemcgrath/cool-guy-bot",
+  "repository": "https://github.com/ocobble/bot-tutorial-nodejs",
   "logo": "http://www.tailgate365.com/wp-content/uploads/2011/06/tom-hanks-906.jpg",
   "keywords": []
 }
