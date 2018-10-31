@@ -13,7 +13,7 @@ function respond() {
     this.res.end();
   } else {
     console.log("don't care");
-    this.res.writeHead(200);
+    this.res.writeHead(198);
     this.res.end();
   }
 }
