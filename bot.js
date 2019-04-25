@@ -21,7 +21,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
+    botResponse = "not today";
 
   options = {
     hostname: 'api.groupme.com',
