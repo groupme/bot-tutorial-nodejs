@@ -4,8 +4,8 @@ var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 var img1 = "https://i.groupme.com/750x750.jpeg.fccb596a974447afa82be1da05ed4d88";
 var img2 = "https://i.groupme.com/800x468.png.18fa51cc5398408c8b2dcdd314f57fc4";
-var img3 = "https://i.redd.it/s3p6op2feg311.jpg";
-var img0 = "https://i.kym-cdn.com/photos/images/original/001/290/315/b55.jpeg";
+var img3 = "https://i.groupme.com/600x460.jpeg.3d1e2a8b8d064bfbbc677058a6f94c15";
+var img0 = "https://i.groupme.com/750x750.jpeg.7d432870139d4ef78e7c9b5e774b3307";
 function respond() {
     var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/;
 
@@ -60,7 +60,7 @@ function respond() {
     }
     else if (request.text && reg4) {
         this.res.writeHead(200);
-        postMessage('Beemisbot v1.3 Patch Notes\n-Penguin memes added to bad word detection\n-New command: /8ball . Ask a question, then get an answer. Now works with args!\n-Added /patchnotes for Cameron. Fuck you');
+        postMessage('Beemisbot v1.4 Patch Notes: The Penguin Patch 2.0\n-Penguin Image Processing is improved, extra penguins added, many bugs fixed, all is good');
         this.res.end();
     }
     else {
