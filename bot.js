@@ -106,10 +106,9 @@ function postMessage(message) {
 }
 
 function postImage(image) {
-    var botImg, options, body, botReq, botMsg;
+    var botImg, options, body, botReq;
 
     botImg = image;
-    botMsg = message;
 
     options = {
         hostname: 'api.groupme.com',
