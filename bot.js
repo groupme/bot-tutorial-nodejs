@@ -2,8 +2,8 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-var img1 = "https://cdn140.picsart.com/255723723020202.jpg";
-var img2 = "https://img.fireden.net/v/image/1540/77/1540777065833.png";
+var img1 = "https://i.groupme.com/750x750.jpeg.fccb596a974447afa82be1da05ed4d88";
+var img2 = "https://i.groupme.com/800x468.png.18fa51cc5398408c8b2dcdd314f57fc4";
 var img3 = "https://i.redd.it/s3p6op2feg311.jpg";
 var img0 = "https://i.kym-cdn.com/photos/images/original/001/290/315/b55.jpeg";
 function respond() {
@@ -23,16 +23,18 @@ function respond() {
         this.res.writeHead(200);
         switch (Math.floor(Math.random() * 3)) {
             case 0:
-                postMessage(img0);
+                postImage(img0);
                 break;
             case 1:
-                postMessage(img1);
+                postImage(img1);
                 break;
             case 2:
-                postMessage(img2);
+                postImage(img2);
                 break;
+            case 3:
+                postImage(img3)
             default:
-                postMessage(img3);
+                postMessage('oh god oh fuck');
                 break;
         }
         postMessage('YOU CAN\'T SAY THAT THAT\'S RACIST');
@@ -101,6 +103,45 @@ function postMessage(message) {
     console.log('timeout posting message '  + JSON.stringify(err));
   });
   botReq.end(JSON.stringify(body));
+}
+
+function postImage(image) {
+    var botImg, options, body, botReq, botMsg;
+
+    botImg = image;
+    botMsg = message;
+
+    options = {
+        hostname: 'api.groupme.com',
+        path: '/v3/bots/post',
+        method: 'POST'
+    };
+
+    body = {
+        "bot_id": botID,
+        "attatchments": [
+            "type": "image",
+            "url": botResponse
+        ]
+    };
+
+    console.log('sending ' + botResponse + ' to ' + botID);
+
+    botReq = HTTPS.request(options, function (res) {
+        if (res.statusCode == 202) {
+            //neat
+        } else {
+            console.log('rejecting bad status code ' + res.statusCode);
+        }
+    });
+
+    botReq.on('error', function (err) {
+        console.log('error posting message ' + JSON.stringify(err));
+    });
+    botReq.on('timeout', function (err) {
+        console.log('timeout posting message ' + JSON.stringify(err));
+    });
+    botReq.end(JSON.stringify(body));
 }
 
 
