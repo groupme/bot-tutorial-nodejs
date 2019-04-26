@@ -2,7 +2,10 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
-
+var img1 = "https://cdn140.picsart.com/255723723020202.jpg";
+var img2 = "https://img.fireden.net/v/image/1540/77/1540777065833.png";
+var img3 = "https://i.redd.it/s3p6op2feg311.jpg";
+var img0 = "https://i.kym-cdn.com/photos/images/original/001/290/315/b55.jpeg";
 function respond() {
     var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/;
 
@@ -16,6 +19,21 @@ function respond() {
     }
     else if (request.text && reg2) {
         this.res.writeHead(200);
+        
+        switch (Math.floor(Math.random() * 3)) {
+            case 0:
+                postMessage(img0);
+                break;
+            case 1:
+                postMessage(img1);
+                break;
+            case 2:
+                postMessage(img2);
+                break;
+            default:
+                postMessage(img3);;
+                break;
+        }
         postMessage('YOU CAN\'T SAY THAT THAT\'S RACIST');
         this.res.end;
     }
