@@ -12,6 +12,7 @@ function respond() {
     var reg1 = botRegex1.test(request.text);
     var reg2 = botRegex2.test(request.text);
     var reg3 = botRegex3.test(request.text);
+    var reg4 = botRegex4.test(request.text);
 
     if (request.text && reg1) {
         this.res.writeHead(200);
@@ -20,7 +21,6 @@ function respond() {
     }
     else if (request.text && reg2) {
         this.res.writeHead(200);
-        
         switch (Math.floor(Math.random() * 3)) {
             case 0:
                 postMessage(img0);
@@ -59,7 +59,8 @@ function respond() {
     else if (request.text && reg4) {
         this.res.writeHead(200);
         postMessage('Beemisbot v1.3 Patch notes:');
-        postMessage('-Penguin memes added to bad word detection\n-New command: /8ball . Ask a question, then get an answer.\n-Added /patchnotes for Cameron. Fuck you')
+        postMessage('-Penguin memes added to bad word detection\n-New command: /8ball . Ask a question, then get an answer.\n-Added /patchnotes for Cameron. Fuck you');
+        this.res.end();
     }
     else {
     console.log("don't care");
