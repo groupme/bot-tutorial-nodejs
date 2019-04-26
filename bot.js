@@ -119,9 +119,11 @@ function postImage(image) {
 
     body = {
         "bot_id": botID,
-        "attatchments": [
+        "attachments": [
+            {
             "type": "image",
             "url": botResponse
+            }
         ]
     };
 
