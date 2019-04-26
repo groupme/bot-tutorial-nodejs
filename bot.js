@@ -58,8 +58,7 @@ function respond() {
     }
     else if (request.text && reg4) {
         this.res.writeHead(200);
-        postMessage('Beemisbot v1.3 Patch notes:');
-        postMessage('-Penguin memes added to bad word detection\n-New command: /8ball . Ask a question, then get an answer.\n-Added /patchnotes for Cameron. Fuck you');
+        postMessage('Beemisbot v1.3 Patch Notes\n-Penguin memes added to bad word detection\n-New command: /8ball . Ask a question, then get an answer.\n-Added /patchnotes for Cameron. Fuck you');
         this.res.end();
     }
     else {
