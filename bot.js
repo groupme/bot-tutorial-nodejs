@@ -7,7 +7,7 @@ var img2 = "https://img.fireden.net/v/image/1540/77/1540777065833.png";
 var img3 = "https://i.redd.it/s3p6op2feg311.jpg";
 var img0 = "https://i.kym-cdn.com/photos/images/original/001/290/315/b55.jpeg";
 function respond() {
-    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball$/, botRegex4 = /^\/patchnotes$/;
+    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/;
 
     var reg1 = botRegex1.test(request.text);
     var reg2 = botRegex2.test(request.text);
@@ -58,7 +58,7 @@ function respond() {
     }
     else if (request.text && reg4) {
         this.res.writeHead(200);
-        postMessage('Beemisbot v1.3 Patch Notes\n-Penguin memes added to bad word detection\n-New command: /8ball . Ask a question, then get an answer.\n-Added /patchnotes for Cameron. Fuck you');
+        postMessage('Beemisbot v1.3 Patch Notes\n-Penguin memes added to bad word detection\n-New command: /8ball . Ask a question, then get an answer. Now works with args!\n-Added /patchnotes for Cameron. Fuck you');
         this.res.end();
     }
     else {
