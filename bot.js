@@ -121,7 +121,7 @@ function postImage(image) {
         "attachments": [
             {
             "type": "image",
-            "url": botResponse
+            "url": botImg
             }
         ]
     };
