@@ -126,7 +126,7 @@ function postImage(image) {
         ]
     };
 
-    console.log('sending ' + botResponse + ' to ' + botID);
+    console.log('sending ' + botImg + ' to ' + botID);
 
     botReq = HTTPS.request(options, function (res) {
         if (res.statusCode == 202) {
