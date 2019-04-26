@@ -21,7 +21,7 @@ function respond() {
     }
     else if (request.text && reg2) {
         this.res.writeHead(200);
-        switch (Math.floor(Math.random() * 3)) {
+        switch (Math.floor(Math.random() * 4)) {
             case 0:
                 postImage(img0);
                 break;
