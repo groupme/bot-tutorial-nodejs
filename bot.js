@@ -32,7 +32,8 @@ function respond() {
                 postImage(img2);
                 break;
             case 3:
-                postImage(img3)
+                postImage(img3);
+                break;
             default:
                 postMessage('oh god oh fuck');
                 break;
