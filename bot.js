@@ -6,13 +6,12 @@ var img1 = "https://i.groupme.com/750x750.jpeg.fccb596a974447afa82be1da05ed4d88"
 var img2 = "https://i.groupme.com/800x468.png.18fa51cc5398408c8b2dcdd314f57fc4";
 var img3 = "https://i.groupme.com/600x460.jpeg.3d1e2a8b8d064bfbbc677058a6f94c15";
 var img0 = "https://i.groupme.com/750x750.jpeg.7d432870139d4ef78e7c9b5e774b3307";
-var imgThanos = "https://i.groupme.com/1399x1407.jpeg.da79f18b4ae8401da9465f0a895ad95b.large";
+var imgThanos = "https://i.groupme.com/1399x1407.jpeg.da79f18b4ae8401da9465f0a895ad95b";
 
 function respond() {
   
-    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/;
+    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegexChad = /.*endgame.*/;
     var botRegex5 = /.*[Uu]r.*[Mm]om.*[Gg]ay.*/;
-    var botRegexChad = /.*endgame.*/;
 
     var reg1 = botRegex1.test(request.text);
     var reg2 = botRegex2.test(request.text);
