@@ -10,7 +10,7 @@ var imgThanos = "https://i.groupme.com/1399x1407.jpeg.da79f18b4ae8401da9465f0a89
 
 function respond() {
   
-    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegexChad = /endgame$/;
+    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegexChad = /^\/endgame$/;
     var botRegex5 = /.*[Uu]r.*[Mm]om.*[Gg]ay.*/;
 
     var reg1 = botRegex1.test(request.text);
