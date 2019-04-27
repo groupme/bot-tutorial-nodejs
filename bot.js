@@ -72,8 +72,8 @@ function respond() {
         postMessage('Beemisbot v1.4 Patch Notes: The Penguin Patch 2.0\n-Penguin Image Processing is improved, extra penguins added, many bugs fixed, all is good');
         this.res.end();
     }
-    else if (request.test && reg5) {
-        this.res.writeHead(200);
+    else if (request.text && reg5) {
+                this.res.writeHead(200);
         console.log("gay mom detected");
         switch (Math.floor(Math.random() * 3)) {
             case 0:
