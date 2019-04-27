@@ -7,15 +7,19 @@ var img2 = "https://i.groupme.com/800x468.png.18fa51cc5398408c8b2dcdd314f57fc4";
 var img3 = "https://i.groupme.com/600x460.jpeg.3d1e2a8b8d064bfbbc677058a6f94c15";
 var img0 = "https://i.groupme.com/750x750.jpeg.7d432870139d4ef78e7c9b5e774b3307";
 var imgThanos = "https://i.groupme.com/1399x1407.jpeg.da79f18b4ae8401da9465f0a895ad95b.large";
-function respond() {
-    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegexChad = /.*[Ee]nd[Gg]ame.*/  ;
 
+function respond() {
+  
+    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/;
+    var botRegex5 = /.*[Uu]r.*[Mm]om.*[Gg]ay.*/;
+    var botRegexChad = /.*[Ee]nd[Gg]ame.*/;
 
     var reg1 = botRegex1.test(request.text);
     var reg2 = botRegex2.test(request.text);
     var reg3 = botRegex3.test(request.text);
     var reg4 = botRegex4.test(request.text);
     var regChad = botRegexChad.test(request.test);
+    var reg5 = botRegex5.test(request.text);
 
     if (request.text && reg1) {
         this.res.writeHead(200);
@@ -35,7 +39,8 @@ function respond() {
                 postImage(img2);
                 break;
             case 3:
-                postImage(img3)
+                postImage(img3);
+                break;
             default:
                 postMessage('oh god oh fuck');
                 break;
@@ -71,7 +76,28 @@ function respond() {
         postMessage('Beemisbot v1.4 Patch Notes: The Penguin Patch 2.0\n-Penguin Image Processing is improved, extra penguins added, many bugs fixed, all is good');
         this.res.end();
     }
+    else if (request.text && reg5) {
+
+        this.res.writeHead(200);
+        console.log("gay mom detected");
+        switch (Math.floor(Math.random() * 3)) {
+            case 0:
+                postMessage('no u');
+                break;
+            case 1:
+                postMessage('ur dad lesbian');
+                break;
+            case 2:
+                postMessage('no u infinity');
+                break;
+            default:
+                postMessage('oh god oh fuck');
+                break;
+        }
+        this.res.end();
+    }
     else {
+
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
