@@ -66,18 +66,12 @@ function respond() {
         }
         this.res.end();
     }
-    else if (request.text && regChad) {
-        this.res.writeHead(200);
-        postImage(imgThanos);
-        this.res.end();
-    }
     else if (request.text && reg4) {
         this.res.writeHead(200);
         postMessage('Beemisbot v1.4 Patch Notes: The Penguin Patch 2.0\n-Penguin Image Processing is improved, extra penguins added, many bugs fixed, all is good');
         this.res.end();
     }
     else if (request.text && reg5) {
-
         this.res.writeHead(200);
         console.log("gay mom detected");
         switch (Math.floor(Math.random() * 3)) {
@@ -94,6 +88,11 @@ function respond() {
                 postMessage('oh god oh fuck');
                 break;
         }
+        this.res.end();
+    }
+    else if (request.text && regChad) {
+        this.res.writeHead(200);
+        postImage(imgThanos);
         this.res.end();
     }
     else {
