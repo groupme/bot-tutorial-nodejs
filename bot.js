@@ -69,6 +69,7 @@ function respond() {
     }
     else if (request.test && reg5) {
         this.res.writeHead(200);
+        console.log("gay mom detected");
         switch (Math.floor(Math.random() * 3)) {
             case 0:
                 postMessage('no u');
