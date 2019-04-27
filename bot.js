@@ -9,7 +9,8 @@ var img0 = "https://i.groupme.com/750x750.jpeg.7d432870139d4ef78e7c9b5e774b3307"
 
 function respond() {
   
-    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegex5 = /.*[Uu]r [Mm]om [Gg]ay.*/;
+    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/;
+    var botRegex5 = /.*[Uu]r.*[Mm]om.*[Gg]ay.*/;
   
     var reg1 = botRegex1.test(request.text);
     var reg2 = botRegex2.test(request.text);
