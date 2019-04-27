@@ -12,7 +12,7 @@ function respond() {
   
     var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/;
     var botRegex5 = /.*[Uu]r.*[Mm]om.*[Gg]ay.*/;
-    var botRegexChad = /.*[Ee]ndgame.*/;
+    var botRegexChad = /.*endgame.*/;
 
     var reg1 = botRegex1.test(request.text);
     var reg2 = botRegex2.test(request.text);
