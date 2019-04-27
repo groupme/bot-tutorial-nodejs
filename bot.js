@@ -63,15 +63,7 @@ function respond() {
     }
     else if (request.text && regChad) {
         this.res.writeHead(200);
-        switch (Math.floor(Math.random() * 4)) {
-            case 0:
-                postImage(imgThanos);
-                break;
-            default:
-                postMessage('perfectly balanced');
-                break;
-        }
-        postMessage('YOU CAN\'T SAY THAT THAT\'S RACIST');
+        postImage(imgThanos);
         this.res.end();
     }
     else if (request.text && reg4) {
