@@ -73,7 +73,8 @@ function respond() {
         this.res.end();
     }
     else if (request.text && reg5) {
-                this.res.writeHead(200);
+
+        this.res.writeHead(200);
         console.log("gay mom detected");
         switch (Math.floor(Math.random() * 3)) {
             case 0:
@@ -92,6 +93,7 @@ function respond() {
         this.res.end();
     }
     else {
+
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
