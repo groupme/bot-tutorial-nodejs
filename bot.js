@@ -18,10 +18,10 @@ function respond() {
     var reg2 = botRegex2.test(request.text);
     var reg3 = botRegex3.test(request.text);
     var reg4 = botRegex4.test(request.text);
-    var reg7 = botRegex7.test(request.text);
     var reg5 = botRegex5.test(request.text);
     var reg6 = botRegex6.test(request.text);
-    console.log(reg6);
+    var reg7 = botRegex7.test(request.text);
+    console.log(reg7);
 
 
     if (request.text && reg1) {
