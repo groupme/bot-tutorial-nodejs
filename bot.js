@@ -102,13 +102,13 @@ function respond() {
         this.res.writeHead(200);
         switch (Math.floor(Math.random() * 4)) {
             case 0:
-                postMessage('Hello friends!');
+                postMessage('Hello, friends');
                 break;
             case 1:
-                postMessage('G\'day brethen, let\'s get this bread.');
+                postMessage('G\'day brethen, let\'s get this bread');
                 break;
             case 2:
-                postMessage('Hi guys.');
+                postMessage('Hi guys');
                 break;
             case 3:
                 postMessage('Death calls us all,  and we continuue to ignore its sweet beckon');
