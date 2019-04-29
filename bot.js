@@ -10,15 +10,15 @@ var imgThanos = "https://i.groupme.com/1399x1407.jpeg.da79f18b4ae8401da9465f0a89
 
 function respond() {
   
-    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegexChad = /^\/endgame$/;
+    var request = JSON.parse(this.req.chunks[0]), botRegex1 = /^\/cool guy$/, botRegex2 = /.*[Nn].[Gg][Gg].[Rr].*/, botRegex3 = /^\/8ball.*/, botRegex4 = /^\/patchnotes$/, botRegex6 = /anything.*$/;
     var botRegex5 = /.*[Uu]r.*[Mm]om.*[Gg]ay.*/;
 
     var reg1 = botRegex1.test(request.text);
     var reg2 = botRegex2.test(request.text);
     var reg3 = botRegex3.test(request.text);
     var reg4 = botRegex4.test(request.text);
-    var regChad = botRegexChad.test(request.test);
     var reg5 = botRegex5.test(request.text);
+    var reg6 = botRegex6.test(request.text);
     console.log(regChad);
 
     if (request.text && reg1) {
@@ -90,9 +90,10 @@ function respond() {
         }
         this.res.end();
     }
-    else if (request.text && regChad) {
+    else if (request.text && reg6) {
         this.res.writeHead(200);
-        postImage(imgThanos);
+        postMessage('Was that my cue? sorry');
+        //postImage(imgThanos);
         this.res.end();
     }
     else {
