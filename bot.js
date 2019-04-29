@@ -100,28 +100,29 @@ function respond() {
     }
     else if (request.text && reg7) {
         this.res.writeHead(200);
-        switch (Math.floor(Math.random()*4)){
-           case 0:
-           postMessage('Hello friends!');
-           break;
-           case 1:
-           postMessage('G\'day brethen, let\'s get this bread.');
-           break;
-           case 2:
-           postMessage('Hi guys.');
-           break; 
-           case 3:
-           postMessage('Death calls us all,  and we continuue to ignore its sweet beckon');
-           break;
-           default:
-           postMessage('Fetus deletus');
-           break;
+        switch (Math.floor(Math.random() * 4)) {
+            case 0:
+                postMessage('Hello friends!');
+                break;
+            case 1:
+                postMessage('G\'day brethen, let\'s get this bread.');
+                break;
+            case 2:
+                postMessage('Hi guys.');
+                break;
+            case 3:
+                postMessage('Death calls us all,  and we continuue to ignore its sweet beckon');
+                break;
+            default:
+                postMessage('Fetus deletus');
+                break;
         }
+    }
     else {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
-  }
+    }
 }
 
 function postMessage(message) {
