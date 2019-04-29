@@ -19,7 +19,7 @@ function respond() {
     var reg4 = botRegex4.test(request.text);
     var reg5 = botRegex5.test(request.text);
     var reg6 = botRegex6.test(request.text);
-    console.log(regChad);
+    console.log(reg6);
 
     if (request.text && reg1) {
         this.res.writeHead(200);
