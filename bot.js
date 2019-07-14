@@ -22,7 +22,6 @@ var quotes = [
   '"I used a pretty nasty word to describe Ghaul. I don\'t want to repeat it here." - Ghost',
   '"Does that fallen look like a transmat thieving thief to you? He looks like a transmat theieving theif to me." - Ghost',
   '"That one. That one\'s gotta be a transmat thieving thief. He looks even thiefier than the first one." - Ghost',
-  '"While I cannot condone theft, I do appreciate payback." - Zavala',
   '"Only my captain can access those memories. And he\'s super dead." - Failsafe',
   '"Got em! We got their spire. You should have seen us, we were amazing!" - Ghost',
   '"Stay in the shadows. THE SHADOWS!" - Ghost',
@@ -46,6 +45,7 @@ function respond() {
       kujay = /^!kujay/im.test(request.text),
       yep = /^!yep/im.test(request.text),
       goose = /^!goose/im.test(request.text),
+      dinklebot = /^!dinklebot/im.test(request.text),
       hype = /!hype$/im.test(request.text);
 
   // she goes for the badboy type
@@ -80,6 +80,8 @@ function respond() {
       postMessage('https://static-cdn.jtvnw.net/previews-ttv/live_user_kujay-640x360.jpg');
     } else if (yep) {
       postMessage('http://nvn.io/img/yep.gif');
+    } else if (dinklebot) {
+      postMessage('https://www.youtube.com/watch?v=ycBWgfAZT3U');
     } else {
       console.log("don't care");
     }
@@ -245,7 +247,7 @@ function postQuote() {
 
 function postHelp() {
   var msg;
-  msg = 'Deej Help\n!hype: Post random hype message!\n!hype1, !hype2, !hype3: Post a specific hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!yep: YEP\n!rip: riiiiip\n!clap: Applause!\n!twab: This Week at Bungie link\n!kujay: Live picture of THE MAN HIMSELF\n!goose: goose is ANGRY';
+  msg = 'Deej Help\n!hype: Post random hype message!\n!hype1, !hype2, !hype3: Post a specific hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!yep: YEP\n!rip: riiiiip\n!clap: Applause!\n!twab: This Week at Bungie link\n!kujay: Live picture of THE MAN HIMSELF\n!goose: goose is ANGRY\n!dinklebot: Link the Dinklebot SUPERCUT.';
   postMessage(msg);
 }
 
