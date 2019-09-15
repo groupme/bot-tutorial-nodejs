@@ -1,8 +1,9 @@
-# Sample GroupMe NodeJS Callback Bot
+# Sample GroupMe NodeJS Bot
+[**Python**](https://github.com/groupme/bot-tutorial-nodejs) | **JavaScript**
 
 ## Introduction
 
-This project shows the capability of a bot to react to messages sent within a group.
+A simple GroupMe bot that reacts to messages sent in a group.
 
 ## Contents
 
@@ -18,7 +19,7 @@ This project shows the capability of a bot to react to messages sent within a gr
 
   * GroupMe account
   * Heroku account
-  * [Heroku Toolbelt](https://toolbelt.heroku.com/)
+  * [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
 # Get your bot up and running<a name="deploy"></a>
 
@@ -55,10 +56,10 @@ Fill out the form to create your new bot:
 
   * Select the group where you want the bot to live
   * Give your bot a name
-  * Paste in the url to your newly deply heroku app
+  * Paste in the URL of your newly deployed Heroku app
     * `http://your-app-name-here.herokuapp.com/`
-  * (Optional) Give your bot an avatar by providing a url to an image
-  * Click submit
+  * (Optional) Give your bot an avatar by providing the URL of an image
+  * Click submit!
 
 ## Find your Bot ID:<a name="get-bot-id"></a>
 
@@ -113,37 +114,51 @@ Go to GroupMe and type "/cool guy" in the group where your bot lives to see it i
 
 Within terminal, change directory to the location where you would like the files to live, then run this command:
 
-    $ heroku git:clone -a YOUR_APP_NAME_HERE
+```sh
+heroku git:clone -a YOUR_APP_NAME_HERE
+```
 
 And then change directory into the new folder
 
-    $ cd YOUR_APP_NAME_HERE
+```sh
+cd YOUR_APP_NAME_HERE
+```
 
 ## Configure your local BOT_ID environment variable
 
 Open the file `.env` from your local files in your text editor of choice.
 Find where it says "YOUR_BOT_ID_HERE" and replace it with the ID of your new bot.
 
-If you don't know what your Bot ID is, please refer back to [this](#get-bot-id) section,
-where it is explained how to retrieve it.
+If you don't know what your Bot ID is, please refer back to [this](#get-bot-id) section, where it is explained how to retrieve it.
 
 If your Bot ID is 12345678910, then:
 
-    BOT_ID="YOUR_BOT_ID_HERE"
+```sh
+BOT_ID="YOUR_BOT_ID_HERE"
+```
 
 becomes:
 
-    BOT_ID="12345678910"
+```sh
+BOT_ID="12345678910"
+```
 
 ## Start the server
 
 To test your bot locally, open terminal and run the following command to start a local server.
 
-    $ foreman start
+```sh
+npm start
+```
+
+or
+
+```sh
+node index.js
+```
 
 Then navigate to `http://127.0.0.1:5000/` in a browser.
 
 ![Local bot](http://i.groupme.com/502x133.png.f06c630467954f5dab4c742dc67b71bf)
 
 ## All done! Go play around and make the bot your own.
-
