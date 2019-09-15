@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
+  "name": "bot-tutorial",
   "version": "0.1.2",
-  "description": "A sample Node.js app using Express 4",
+  "description": "A simple GroupMe bot written in Node.js",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -15,12 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/groupme/bot-tutorial-nodejs"
   },
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express",
+    "groupme",
+    "bot"
   ],
   "license": "MIT"
 }
