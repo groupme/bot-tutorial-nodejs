@@ -37,7 +37,7 @@ function postMessage() {
   console.log('sending ' + botResponse + ' to ' + botID);
 
   botReq = HTTPS.request(options, function(res) {
-    if(res.statusCode == 202) {
+    if (res.statusCode == 202) {
       // Request was successful.
     } else {
       console.log('received bad status code ' + res.statusCode);
