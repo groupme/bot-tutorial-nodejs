@@ -1,5 +1,5 @@
 # Sample GroupMe NodeJS Bot
-[**Python**](https://github.com/groupme/bot-tutorial-nodejs) | **JavaScript**
+[**Python**](https://github.com/groupme/bot-tutorial-python) | **JavaScript**
 
 ## Introduction
 
