@@ -46,6 +46,8 @@ function respond() {
       yep = /^!yep/im.test(request.text),
       goose = /^!goose/im.test(request.text),
       dinklebot = /^!dinklebot/im.test(request.text),
+      doom = /^!doom/im.test(request.text),
+      gloom = /^!gloom/im.test(request.text),
       hype = /!hype$/im.test(request.text);
 
   // she goes for the badboy type
@@ -82,6 +84,8 @@ function respond() {
       postMessage('http://nvn.io/img/yep.gif');
     } else if (dinklebot) {
       postMessage('https://www.youtube.com/watch?v=ycBWgfAZT3U');
+    } else if (doom || gloom) {
+      postMessage('https://www.reactiongifs.com/r/suitm.gif');
     } else {
       console.log("don't care");
     }
@@ -247,7 +251,7 @@ function postQuote() {
 
 function postHelp() {
   var msg;
-  msg = 'Deej Help\n!hype: Post random hype message!\n!hype1, !hype2, !hype3: Post a specific hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!yep: YEP\n!rip: riiiiip\n!clap: Applause!\n!twab: This Week at Bungie link\n!kujay: Live picture of THE MAN HIMSELF\n!goose: goose is ANGRY\n!dinklebot: Link the Dinklebot SUPERCUT.';
+  msg = 'Deej Help\n!hype: Post random hype message!\n!hype1, !hype2, !hype3: Post a specific hype message!\n!quote: Post one of ' + quotes.length +' awesome Destiny 2 quotes!\n!bird: Jacky boy!\n!nope: Nope, nope...\n!yep: YEP\n!rip: riiiiip\n!clap: Applause!\n!twab: This Week at Bungie link\n!kujay: Live picture of THE MAN HIMSELF\n!goose: goose is ANGRY\n!dinklebot: Link the Dinklebot SUPERCUT.\n!doom or !gloom: The season is fucking over...';
   postMessage(msg);
 }
 
