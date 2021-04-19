@@ -153,7 +153,7 @@ function postEmojis(emojiSet) {
       [18, 21], // 100
       [9, 20], // shaka brah
       [9, 21], // make it rain
-      [9, 33] // rainbow flag
+      [9, 33] // rainbow flags
     ],
     1: [
         [3, 11],
